@@ -28,7 +28,7 @@ function render(applicationNameVsVulnerabilityDefinitions) {
       } else {
         column.className = "master-item";
       }
-      column.dataset.internalid=index;
+      column.dataset.vulnerability_index=index;
       column.id = identifier;
       let textNode = document.createTextNode(
         vulnerabilityDefinitions[index]["Name"]
@@ -204,15 +204,15 @@ function _addEventListenerToVulnerabilityTypesAndLevels(item, applicationName, v
     detail.classList.remove("hidden-md-down");
     innerMaster.innerHTML = "";
     applicationSelected = applicationName;
-    vulnerabilitySelected = vulnerabilityDefinitions[this.dataset.internalid]["Name"];
+    vulnerabilitySelected = vulnerabilityDefinitions[this.dataset.vulnerability_index]["Name"];
     let isFirst = true;
-    for (let key in vulnerabilityDefinitions[this.dataset.internalid][
+    for (let key in vulnerabilityDefinitions[this.dataset.vulnerability_index][
       "Detailed Information"
     ]) {
       let column = document.createElement("div");
       column.id = this.id + "." + key;
       let textNode = document.createTextNode(
-        vulnerabilityDefinitions[this.dataset.internalid]["Detailed Information"][key][
+        vulnerabilityDefinitions[this.dataset.vulnerability_index]["Detailed Information"][key][
           "Level"
         ]
       );
@@ -224,7 +224,7 @@ function _addEventListenerToVulnerabilityTypesAndLevels(item, applicationName, v
           vulnerabilityDefinitions,
           applicationName,
           this.id,
-          this.dataset.internalid,
+          this.dataset.vulnerability_index,
           key,
           vulnerabilitySelected
         )
@@ -234,7 +234,7 @@ function _addEventListenerToVulnerabilityTypesAndLevels(item, applicationName, v
         isFirst = false;
       }
       innerMaster.appendChild(column);
-      _addEventListenerToShowHideHelpButton(vulnerabilityDefinitions, this.dataset.internalid, key);
+      _addEventListenerToShowHideHelpButton(vulnerabilityDefinitions, this.dataset.vulnerability_index, key);
     }
   });
 }
@@ -246,15 +246,15 @@ function _resetHelpRelatedElements() {
   document.getElementById("hideHelp").disabled = true;
 }
 
-function _addEventListenerToShowHideHelpButton(vulnerableAppEndPointData, internalid, key) {
+function _addEventListenerToShowHideHelpButton(vulnerabilityDefinitions, vulnerability_index, key) {
   document.getElementById("showHelp").addEventListener("click", function () {
     document.getElementById("showHelp").disabled = true;
     let helpText = "<ol>";
-    for (let index in vulnerableAppEndPointData[internalid][
+    for (let index in vulnerabilityDefinitions[vulnerability_index][
       "Detailed Information"
     ][key]["AttackVectors"]) {
       let attackVector =
-        vulnerableAppEndPointData[internalid]["Detailed Information"][
+        vulnerabilityDefinitions[vulnerability_index]["Detailed Information"][
           key
         ]["AttackVectors"][index];
       let curlPayload = attackVector["CurlPayload"];
