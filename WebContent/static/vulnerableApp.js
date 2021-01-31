@@ -234,7 +234,7 @@ function _addEventListenerToVulnerabilityTypesAndLevels(item, applicationName, v
         isFirst = false;
       }
       innerMaster.appendChild(column);
-      _addEventListenerToShowHideHelpButton(vulnerabilityDefinitions, this.dataset.vulnerability_index, key);
+      _addEventListenerToShowHideHelpButton(vulnerabilityDefinitions);
     }
   });
 }
@@ -246,16 +246,16 @@ function _resetHelpRelatedElements() {
   document.getElementById("hideHelp").disabled = true;
 }
 
-function _addEventListenerToShowHideHelpButton(vulnerabilityDefinitions, vulnerability_index, key) {
+function _addEventListenerToShowHideHelpButton(vulnerabilityDefinitions) {
   document.getElementById("showHelp").addEventListener("click", function () {
     document.getElementById("showHelp").disabled = true;
     let helpText = "<ol>";
-    for (let index in vulnerabilityDefinitions[vulnerability_index][
+    for (let index in vulnerabilityDefinitions[currentVulnerabilityTypeElementId][
       "Detailed Information"
-    ][key]["AttackVectors"]) {
+    ][currentVulnerabilityLevelElementId]["AttackVectors"]) {
       let attackVector =
-        vulnerabilityDefinitions[vulnerability_index]["Detailed Information"][
-          key
+        vulnerabilityDefinitions[currentVulnerabilityTypeElementId]["Detailed Information"][
+          currentVulnerabilityLevelElementId
         ]["AttackVectors"][index];
       let curlPayload = attackVector["CurlPayload"];
       let description = attackVector["Description"];
