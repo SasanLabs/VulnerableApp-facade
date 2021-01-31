@@ -8,11 +8,18 @@ services:
     VulnerableApp-jsp:
        image: vulnerableapp-jsp
        ports:
-        - "8888:8080"
+        - "9091:8080"
+    
+    VulnerableApp-php:
+        image: vulnerableapp-php
+        ports:
+         - "80:80"
        
     VulnerableApp-web:
       depends_on:
         - VulnerableApp-base
+        - VulnerableApp-jsp
+        - VulnerableApp-php
       image: vulnerableapp_nginx
       volumes:
        - ./templates:/etc/nginx/templates
