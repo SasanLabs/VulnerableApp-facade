@@ -14,7 +14,7 @@ services:
       depends_on:
         - VulnerableApp-base
         - VulnerableApp-jsp
-      image: vulnerableapp_nginx
+      image: vulnerableapp_facade
       volumes:
        - ./templates:/etc/nginx/templates
       ports:
