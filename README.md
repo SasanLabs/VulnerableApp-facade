@@ -24,4 +24,4 @@ VulnerableApp-Nginx have majorly 2 components:
 2. Lua module
 
 Static files are used to load the skeleton UI and Lua module is used to merge the Vulnerability Definitions exposed by different vulnerable applications.
-So you just need to do the changes in any of the components and then build the docker image using command ```docker build . -t vulnerableapp_nginx``` and then run the project as mentioned at [How to run the project](#how-to-run-project) 
+So you just need to do the changes in any of the components and then build the docker image using command ```docker build . -t vulnerableapp_nginx``` and then run the project as mentioned at [How to run the project](#how-to-run-the-project) 
