@@ -5,16 +5,10 @@ services:
       ports:
        - "9090:9090"
        
-    VulnerableApp-jsp:
-       image: vulnerableapp-jsp
-       ports:
-        - "9091:8080"
-       
-    VulnerableApp-web:
+    VulnerableApp-facade:
       depends_on:
         - VulnerableApp-base
-        - VulnerableApp-jsp
-      image: vulnerableapp_facade
+      image: sasanlabs/vulnerableapp_facade
       volumes:
        - ./templates:/etc/nginx/templates
       ports:
