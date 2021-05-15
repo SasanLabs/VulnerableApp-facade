@@ -20,4 +20,5 @@ jobs:
         with:
           context: ./
           push: true
+          file: .
           tags: sasanlabs/vulnerableapp-facade:latest
