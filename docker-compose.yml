@@ -8,7 +8,7 @@ services:
     VulnerableApp-facade:
       depends_on:
         - VulnerableApp-base
-      image: sasanlabs/vulnerableapp_facade
+      image: sasanlabs/vulnerableapp-facade
       volumes:
        - ./templates:/etc/nginx/templates
       ports:
