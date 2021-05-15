@@ -7,13 +7,14 @@ function vulnerableapp_utility.merge_vulnerability_information(vulnerableAppResp
         response = response .. '"VulnerableApp":' .. vulnerableAppResponse.body
         appendComma = true
     end
-    #if (vulnerableAppJspResponse.status == 200) then
-    #    if (appendComma) then
-    #        response = response .. ","
-    #    end
-    #    appendComma = true
-    #    response = response .. '"VulnerableApp-jsp":' .. vulnerableAppJspResponse.body
-    #end
+    --[[if (vulnerableAppJspResponse.status == 200) then
+        if (appendComma) then
+            response = response .. ","
+        end
+        appendComma = true
+        response = response .. '"VulnerableApp-jsp":' .. vulnerableAppJspResponse.body
+    end
+    ]]--
     response = response .. "}"
     return response
 end
