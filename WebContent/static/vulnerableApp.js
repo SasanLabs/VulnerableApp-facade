@@ -3,6 +3,11 @@ const detailTitle = document.querySelector(".detail-title");
 const master = document.querySelector(".master");
 const innerMaster = document.querySelector(".inner-master");
 
+const variantTooltip = {
+  secure: "Secure implementation",
+  unsecure: "Unsecure implementation",
+};
+
 let vulnerabilitySelected = "";
 let vulnerabilityLevelSelected = "";
 let applicationSelected = "";
@@ -197,6 +202,38 @@ function _resetSelectedVulnerabilityLevel() {
   _resetHelpRelatedElements();
 }
 
+
+function _isSecureVariant(detailedInformation) {
+  return detailedInformation["Variant"] === "SECURE";
+}
+
+function _getSvgElementForVariant(isSecure) {
+  let svg = document.createElement("img");
+  svg.classList.add("vector");
+  svg.classList.add("tooltip");
+  const svgVariantName = isSecure ? "secure" : "unsecure";
+
+  svg.setAttribute("src", "vectors/" + svgVariantName + ".svg");
+
+  return svg;
+}
+
+function _getSvgVariantWithToolTipElement(detailedInformation) {
+  let svgWithTooltip = document.createElement("div");
+  svgWithTooltip.classList.add("tooltip");
+  let isSecure = _isSecureVariant(detailedInformation);
+  let span = document.createElement("span");
+  span.classList.add("tooltip-text");
+  span.classList.add(
+    isSecure ? "secure-variant-tooltip-text" : "unsecure-variant-tooltip-text"
+  );
+  span.innerHTML = isSecure ? variantTooltip.secure : variantTooltip.unsecure;
+
+  svgWithTooltip.appendChild(span);
+  svgWithTooltip.appendChild(_getSvgElementForVariant(isSecure));
+  return svgWithTooltip;
+}
+
 function _addEventListenerToVulnerabilityTypesAndLevels(item, applicationName, vulnerabilityDefinitions) {
   item.addEventListener("click", function () {
     _resetSelectedVulnerabilityType();
@@ -217,6 +254,7 @@ function _addEventListenerToVulnerabilityTypesAndLevels(item, applicationName, v
         ]
       );
       column.appendChild(textNode);
+      column.appendChild(_getSvgVariantWithToolTipElement(vulnerabilityDefinitions[this.dataset.vulnerability_index]["Detailed Information"][key]));
       column.className = "inner-master-item";
       column.addEventListener(
         "click",
