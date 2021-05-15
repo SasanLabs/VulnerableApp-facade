@@ -6,7 +6,7 @@ As we are seeing a lot of technological enhancements in the industry from past f
 ## High Level Design Details
 ![High Level Design](https://github.com/SasanLabs/VulnerableApp-facade/blob/main/docs/images/VulnerableApp-facade.jpeg)
 
-**VulnerableApp-facade** is a small component which acts as a webserver and a gateway. It routes the calls to different Vulnerable Applications which are registered with it based on a url pattern. It also exposes a schema/contract (Vulnerability Definition) and if a vulnerable application adhere to that then it will be able to intract and route the traffic to that vulnerable application. It also provides the generic skeleton UI which it builds by reading the provided schema (Vulnerability Definition) from the vulnerable application and then loads the UI specific to vulnerable application inside the skeleton UI. 
+**VulnerableApp-facade** is a small component which acts as a webserver and a gateway. It routes the calls to different Vulnerable Applications which are registered with it based on a url pattern. It also exposes a schema/contract (Vulnerability Definition) and if a vulnerable application adhere to that then it will be able to intract and route the traffic to that vulnerable application. It also provides the generic skeleton UI which it builds by reading the provided schema (Vulnerability Definition) from the vulnerable application and then loads the UI specific to vulnerable application inside the skeleton UserInterface. 
 
 ## How to run the project
 VulnerableApp-facade is a farm of vulnerable applications where each application runs as a docker container. VulnerableApp-facade has `docker-compose.yml` file which contains docker configuration of other vulnerable applications along with docker configuration of VulnerableApp-facade. 
@@ -23,7 +23,7 @@ VulnerableApp-facade have majorly 2 components:
 1. Static files
 2. Lua module
 
-Static files are used to load the skeleton UI and Lua module is used to merge the Vulnerability Definitions exposed by different vulnerable applications.
+Static files are used to load the skeleton UserInterface and Lua module is used to merge the Vulnerability Definitions exposed by different vulnerable applications.
 So you just need to do the changes in any of the components and then build the docker image using command ```docker build . -t vulnerableapp_facade``` and then run the project as mentioned at [How to run the project](#how-to-run-the-project) 
 
 ## Contact ##
