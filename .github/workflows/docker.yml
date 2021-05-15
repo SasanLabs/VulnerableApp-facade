@@ -18,7 +18,5 @@ jobs:
         name: Push docker images
         uses: docker/build-push-action@v2
         with:
-          context: ./
           push: true
-          file: .
           tags: sasanlabs/vulnerableapp-facade:latest
