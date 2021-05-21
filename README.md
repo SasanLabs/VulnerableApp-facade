@@ -4,7 +4,7 @@
 As we are seeing a lot of technological enhancements in the industry from past few years, these technical enhancements are solving one or the other problem however with that they also bring few different vulnerabilities. VulnerableApps are generally written in one of the techstacks like either Node.js or Java with a SQL or NoSQL database etc and hence they are not able to expand to a whole new set of Vulnerabilities which are present in other technologies. Also adding more vulnerabilities in a single vulnerable application makes it heavier and complex which finally makes it unmaintainable. So VulnerableApp-facade is built to solve this problem by building a distributed farm of Vulnerable Applications such that they can be built agnostic to tech stacks.
 
 ## High Level Design Details
-![High Level Design](https://github.com/SasanLabs/VulnerableApp-facade/blob/main/docs/images/VulnerableApp-facade.jpeg)
+![High Level Design](https://raw.githubusercontent.com/SasanLabs/VulnerableApp-facade/main/docs/images/VulnerableApp-facade.jpeg)
 
 **VulnerableApp-facade** is a small component which acts as a webserver and a gateway. It routes the calls to different Vulnerable Applications which are registered with it based on a url pattern. It also exposes a schema/contract (Vulnerability Definition) and if a vulnerable application adhere to that then it will be able to intract and route the traffic to that vulnerable application. It also provides the generic skeleton UI which it builds by reading the provided schema (Vulnerability Definition) from the vulnerable application and then loads the UI specific to vulnerable application inside the skeleton UserInterface. 
 
