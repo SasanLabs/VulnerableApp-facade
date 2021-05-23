@@ -20,9 +20,18 @@ export interface Hint {
   description: string;
 }
 
-export interface ResourceURI {
-  isAbsolute: boolean;
-  uri: string;
+export enum ResourceType {
+  //HTML is sufficient for the server side languages
+  // which returns the html with extensions as ".php" or ".jsp" etc
+  HTML,
+  JAVASCRIPT,
+  CSS,
+}
+
+export class ResourceURI {
+  resourceType: ResourceType = ResourceType.HTML;
+  isAbsolute: boolean = false;
+  uri: string = "/";
 }
 
 export interface ResourceInformation {

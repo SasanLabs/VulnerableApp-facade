@@ -14,10 +14,9 @@ interface VulnerabilityDefinitionResponse {
 }
 
 export default class App extends React.Component {
-
   state: GlobalState = {
-      isSuccessfullyLoaded : false
-  }
+    isSuccessfullyLoaded: false,
+  };
 
   _populateGlobalState(
     vulnerabilityDefinitionResponse: VulnerabilityDefinitionResponse
@@ -37,9 +36,9 @@ export default class App extends React.Component {
             vulnerabilityDefinitionIndexRes
           ]["levels"]) {
             let levelInformationRes =
-              vulnerabilityDefinitionsRes[vulnerabilityDefinitionIndexRes]["levels"][
-                vulnerabilityLevelIndexRes
-              ];
+              vulnerabilityDefinitionsRes[vulnerabilityDefinitionIndexRes][
+                "levels"
+              ][vulnerabilityLevelIndexRes];
             //Hint population
             let hints = [];
             for (let hintIndexRes in levelInformationRes["hints"]) {
@@ -67,8 +66,13 @@ export default class App extends React.Component {
             }
             // Resource population
             let resourceInformationHtml = {
-              isAbsolute: levelInformationRes["resourceInformation"]["htmlResource"]["isAbsolute"],
-              uri: levelInformationRes["resourceInformation"]["htmlResource"]["uri"]
+              isAbsolute:
+                levelInformationRes["resourceInformation"]["htmlResource"][
+                  "isAbsolute"
+                ],
+              uri: levelInformationRes["resourceInformation"]["htmlResource"][
+                "uri"
+              ],
             };
 
             let staticResourceInformation = [];
@@ -81,7 +85,7 @@ export default class App extends React.Component {
                 ];
               staticResourceInformation.push({
                 isAbsolute: staticResourceInformationRes["isAbsolute"],
-                uri: staticResourceInformationRes["uri"]
+                uri: staticResourceInformationRes["uri"],
               });
             }
 
@@ -118,14 +122,13 @@ export default class App extends React.Component {
             id: vulnerabilityDefinitionsRes["id"],
             description: vulnerabilityDefinitionsRes["description"],
             vulnerabilityTypes: vulnerabilityTypes,
-            levels: levels
+            levels: levels,
           };
           vulnerabilityDefinitions.push(vulnerabilityDefinition);
         }
         applicationDataArray.push({
           applicationName: vulnerableAppRes,
-          vulnerabilityDefinitions:
-            vulnerabilityDefinitionsRes
+          vulnerabilityDefinitions: vulnerabilityDefinitionsRes,
         });
       }
       this.setState({
@@ -143,7 +146,8 @@ export default class App extends React.Component {
           applicationDataArray.length >= 1 &&
           applicationDataArray[0].vulnerabilityDefinitions.length >= 1 &&
           applicationDataArray[0].vulnerabilityDefinitions[0].levels.length >= 1
-            ? applicationDataArray[0].vulnerabilityDefinitions[0].levels[0].levelIdentifier
+            ? applicationDataArray[0].vulnerabilityDefinitions[0].levels[0]
+                .levelIdentifier
             : null,
         isSuccessfullyLoaded: true,
       });
@@ -158,7 +162,10 @@ export default class App extends React.Component {
       .then(
         (result) => {
           //As currently we don't have facade backend ready with new schema.
-          this._populateGlobalState({ successful: true, data: {"VulnerableApp" : result} });
+          this._populateGlobalState({
+            successful: true,
+            data: { VulnerableApp: result },
+          });
         },
         (error) => {
           this._populateGlobalState({
@@ -169,9 +176,9 @@ export default class App extends React.Component {
       );
   }
 
- setGlobalState = (globalState: GlobalState) => {
+  setGlobalState = (globalState: GlobalState) => {
     this.setState(globalState);
-}
+  };
 
   render() {
     return (
@@ -179,10 +186,15 @@ export default class App extends React.Component {
         <Container>
           <Header></Header>
           <Container>
-            <LeftNav globalState={this.state} setGlobalState={this.setGlobalState} />
-            <Content {...this.state}/>
+            <LeftNav
+              globalState={this.state}
+              setGlobalState={this.setGlobalState}
+            />
+            <Content {...this.state} />
           </Container>
-          <Footer globalState={this.state} setGlobalState={this.setGlobalState}>Footer</Footer>
+          <Footer globalState={this.state} setGlobalState={this.setGlobalState}>
+            Footer
+          </Footer>
         </Container>
       </div>
     );

@@ -1,10 +1,11 @@
 import React from "react";
-import { Sidenav as RSuiteSidenav, Dropdown as RSuiteDropdown, Nav as RSuiteNav, Icon as RSuiteIcon } from "rsuite";
-import { Props } from "../interface/Props";
 import {
-  LevelInformation,
-  VulnerabilityDefinition,
-} from "../interface/State";
+  Sidenav as RSuiteSidenav,
+  Dropdown as RSuiteDropdown,
+  Nav as RSuiteNav,
+} from "rsuite";
+import { Props } from "../interface/Props";
+import { LevelInformation, VulnerabilityDefinition } from "../interface/State";
 
 export class LeftNav extends React.Component<Props> {
   constructor(props: Props) {
@@ -42,8 +43,11 @@ export class LeftNav extends React.Component<Props> {
         <RSuiteSidenav>
           <RSuiteSidenav.Body>
             <RSuiteNav>
-              <RSuiteDropdown eventKey={applicationName} title={applicationName}>
-              <RSuiteDropdown.Item divider />
+              <RSuiteDropdown
+                eventKey={applicationName}
+                title={applicationName}
+              >
+                <RSuiteDropdown.Item divider />
                 {vulnerabilityDefinition.map((vulnerabilityDefinition) =>
                   this._getApplicationVulnerabilityLevels(
                     applicationName,
