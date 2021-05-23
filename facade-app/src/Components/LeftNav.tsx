@@ -1,42 +1,82 @@
 import React from "react";
-import { Sidenav, Dropdown, Nav, Icon } from "rsuite";
-import { GlobalState } from "../interface/State";
+import { Sidenav as RSuiteSidenav, Dropdown as RSuiteDropdown, Nav as RSuiteNav, Icon as RSuiteIcon } from "rsuite";
+import { Props } from "../interface/Props";
+import {
+  LevelInformation,
+  VulnerabilityDefinition,
+} from "../interface/State";
 
-export class LeftNav extends React.Component<GlobalState> {
-    globalState: GlobalState;
-    constructor(props: GlobalState){
-        super(props);
-        this.globalState = props;
-    }
+export class LeftNav extends React.Component<Props> {
+  constructor(props: Props) {
+    super(props);
+  }
 
-    render() {
-        if(this.globalState.applicationData) {
-        return (
-            <Sidenav defaultOpenKeys={["3", "4"]} activeKey="1">
-<Sidenav.Body>
-       {
-       this.globalState.applicationData.forEach(applicationState => {
-           
-        <Nav>
-          <Nav.Item eventKey="1" icon={<Icon icon="dashboard" />}>
-            Dashboard
-          </Nav.Item>
-          <Nav.Item eventKey="2" icon={<Icon icon="group" />}>
-            User Group
-          </Nav.Item>
-          <Dropdown eventKey="3" title="Advanced" icon={<Icon icon="magic" />}>
-            <Dropdown.Item eventKey="3-1">Geo</Dropdown.Item>
-            <Dropdown.Item eventKey="3-2">Devices</Dropdown.Item>
-            <Dropdown.Item eventKey="3-3">Loyalty</Dropdown.Item>
-            <Dropdown.Item eventKey="3-4">Visit Depth</Dropdown.Item>
-          </Dropdown>
-          </Nav>
-        })};
-        </Sidenav.Body>
-        </Sidenav>
-        );
-    } else {
-        return {};
+  _getApplicationVulnerabilityLevels(
+    applicationName: string,
+    vulnerabilityName: string,
+    levels: Array<LevelInformation>
+  ) {
+    return (
+      <RSuiteDropdown.Menu
+        eventKey={applicationName + "." + vulnerabilityName}
+        title={vulnerabilityName}
+      >
+        {levels.map((vulnerabilityLevel, index) => (
+          <RSuiteDropdown.Item
+            eventKey={applicationName + "." + vulnerabilityName + "." + index}
+            active={index === 0}
+          >
+            {vulnerabilityLevel.levelIdentifier}
+          </RSuiteDropdown.Item>
+        ))}
+      </RSuiteDropdown.Menu>
+    );
+  }
+
+  _getApplicationVulnerabilities(
+    applicationName: string,
+    vulnerabilityDefinition: Array<VulnerabilityDefinition>
+  ) {
+    return (
+      <div style={{ width: "20%" }}>
+        <RSuiteSidenav>
+          <RSuiteSidenav.Body>
+            <RSuiteNav>
+              <RSuiteDropdown eventKey={applicationName} title={applicationName}>
+              <RSuiteDropdown.Item divider />
+                {vulnerabilityDefinition.map((vulnerabilityDefinition) =>
+                  this._getApplicationVulnerabilityLevels(
+                    applicationName,
+                    vulnerabilityDefinition.name,
+                    vulnerabilityDefinition.levels
+                  )
+                )}
+              </RSuiteDropdown>
+            </RSuiteNav>
+          </RSuiteSidenav.Body>
+        </RSuiteSidenav>
+      </div>
+    );
+  }
+
+  render() {
+    const { isSuccessfullyLoaded, applicationData } = this.props.globalState;
+    if (isSuccessfullyLoaded && applicationData) {
+      return (
+        <div>
+          {applicationData.map((applicationData) => {
+            let applicationName = applicationData.applicationName;
+            let vulnerabilityDefinitions =
+              applicationData.vulnerabilityDefinitions;
+
+            return this._getApplicationVulnerabilities(
+              applicationName,
+              vulnerabilityDefinitions
+            );
+          })}
+        </div>
+      );
     }
-}
+    return <div />;
+  }
 }

@@ -1,45 +1,11 @@
 import React from "react";
 import "./App.css";
-import { Sidenav, Nav, Icon, Dropdown, Container, Content } from "rsuite";
+import { Container, Content } from "rsuite";
 import "rsuite/dist/styles/rsuite-default.min.css";
-import { MyComponent } from "./MyComponent";
 import { Header } from "./Components/Header";
+import { LeftNav } from "./Components/LeftNav";
 import { GlobalState } from "./interface/State";
-const instance = (
-  <div style={{ width: 250 }}>
-    <Sidenav defaultOpenKeys={["3", "4"]} activeKey="1">
-      <Sidenav.Body>
-        <Nav>
-          <Nav.Item eventKey="1" icon={<Icon icon="dashboard" />}>
-            Dashboard
-          </Nav.Item>
-          <Nav.Item eventKey="2" icon={<Icon icon="group" />}>
-            User Group
-          </Nav.Item>
-          <Dropdown eventKey="3" title="Advanced" icon={<Icon icon="magic" />}>
-            <Dropdown.Item eventKey="3-1">Geo</Dropdown.Item>
-            <Dropdown.Item eventKey="3-2">Devices</Dropdown.Item>
-            <Dropdown.Item eventKey="3-3">Loyalty</Dropdown.Item>
-            <Dropdown.Item eventKey="3-4">Visit Depth</Dropdown.Item>
-          </Dropdown>
-          <Dropdown
-            eventKey="4"
-            title="Settings"
-            icon={<Icon icon="gear-circle" />}
-          >
-            <Dropdown.Item eventKey="4-1">Applications</Dropdown.Item>
-            <Dropdown.Item eventKey="4-2">Channels</Dropdown.Item>
-            <Dropdown.Item eventKey="4-3">Versions</Dropdown.Item>
-            <Dropdown.Menu eventKey="4-5" title="Custom Action">
-              <Dropdown.Item eventKey="4-5-1">Action Name</Dropdown.Item>
-              <Dropdown.Item eventKey="4-5-2">Action Params</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-        </Nav>
-      </Sidenav.Body>
-    </Sidenav>
-  </div>
-);
+import { Footer } from "./Components/Footer";
 
 interface VulnerabilityDefinitionResponse {
   successful: boolean;
@@ -48,7 +14,10 @@ interface VulnerabilityDefinitionResponse {
 }
 
 export default class App extends React.Component {
-  globalState?: GlobalState;
+
+  state: GlobalState = {
+      isSuccessfullyLoaded : false
+  }
 
   _populateGlobalState(
     vulnerabilityDefinitionResponse: VulnerabilityDefinitionResponse
@@ -66,9 +35,9 @@ export default class App extends React.Component {
           let levels = [];
           for (let vulnerabilityLevelIndexRes in vulnerabilityDefinitionsRes[
             vulnerabilityDefinitionIndexRes
-          ]) {
+          ]["levels"]) {
             let levelInformationRes =
-              vulnerabilityDefinitionsRes[vulnerabilityDefinitionIndexRes][
+              vulnerabilityDefinitionsRes[vulnerabilityDefinitionIndexRes]["levels"][
                 vulnerabilityLevelIndexRes
               ];
             //Hint population
@@ -98,8 +67,8 @@ export default class App extends React.Component {
             }
             // Resource population
             let resourceInformationHtml = {
-              isAbsolute: levelInformationRes["htmlResource"]["isAbsolute"],
-              uri: levelInformationRes["htmlResource"]["uri"]
+              isAbsolute: levelInformationRes["resourceInformation"]["htmlResource"]["isAbsolute"],
+              uri: levelInformationRes["resourceInformation"]["htmlResource"]["uri"]
             };
 
             let staticResourceInformation = [];
@@ -154,12 +123,12 @@ export default class App extends React.Component {
           vulnerabilityDefinitions.push(vulnerabilityDefinition);
         }
         applicationDataArray.push({
-          applicationName: vulnerabilityDefinitionsRes["name"],
+          applicationName: vulnerableAppRes,
           vulnerabilityDefinitions:
-            vulnerabilityDefinitionsRes["vulnerabilityDefinitions"]
+            vulnerabilityDefinitionsRes
         });
       }
-      this.globalState = {
+      this.setState({
         applicationData: applicationDataArray,
         activeApplication:
           applicationDataArray.length >= 1
@@ -168,32 +137,28 @@ export default class App extends React.Component {
         activeVulnerability:
           applicationDataArray.length >= 1 &&
           applicationDataArray[0].vulnerabilityDefinitions.length >= 1
-            ? applicationDataArray[0].vulnerabilityDefinitions[0]
+            ? applicationDataArray[0].vulnerabilityDefinitions[0].id
             : null,
         activeLevel:
           applicationDataArray.length >= 1 &&
           applicationDataArray[0].vulnerabilityDefinitions.length >= 1 &&
           applicationDataArray[0].vulnerabilityDefinitions[0].levels.length >= 1
-            ? applicationDataArray[0].vulnerabilityDefinitions[0].levels[0]
-                .identifier
+            ? applicationDataArray[0].vulnerabilityDefinitions[0].levels[0].levelIdentifier
             : null,
         isSuccessfullyLoaded: true,
-      };
-      this.setState(this.globalState);
+      });
     } else {
       console.log(vulnerabilityDefinitionResponse.error);
-      this.setState({
-        isSuccessfullyLoaded: false,
-      });
     }
   }
 
   componentDidMount() {
-    fetch("/VulnerabilityDefinitions")
+    fetch("http://localhost:9090/VulnerableApp/VulnerabilityDefinitions")
       .then((res) => res.json())
       .then(
         (result) => {
-          this._populateGlobalState({ successful: true, data: result });
+          //As currently we don't have facade backend ready with new schema.
+          this._populateGlobalState({ successful: true, data: {"VulnerableApp" : result} });
         },
         (error) => {
           this._populateGlobalState({
@@ -204,19 +169,21 @@ export default class App extends React.Component {
       );
   }
 
+ setGlobalState = (globalState: GlobalState) => {
+    this.setState(globalState);
+}
+
   render() {
     return (
       <div>
         <Container>
           <Header></Header>
           <Container>
-            {instance}
-            <Content></Content>
+            <LeftNav globalState={this.state} setGlobalState={this.setGlobalState} />
+            <Content {...this.state}/>
           </Container>
-          {/* <Footer>Footer</Footer> */}
+          <Footer globalState={this.state} setGlobalState={this.setGlobalState}>Footer</Footer>
         </Container>
-
-        <MyComponent name="Sasan"></MyComponent>
       </div>
     );
   }
