@@ -24,8 +24,11 @@ VulnerableApp-facade have majorly 2 components:
 2. Lua module
 
 Static files are used to load the skeleton UserInterface and Lua module is used to merge the Vulnerability Definitions exposed by different vulnerable applications.
-So you just need to do the changes in any of the components and then build the docker image using command ```docker build . -t vulnerableapp_facade``` and then run the project as mentioned at [How to run the project](#how-to-run-the-project) 
+So you just need to do the changes in any of the components and then build the docker image using command ```docker build . -t owasp-vulnerableapp-facade``` and then run the project as mentioned at [How to run the project](#how-to-run-the-project) 
 
 ## Contact ##
 Please raise a github issue for enhancement/issues in VulnerableApp-facade or send email to karan.sasan@owasp.org regarding queries
 we will try to resolve issues asap.
+
+## Other links ##
+[Owasp Project link](https://owasp.org/www-project-vulnerableapp-facade/)
