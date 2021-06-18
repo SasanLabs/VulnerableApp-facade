@@ -10,6 +10,33 @@ import { LevelInformation, VulnerabilityDefinition } from "../interface/State";
 export class LeftNav extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
+    this._handleVulnerabilityLevelSelect =
+      this._handleVulnerabilityLevelSelect.bind(this);
+    this._handleVulnerabilityTypeSelect =
+      this._handleVulnerabilityTypeSelect.bind(this);
+  }
+
+  _handleVulnerabilityLevelSelect(
+    applicationName: string,
+    vulnerabilityName: string,
+    levelIdentifier: string
+  ) {
+    this.props.setGlobalState({
+      activeApplication: applicationName,
+      activeVulnerability: vulnerabilityName,
+      activeLevel: levelIdentifier,
+    });
+  }
+
+  _handleVulnerabilityTypeSelect(
+    applicationName: string,
+    vulnerabilityName: string
+  ) {
+    this.props.setGlobalState({
+      activeApplication: applicationName,
+      activeVulnerability: vulnerabilityName,
+      activeLevel: undefined,
+    });
   }
 
   _getApplicationVulnerabilityLevels(
@@ -18,53 +45,73 @@ export class LeftNav extends React.Component<Props> {
     levels: Array<LevelInformation>
   ) {
     return (
-      <RSuiteDropdown.Menu
+      <RSuiteDropdown
         eventKey={applicationName + "." + vulnerabilityName}
         title={vulnerabilityName}
+        onOpen={() =>
+          this._handleVulnerabilityTypeSelect(
+            applicationName,
+            vulnerabilityName
+          )
+        }
       >
         {levels.map((vulnerabilityLevel, index) => (
           <RSuiteDropdown.Item
-            eventKey={applicationName + "." + vulnerabilityName + "." + index}
+            eventKey={
+              applicationName +
+              "." +
+              vulnerabilityName +
+              "." +
+              vulnerabilityLevel.levelIdentifier
+            }
             active={index === 0}
+            onSelect={() =>
+              this._handleVulnerabilityLevelSelect(
+                applicationName,
+                vulnerabilityName,
+                vulnerabilityLevel.levelIdentifier
+              )
+            }
           >
             {vulnerabilityLevel.levelIdentifier}
           </RSuiteDropdown.Item>
         ))}
-      </RSuiteDropdown.Menu>
+      </RSuiteDropdown>
     );
   }
 
   _getApplicationVulnerabilities(
     applicationName: string,
-    vulnerabilityDefinition: Array<VulnerabilityDefinition>
+    vulnerabilityDefinition: Array<VulnerabilityDefinition>,
+    isApplicationDropDownClosed: boolean
   ) {
     return (
-      <div style={{ width: "20%" }}>
-        <RSuiteSidenav>
-          <RSuiteSidenav.Body>
-            <RSuiteNav>
-              <RSuiteDropdown
-                eventKey={applicationName}
-                title={applicationName}
-              >
-                <RSuiteDropdown.Item divider />
-                {vulnerabilityDefinition.map((vulnerabilityDefinition) =>
-                  this._getApplicationVulnerabilityLevels(
-                    applicationName,
-                    vulnerabilityDefinition.name,
-                    vulnerabilityDefinition.levels
-                  )
-                )}
-              </RSuiteDropdown>
-            </RSuiteNav>
-          </RSuiteSidenav.Body>
-        </RSuiteSidenav>
-      </div>
+      <RSuiteSidenav>
+        <RSuiteSidenav.Body>
+          <RSuiteNav>
+            <RSuiteDropdown
+              eventKey={applicationName}
+              title={applicationName}
+              open={!isApplicationDropDownClosed}
+            >
+              <RSuiteDropdown.Item divider />
+              {vulnerabilityDefinition.map((vulnerabilityDefinition) =>
+                this._getApplicationVulnerabilityLevels(
+                  applicationName,
+                  vulnerabilityDefinition.name,
+                  vulnerabilityDefinition.levels
+                )
+              )}
+            </RSuiteDropdown>
+          </RSuiteNav>
+        </RSuiteSidenav.Body>
+      </RSuiteSidenav>
     );
   }
 
   render() {
     const { isSuccessfullyLoaded, applicationData } = this.props.globalState;
+    let index = 0;
     if (isSuccessfullyLoaded && applicationData) {
       return (
         <div>
@@ -75,7 +122,8 @@ export class LeftNav extends React.Component<Props> {
 
             return this._getApplicationVulnerabilities(
               applicationName,
-              vulnerabilityDefinitions
+              vulnerabilityDefinitions,
+              index++ === 0
             );
           })}
         </div>

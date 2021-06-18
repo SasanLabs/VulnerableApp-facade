@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.css";
-import { Container, Content } from "rsuite";
+import { Container as RContainer, Sidebar as RSidebar } from "rsuite";
 import "rsuite/dist/styles/rsuite-default.min.css";
 import { Header } from "./Components/Header";
 import { LeftNav } from "./Components/LeftNav";
 import { GlobalState } from "./interface/State";
 import { Footer } from "./Components/Footer";
+import { Content } from "./Components/Content";
 
 interface VulnerabilityDefinitionResponse {
   successful: boolean;
@@ -182,21 +183,21 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <Container>
-          <Header></Header>
-          <Container>
+      <RContainer className="show-container">
+        <Header></Header>
+        <RContainer className="show-container">
+          <RSidebar>
             <LeftNav
               globalState={this.state}
               setGlobalState={this.setGlobalState}
             />
-            <Content {...this.state} />
-          </Container>
-          <Footer globalState={this.state} setGlobalState={this.setGlobalState}>
-            Footer
-          </Footer>
-        </Container>
-      </div>
+          </RSidebar>
+          <Content {...this.state}></Content>
+        </RContainer>
+        <Footer globalState={this.state} setGlobalState={this.setGlobalState}>
+          Footer
+        </Footer>
+      </RContainer>
     );
   }
 }
