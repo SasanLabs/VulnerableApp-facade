@@ -1,4 +1,5 @@
-export interface FetchResourceResponse {
+export interface VulnerabilityDefinitionResponse {
   isSuccessful: boolean;
-  data: any;
+  error?: string;
+  data?: any;
 }

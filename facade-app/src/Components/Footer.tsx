@@ -11,7 +11,11 @@ export class Footer extends React.Component<Props> {
     return (
       <RSuiteFooter>
         <RSuiteNavBar>
-          <RSuiteNavBar.Header>SasanLabs</RSuiteNavBar.Header>
+          <RSuiteNavBar.Body
+            style={{ textAlign: "center", height: "30px", fontSize: "15px" }}
+          >
+            <div>&copy; Copyright {new Date().getFullYear()}, SasanLabs</div>
+          </RSuiteNavBar.Body>
         </RSuiteNavBar>
       </RSuiteFooter>
     );
