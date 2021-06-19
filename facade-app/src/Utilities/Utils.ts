@@ -6,7 +6,7 @@ import { LevelInformation, ResourceType } from "../interface/State";
  * @param callback , callback function to invoke on Api response
  * @param isJson , to parse the response and return json object if True and text in case of False
  */
-export function getResource(uri: string, callback: Function, isJson: boolean) {
+export function getResource(uri: string, callback: Function, isJson: boolean): void {
   fetch(uri)
     .then((res) => (isJson ? res.json() : res.text()))
     .then(
@@ -19,7 +19,7 @@ export function getResource(uri: string, callback: Function, isJson: boolean) {
     );
 }
 
-export function removeChildByParentElementId(elementId: string) {
+export function removeChildByParentElementId(elementId: string): void {
   let documentElement = document.getElementById(elementId);
   while (documentElement && documentElement.lastElementChild) {
     documentElement.removeChild(documentElement.lastElementChild);
@@ -27,7 +27,7 @@ export function removeChildByParentElementId(elementId: string) {
 }
 
 
-export function appendStaticResourcesToDocument(selectedLevel: LevelInformation) {
+export function appendStaticResourcesToDocument(selectedLevel: LevelInformation): void {
   removeChildByParentElementId("scripts");
   removeChildByParentElementId("styles");
   selectedLevel.resourceInformation.staticResources.forEach(
