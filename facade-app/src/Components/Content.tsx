@@ -1,5 +1,5 @@
 import React from "react";
-import { GlobalState } from "../interface/State";
+import { GlobalState, ResourceType } from "../interface/State";
 
 interface State {
   htmlResource?: string;
@@ -44,6 +44,22 @@ export class Content extends React.Component<GlobalState, State> {
             this._fetchResource(
               selectedLevel.resourceInformation.htmlResource.uri
             );
+            selectedLevel.resourceInformation.staticResources.forEach(
+              (resourceURI) => {
+                if (resourceURI.resourceType === ResourceType.JAVASCRIPT) {
+                  const script = document.createElement("script");
+                  script.src = resourceURI.uri;
+                  script.async = true;
+                  document.getElementById("scripts")?.appendChild(script);
+                } else if (resourceURI.resourceType === ResourceType.CSS) {
+                  let cssElement = document.createElement("link");
+                  cssElement.href = resourceURI.uri;
+                  cssElement.type = "text/css";
+                  cssElement.rel = "stylesheet";
+                  document.getElementById("styles")?.appendChild(cssElement);
+                }
+              }
+            );
           }
         }
       }
@@ -71,6 +87,7 @@ export class Content extends React.Component<GlobalState, State> {
     if (!description && !htmlResource) {
       return <div />;
     }
+
     if (description && !htmlResource) {
       return <div dangerouslySetInnerHTML={{ __html: description }} />;
     }

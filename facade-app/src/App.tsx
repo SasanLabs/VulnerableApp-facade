@@ -87,6 +87,7 @@ export default class App extends React.Component {
               staticResourceInformation.push({
                 isAbsolute: staticResourceInformationRes["isAbsolute"],
                 uri: staticResourceInformationRes["uri"],
+                resourceType: staticResourceInformationRes["resourceType"],
               });
             }
 
@@ -179,6 +180,11 @@ export default class App extends React.Component {
 
   setGlobalState = (globalState: GlobalState) => {
     this.setState(globalState);
+    (window as any).globalUtilityState = {
+      activeVulnerabilityIdentifier: globalState.activeVulnerability,
+      activeVulnerabilityLevelIdentifier: globalState.activeLevel,
+      baseURI: window.location.toString(),
+    };
   };
 
   render() {

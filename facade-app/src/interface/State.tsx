@@ -23,9 +23,9 @@ export interface Hint {
 export enum ResourceType {
   //HTML is sufficient for the server side languages
   // which returns the html with extensions as ".php" or ".jsp" etc
-  HTML,
-  JAVASCRIPT,
-  CSS,
+  HTML = "HTML",
+  JAVASCRIPT = "JAVASCRIPT",
+  CSS = "CSS",
 }
 
 export class ResourceURI {
