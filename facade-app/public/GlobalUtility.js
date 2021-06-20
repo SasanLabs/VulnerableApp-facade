@@ -42,7 +42,7 @@ function genericResponseHandler(xmlHttpRequest, callBack, isJson) {
 }
 
 /**
- * DONOT USER THIS METHOD.
+ * DONOT USE THIS METHOD.
  *
  * Only for VulnerableApp, for easy shortcut (Backward compatibility)
  * @returns

@@ -1,6 +1,9 @@
 import React from "react";
 import "./App.css";
-import { Container as RContainer, Sidebar as RSidebar } from "rsuite";
+import {
+  Container as RSuiteContainer,
+  Sidebar as RSuitesSidebar,
+} from "rsuite";
 import "rsuite/dist/styles/rsuite-default.min.css";
 import { Header } from "./Components/Header";
 import { LeftNav } from "./Components/LeftNav";
@@ -157,18 +160,18 @@ export default class App extends React.Component {
           applicationDataArray.length >= 1
             ? applicationDataArray[0].applicationName
             : null,
-        activeVulnerability:
-          applicationDataArray.length >= 1 &&
-          applicationDataArray[0].vulnerabilityDefinitions.length >= 1
-            ? applicationDataArray[0].vulnerabilityDefinitions[0].id
-            : null,
-        activeLevel:
-          applicationDataArray.length >= 1 &&
-          applicationDataArray[0].vulnerabilityDefinitions.length >= 1 &&
-          applicationDataArray[0].vulnerabilityDefinitions[0].levels.length >= 1
-            ? applicationDataArray[0].vulnerabilityDefinitions[0].levels[0]
-                .levelIdentifier
-            : null,
+        // activeVulnerability:
+        //   applicationDataArray.length >= 1 &&
+        //   applicationDataArray[0].vulnerabilityDefinitions.length >= 1
+        //     ? applicationDataArray[0].vulnerabilityDefinitions[0].id
+        //     : null,
+        // activeLevel:
+        //   applicationDataArray.length >= 1 &&
+        //   applicationDataArray[0].vulnerabilityDefinitions.length >= 1 &&
+        //   applicationDataArray[0].vulnerabilityDefinitions[0].levels.length >= 1
+        //     ? applicationDataArray[0].vulnerabilityDefinitions[0].levels[0]
+        //         .levelIdentifier
+        //     : null,
         isSuccessfullyLoaded: true,
       });
     } else {
@@ -198,21 +201,21 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <RContainer className="show-container">
+      <RSuiteContainer className="show-container">
         <Header></Header>
-        <RContainer className="show-container">
-          <RSidebar style={{ flex: "0 0 300px", minWidth: "20%" }}>
+        <RSuiteContainer className="show-container">
+          <RSuitesSidebar style={{ flex: "0 0 300px", minWidth: "20%" }}>
             <LeftNav
               globalState={this.state}
               setGlobalState={this.setGlobalState}
             />
-          </RSidebar>
+          </RSuitesSidebar>
           <Content {...this.state}></Content>
-        </RContainer>
+        </RSuiteContainer>
         <Footer globalState={this.state} setGlobalState={this.setGlobalState}>
           Footer
         </Footer>
-      </RContainer>
+      </RSuiteContainer>
     );
   }
 }

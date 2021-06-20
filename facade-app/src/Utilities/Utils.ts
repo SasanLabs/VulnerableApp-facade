@@ -45,6 +45,12 @@ export function appendStaticResourcesToDocument(selectedLevel: LevelInformation)
       cssElement.rel = "stylesheet";
       document.getElementById("styles")?.appendChild(cssElement);
     }
-  }
-  );
+  });
+}
+
+export function manipulateDOM(elementId: string, content: string): void {
+  const element = document.getElementById(elementId);
+        if(element) {
+          element.innerHTML = content;
+        }
 }

@@ -3,6 +3,7 @@ import {
   Sidenav as RSuiteSidenav,
   Dropdown as RSuiteDropdown,
   Nav as RSuiteNav,
+  Icon as RSuiteIcon,
 } from "rsuite";
 import { Props } from "../interface/Props";
 import { LevelInformation, VulnerabilityDefinition } from "../interface/State";
@@ -55,7 +56,7 @@ export class LeftNav extends React.Component<Props> {
           )
         }
       >
-        {levels.map((vulnerabilityLevel, index) => (
+        {levels.map((vulnerabilityLevel) => (
           <RSuiteDropdown.Item
             eventKey={
               applicationName +
@@ -64,7 +65,13 @@ export class LeftNav extends React.Component<Props> {
               "." +
               vulnerabilityLevel.levelIdentifier
             }
-            active={index === 0}
+            icon={
+              vulnerabilityLevel.variant === "SECURE" ? (
+                <RSuiteIcon icon="lock" />
+              ) : (
+                <RSuiteIcon icon="unlock" />
+              )
+            }
             onSelect={() =>
               this._handleVulnerabilityLevelSelect(
                 applicationName,
@@ -83,10 +90,13 @@ export class LeftNav extends React.Component<Props> {
   _getApplicationVulnerabilities(
     applicationName: string,
     vulnerabilityDefinition: Array<VulnerabilityDefinition>,
-    isApplicationDropDownClosed: boolean
+    isApplicationDropDownClosed: boolean,
+    activeApplication?: string
   ) {
     return (
-      <RSuiteSidenav>
+      <RSuiteSidenav
+        defaultOpenKeys={activeApplication ? [activeApplication] : []}
+      >
         <RSuiteSidenav.Body>
           <RSuiteNav>
             <RSuiteDropdown
@@ -110,7 +120,8 @@ export class LeftNav extends React.Component<Props> {
   }
 
   render() {
-    const { isSuccessfullyLoaded, applicationData } = this.props.globalState;
+    const { isSuccessfullyLoaded, applicationData, activeApplication } =
+      this.props.globalState;
     let index = 0;
     if (isSuccessfullyLoaded && applicationData) {
       return (
@@ -119,11 +130,11 @@ export class LeftNav extends React.Component<Props> {
             let applicationName = applicationData.applicationName;
             let vulnerabilityDefinitions =
               applicationData.vulnerabilityDefinitions;
-
             return this._getApplicationVulnerabilities(
               applicationName,
               vulnerabilityDefinitions,
-              index++ === 0
+              index++ === 0,
+              activeApplication
             );
           })}
         </div>

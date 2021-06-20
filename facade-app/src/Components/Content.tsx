@@ -1,21 +1,17 @@
 import React from "react";
-import { GlobalState } from "../interface/State";
-import { Panel as RPanel } from "rsuite";
+import { GlobalState, LevelInformation } from "../interface/State";
+import { Panel as RSuitePanel } from "rsuite";
 import {
   appendStaticResourcesToDocument,
   getResource,
+  manipulateDOM,
 } from "../Utilities/Utils";
 import { VulnerabilityDefinitionResponse } from "../interface/GeneralContracts";
 
-interface State {
-  htmlResource?: string;
-  description?: string;
-}
-
-export class Content extends React.Component<GlobalState, State> {
+export class Content extends React.Component<GlobalState> {
+  selectedLevel?: LevelInformation;
   constructor(props: GlobalState) {
     super(props);
-    this.state = {};
   }
 
   componentDidUpdate(prevProps: GlobalState) {
@@ -42,15 +38,20 @@ export class Content extends React.Component<GlobalState, State> {
           );
         this.setState({ description: selectedVulnerability?.description });
         if (selectedVulnerability) {
+          manipulateDOM(
+            "__vuln_description__",
+            selectedVulnerability.description
+          );
           const selectedLevel = selectedVulnerability.levels.find(
             (level) => level.levelIdentifier === activeLevel
           );
           if (selectedLevel) {
-            // Fetch this resource selectedLevel.resourceInformation.htmlResource
-            this._fetchResource(
-              selectedLevel.resourceInformation.htmlResource.uri
+            this.selectedLevel = selectedLevel;
+            getResource(
+              selectedLevel.resourceInformation.htmlResource.uri,
+              this._setLocalState.bind(this),
+              false
             );
-            appendStaticResourcesToDocument(selectedLevel);
           }
         }
       }
@@ -60,55 +61,41 @@ export class Content extends React.Component<GlobalState, State> {
   _setLocalState(
     vulnerabilityDefinitionResponse: VulnerabilityDefinitionResponse
   ) {
-    if (vulnerabilityDefinitionResponse.isSuccessful) {
-      this.setState({
-        htmlResource: vulnerabilityDefinitionResponse.data,
-      });
-    } else {
-      this.setState({
-        htmlResource:
-          "<div>Error" + vulnerabilityDefinitionResponse.error + "</div>",
-      });
+    if (vulnerabilityDefinitionResponse.data) {
+      manipulateDOM("__content__", vulnerabilityDefinitionResponse.data);
+      if (this.selectedLevel) {
+        appendStaticResourcesToDocument(this.selectedLevel);
+      }
     }
-  }
-
-  _fetchResource(uri: string) {
-    getResource(uri, this._setLocalState.bind(this), false);
   }
 
   render() {
-    const { htmlResource, description } = this.state;
-    if (!description && !htmlResource) {
-      return <div />;
-    }
-
-    if (description && !htmlResource) {
-      return <div dangerouslySetInnerHTML={{ __html: description }} />;
-    }
-
-    if (description && htmlResource) {
-      return (
-        <div>
+    const { activeVulnerability, activeLevel } = this.props;
+    return (
+      <div>
+        {activeVulnerability ? (
           <div>
-            <RPanel
-              header="Vulnerability Description"
-              bodyFill /*style={{fontSize: "20px"}}*/
-            >
-              <div dangerouslySetInnerHTML={{ __html: description }} />
-            </RPanel>
+            <RSuitePanel header="Vulnerability Description" bodyFill>
+              <div id="__vuln_description__" />
+            </RSuitePanel>
           </div>
+        ) : (
+          <div />
+        )}
+        {activeVulnerability ? (
           <div>
-            <RPanel
-              header="Practise Vulnerability"
+            <RSuitePanel
+              header="Practice Vulnerability"
               bodyFill
               style={{ alignContent: "center" }}
             >
-              <div dangerouslySetInnerHTML={{ __html: htmlResource }} />
-            </RPanel>
+              <div id="__content__" />
+            </RSuitePanel>
           </div>
-        </div>
-      );
-    }
-    return <div />;
+        ) : (
+          <div></div>
+        )}
+      </div>
+    );
   }
 }
