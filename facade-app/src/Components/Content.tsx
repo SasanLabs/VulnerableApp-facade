@@ -84,8 +84,13 @@ export class Content extends React.Component<GlobalState> {
           <div>
             {activeVulnerability ? (
               <div>
-                <RSuitePanel header="Vulnerability Description" bodyFill>
-                  <div id="__vuln_description__" />
+                <RSuitePanel
+                  header="Vulnerability Description"
+                  className="VulnerableApp-Facade-Content-Vulnerability-Description-Header"
+                >
+                  <div className="VulnerableApp-Facade-Content">
+                    <div id="__vuln_description__" />
+                  </div>
                 </RSuitePanel>
               </div>
             ) : (
@@ -95,10 +100,11 @@ export class Content extends React.Component<GlobalState> {
               <div>
                 <RSuitePanel
                   header="Practice Vulnerability"
-                  bodyFill
-                  style={{ alignContent: "center" }}
+                  className="VulnerableApp-Facade-Content-Practice-Vulnerability-Header"
                 >
-                  <div id="__content__" />
+                  <div className="VulnerableApp-Facade-Content">
+                    <div id="__content__" />
+                  </div>
                 </RSuitePanel>
               </div>
             ) : (
