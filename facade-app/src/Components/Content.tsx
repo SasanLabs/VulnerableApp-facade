@@ -7,6 +7,8 @@ import {
   manipulateDOM,
 } from "../Utilities/Utils";
 import { VulnerabilityDefinitionResponse } from "../interface/GeneralContracts";
+import { HomePage } from "./HomePage";
+import { AboutUs } from "./AboutUs";
 
 export class Content extends React.Component<GlobalState> {
   selectedLevel?: LevelInformation;
@@ -70,31 +72,41 @@ export class Content extends React.Component<GlobalState> {
   }
 
   render() {
-    const { activeVulnerability, activeLevel } = this.props;
+    const { activeVulnerability, activateHomePage, activateAboutUsPage } =
+      this.props;
     return (
       <div>
-        {activeVulnerability ? (
-          <div>
-            <RSuitePanel header="Vulnerability Description" bodyFill>
-              <div id="__vuln_description__" />
-            </RSuitePanel>
-          </div>
+        {activateHomePage ? (
+          <HomePage></HomePage>
+        ) : activateAboutUsPage ? (
+          <AboutUs></AboutUs>
         ) : (
-          <div />
-        )}
-        {activeVulnerability ? (
           <div>
-            <RSuitePanel
-              header="Practice Vulnerability"
-              bodyFill
-              style={{ alignContent: "center" }}
-            >
-              <div id="__content__" />
-            </RSuitePanel>
+            {activeVulnerability ? (
+              <div>
+                <RSuitePanel header="Vulnerability Description" bodyFill>
+                  <div id="__vuln_description__" />
+                </RSuitePanel>
+              </div>
+            ) : (
+              <div />
+            )}
+            {activeVulnerability ? (
+              <div>
+                <RSuitePanel
+                  header="Practice Vulnerability"
+                  bodyFill
+                  style={{ alignContent: "center" }}
+                >
+                  <div id="__content__" />
+                </RSuitePanel>
+              </div>
+            ) : (
+              <div></div>
+            )}
           </div>
-        ) : (
-          <div></div>
         )}
+        ;
       </div>
     );
   }

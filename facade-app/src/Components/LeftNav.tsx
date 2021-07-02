@@ -26,6 +26,8 @@ export class LeftNav extends React.Component<Props> {
       activeApplication: applicationName,
       activeVulnerability: vulnerabilityName,
       activeLevel: levelIdentifier,
+      activateHomePage: false,
+      activateAboutUsPage: false,
     });
   }
 
@@ -37,6 +39,8 @@ export class LeftNav extends React.Component<Props> {
       activeApplication: applicationName,
       activeVulnerability: vulnerabilityName,
       activeLevel: undefined,
+      activateHomePage: false,
+      activateAboutUsPage: false,
     });
   }
 

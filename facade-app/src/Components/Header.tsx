@@ -8,9 +8,15 @@ import {
   Icon as RSuiteIcon,
   Dropdown as RSuiteDropDown,
 } from "rsuite";
+import { Props } from "../interface/Props";
 
-export class Header extends React.Component {
+export class Header extends React.Component<Props> {
+  constructor(props: Props) {
+    super(props);
+  }
+
   render() {
+    const { setGlobalState } = this.props;
     return (
       <RSuiteHeader>
         <RSuiteNavBar appearance="inverse">
@@ -24,10 +30,27 @@ export class Header extends React.Component {
               </RSuiteNav.Item>
             </RSuiteNav>
             <RSuiteNav pullRight>
-              <RSuiteNav.Item icon={<RSuiteIcon icon="home" />}>
+              <RSuiteNav.Item
+                onSelect={() =>
+                  setGlobalState({
+                    activateHomePage: true,
+                    activateAboutUsPage: false,
+                  })
+                }
+                icon={<RSuiteIcon icon="home" />}
+              >
                 Home
               </RSuiteNav.Item>
-              <RSuiteNav.Item>About Us</RSuiteNav.Item>
+              <RSuiteNav.Item
+                onSelect={() =>
+                  setGlobalState(
+                    { activateHomePage: false, activateAboutUsPage: true },
+                    true
+                  )
+                }
+              >
+                About Us
+              </RSuiteNav.Item>
               <a href="https://github.com/SasanLabs/VulnerableApp-facade">
                 <RSuiteNav.Item icon={<RSuiteIcon icon="github" />}>
                   Github

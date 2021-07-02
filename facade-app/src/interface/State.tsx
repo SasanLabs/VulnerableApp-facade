@@ -116,4 +116,6 @@ export interface GlobalState {
   activeVulnerability?: string;
   activeLevel?: string;
   isSuccessfullyLoaded: boolean;
+  activateHomePage: boolean;
+  activateAboutUsPage: boolean;
 }

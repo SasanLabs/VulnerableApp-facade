@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.VulnerableApp-Facade-HomePage-Content, .VulnerableApp-Facade-AboutUs-Content {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+
+.VulnerableApp-Facade-AboutUs-Content-Header, .VulnerableApp-Facade-AboutUs-Content-Header .rs-panel-heading, .VulnerableApp-Facade-HomePage-Content-Header, .VulnerableApp-Facade-HomePage-Content-Header .rs-panel-heading {
+  font-size: 24px;
+  font-weight: bold;
+}
+
