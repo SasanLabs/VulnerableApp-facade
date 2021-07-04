@@ -1,3 +1,4 @@
+@import "~rsuite/dist/styles/rsuite-dark.css";
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -10,4 +11,26 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.VulnerableApp-Facade-HomePage-Content,
+.VulnerableApp-Facade-AboutUs-Content,
+.VulnerableApp-Facade-Content,
+.VulnerableApp-Facade-Content-Hint-Content {
+  font-size: 16px;
+  font-weight: normal;
+  color: #575757;
+}
+
+.VulnerableApp-Facade-AboutUs-Content-Header,
+.VulnerableApp-Facade-AboutUs-Content-Header .rs-panel-heading,
+.VulnerableApp-Facade-HomePage-Content-Header,
+.VulnerableApp-Facade-HomePage-Content-Header .rs-panel-heading,
+.VulnerableApp-Facade-Content-Vulnerability-Description-Header
+  .rs-panel-heading,
+.VulnerableApp-Facade-Content-Practice-Vulnerability-Header .rs-panel-heading,
+.VulnerableApp-Facade-Content-Hint-Content .rs-panel-heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: #575757;
 }
