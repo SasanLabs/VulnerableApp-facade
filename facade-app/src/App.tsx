@@ -163,18 +163,6 @@ export default class App extends React.Component {
           applicationDataArray.length >= 1
             ? applicationDataArray[0].applicationName
             : null,
-        // activeVulnerability:
-        //   applicationDataArray.length >= 1 &&
-        //   applicationDataArray[0].vulnerabilityDefinitions.length >= 1
-        //     ? applicationDataArray[0].vulnerabilityDefinitions[0].id
-        //     : null,
-        // activeLevel:
-        //   applicationDataArray.length >= 1 &&
-        //   applicationDataArray[0].vulnerabilityDefinitions.length >= 1 &&
-        //   applicationDataArray[0].vulnerabilityDefinitions[0].levels.length >= 1
-        //     ? applicationDataArray[0].vulnerabilityDefinitions[0].levels[0]
-        //         .levelIdentifier
-        //     : null,
         isSuccessfullyLoaded: true,
       });
     } else {
