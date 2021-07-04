@@ -18,12 +18,7 @@ export default class App extends React.Component {
     isSuccessfullyLoaded: false,
     activateAboutUsPage: false,
     activateHomePage: true,
-  };
-
-  __initialState: GlobalState = {
-    isSuccessfullyLoaded: false,
-    activateAboutUsPage: false,
-    activateHomePage: false,
+    showHints: false,
   };
 
   _getResourcesInformationsForLevel(levelInformationRes: any) {
@@ -215,13 +210,16 @@ export default class App extends React.Component {
           setGlobalState={this.setGlobalState}
         ></Header>
         <RSuiteContainer className="show-container">
-          <RSuitesSidebar style={{ flex: "0 0 300px", minWidth: "20%" }}>
+          <RSuitesSidebar style={{ flex: "0 0 300px", minWidth: "25%" }}>
             <LeftNav
               globalState={this.state}
               setGlobalState={this.setGlobalState}
             />
           </RSuitesSidebar>
-          <Content {...this.state}></Content>
+          <Content
+            globalState={this.state}
+            setGlobalState={this.setGlobalState}
+          ></Content>
         </RSuiteContainer>
         <Footer globalState={this.state} setGlobalState={this.setGlobalState}>
           Footer

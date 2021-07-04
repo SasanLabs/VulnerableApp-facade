@@ -28,6 +28,7 @@ export class LeftNav extends React.Component<Props> {
       activeLevel: levelIdentifier,
       activateHomePage: false,
       activateAboutUsPage: false,
+      showHints: false,
     });
   }
 
@@ -41,6 +42,7 @@ export class LeftNav extends React.Component<Props> {
       activeLevel: undefined,
       activateHomePage: false,
       activateAboutUsPage: false,
+      showHints: false,
     });
   }
 
@@ -49,10 +51,15 @@ export class LeftNav extends React.Component<Props> {
     vulnerabilityName: string,
     levels: Array<LevelInformation>
   ) {
+    const { activeApplication, activeVulnerability, activeLevel } =
+      this.props.globalState;
     return (
       <RSuiteDropdown
         eventKey={applicationName + "." + vulnerabilityName}
         title={vulnerabilityName}
+        activeKey={
+          activeApplication + "." + activeVulnerability + "." + activeLevel
+        }
         onOpen={() =>
           this._handleVulnerabilityTypeSelect(
             applicationName,
@@ -94,7 +101,6 @@ export class LeftNav extends React.Component<Props> {
   _getApplicationVulnerabilities(
     applicationName: string,
     vulnerabilityDefinition: Array<VulnerabilityDefinition>,
-    isApplicationDropDownClosed: boolean,
     activeApplication?: string
   ) {
     return (
@@ -103,11 +109,7 @@ export class LeftNav extends React.Component<Props> {
       >
         <RSuiteSidenav.Body>
           <RSuiteNav>
-            <RSuiteDropdown
-              eventKey={applicationName}
-              title={applicationName}
-              open={!isApplicationDropDownClosed}
-            >
+            <RSuiteDropdown eventKey={applicationName} title={applicationName}>
               <RSuiteDropdown.Item divider />
               {vulnerabilityDefinition.map((vulnerabilityDefinition) =>
                 this._getApplicationVulnerabilityLevels(
@@ -126,7 +128,7 @@ export class LeftNav extends React.Component<Props> {
   render() {
     const { isSuccessfullyLoaded, applicationData, activeApplication } =
       this.props.globalState;
-    let index = 0;
+    //    let index = 0;
     if (isSuccessfullyLoaded && applicationData) {
       return (
         <div>
@@ -137,7 +139,7 @@ export class LeftNav extends React.Component<Props> {
             return this._getApplicationVulnerabilities(
               applicationName,
               vulnerabilityDefinitions,
-              index++ === 0,
+              // index++ === 0,
               activeApplication
             );
           })}

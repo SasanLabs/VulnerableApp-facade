@@ -22,7 +22,10 @@ export class HomePage extends React.Component {
           distributed farm of Vulnerable Applications such that they can be
           built agnostic to tech stacks.
           <p>Following is the design diagram of Owasp VulnerableApp-Facade:</p>
-          <img src="/images/VulnerableApp-facade.jpeg" />
+          <img
+            src="/images/VulnerableApp-facade.jpeg"
+            alt="Unable to lead the design diagram"
+          />
           <p>
             Here VulnerableApp-Facade is running as a gateway or a proxy which
             is routing calls to actual Vulnerable Applications based on a

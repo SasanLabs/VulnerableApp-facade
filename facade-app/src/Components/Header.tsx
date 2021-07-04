@@ -11,21 +11,24 @@ import {
 import { Props } from "../interface/Props";
 
 export class Header extends React.Component<Props> {
-  constructor(props: Props) {
-    super(props);
-  }
-
   render() {
     const { setGlobalState } = this.props;
     return (
       <RSuiteHeader>
         <RSuiteNavBar appearance="inverse">
           <RSuiteNavBar.Header>
-            <img src={VulnerableAppLogo} width="55" height="55" />
+            <img src={VulnerableAppLogo} width="55" height="55" alt="" />
           </RSuiteNavBar.Header>
           <RSuiteNavBar.Body>
             <RSuiteNav>
-              <RSuiteNav.Item>
+              <RSuiteNav.Item
+                onSelect={() =>
+                  setGlobalState({
+                    activateHomePage: true,
+                    activateAboutUsPage: false,
+                  })
+                }
+              >
                 <b>Owasp VulnerableApp-Facade</b>
               </RSuiteNav.Item>
             </RSuiteNav>

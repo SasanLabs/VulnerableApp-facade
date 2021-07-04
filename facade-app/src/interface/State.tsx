@@ -118,4 +118,5 @@ export interface GlobalState {
   isSuccessfullyLoaded: boolean;
   activateHomePage: boolean;
   activateAboutUsPage: boolean;
+  showHints: boolean;
 }
