@@ -128,7 +128,6 @@ export class LeftNav extends React.Component<Props> {
   render() {
     const { isSuccessfullyLoaded, applicationData, activeApplication } =
       this.props.globalState;
-    //    let index = 0;
     if (isSuccessfullyLoaded && applicationData) {
       return (
         <div>
@@ -139,7 +138,6 @@ export class LeftNav extends React.Component<Props> {
             return this._getApplicationVulnerabilities(
               applicationName,
               vulnerabilityDefinitions,
-              // index++ === 0,
               activeApplication
             );
           })}
