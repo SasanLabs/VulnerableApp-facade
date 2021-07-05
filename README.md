@@ -35,3 +35,4 @@ we will try to resolve issues asap.
 
 ## Other links ##
 [Owasp Project link](https://owasp.org/www-project-vulnerableapp-facade/)
+[Github pages](https://sasanlabs.github.io/VulnerableApp-facade/)
