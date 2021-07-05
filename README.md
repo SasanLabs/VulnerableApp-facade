@@ -23,11 +23,22 @@ As [docker-compose.yml](https://github.com/SasanLabs/VulnerableApp-facade/blob/m
 
 ## How to Contribute to the project
 VulnerableApp-facade have majorly 2 components:
-1. Static files
+1. React UI component
 2. Lua module
 
-Static files are used to load the skeleton UserInterface and Lua module is used to merge the Vulnerability Definitions exposed by different vulnerable applications.
-So you just need to do the changes in any of the components and then build the docker image using command ```docker build . -t owasp-vulnerableapp-facade``` and then run the project as mentioned at [How to run the project](#how-to-run-the-project) 
+React UI component is used to load the skeleton UserInterface and Lua module is used to merge the Vulnerability Definitions exposed by different vulnerable applications.
+In order to do changes in React UI component, 
+1. please navigate to `facade-app` folder 
+2. add the changes
+3. and run `npm run start` which will start the npm server.
+4. navigate to `http://localhost:3000` to verify/view the changes
+ 
+Make sure that the application docker is running such that you can verify the changes.
+
+In order to make changes in Lua module, the easy way is to add the changes in the lua files and build the docker image with those changes
+by executing command: ```docker build . -t owasp-vulnerableapp-facade``` and then run the project as mentioned at [How to run the project](#how-to-run-the-project) 
+
+Before raising the PR with UI changes please execute `npm run pretty` command in `facade-app` folder to auto handle formatting of javascript/typescript files.
 
 ## Contact ##
 Please raise a github issue for enhancement/issues in VulnerableApp-facade or send email to karan.sasan@owasp.org regarding queries
