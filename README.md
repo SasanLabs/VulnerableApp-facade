@@ -34,5 +34,5 @@ Please raise a github issue for enhancement/issues in VulnerableApp-facade or se
 we will try to resolve issues asap.
 
 ## Other links ##
-[Owasp Project link](https://owasp.org/www-project-vulnerableapp-facade/)
-[Github pages](https://sasanlabs.github.io/VulnerableApp-facade/)
+1. [Owasp Project link](https://owasp.org/www-project-vulnerableapp-facade/)
+2. [Github pages](https://sasanlabs.github.io/VulnerableApp-facade/)
