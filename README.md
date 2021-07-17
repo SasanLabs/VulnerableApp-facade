@@ -16,7 +16,7 @@ VulnerableApp-facade is a farm of vulnerable applications where each application
 ### Simple Start ###
 In order to run entire suit please download and install [Docker Compose](https://docs.docker.com/compose/install/). After installation, please copy the [docker-compose.yml](https://github.com/SasanLabs/VulnerableApp-facade/blob/main/docker-compose.yml) and run the following command from terminal:
 ``` docker-compose up ```
-Then naviate to ``` http://localhost:8080 ``` to play with the application
+Then navigate to ``` http://localhost:80 ``` to play with the application
 
 ### Advanced Start ###
 As [docker-compose.yml](https://github.com/SasanLabs/VulnerableApp-facade/blob/main/docker-compose.yml) contains all the applications which adhere to the schema of VulnerableApp-facade so in cause you are looking for specific vulnerable applications like only Java related vulnerable applications then remove other vulnerable applications from [docker-compose.yml](https://github.com/SasanLabs/VulnerableApp-facade/blob/main/docker-compose.yml) and then run steps as mentioned in the [Simple start step](#simple-start).
