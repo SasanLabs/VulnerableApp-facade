@@ -40,6 +40,10 @@ by executing command: ```docker build . -t owasp-vulnerableapp-facade``` and the
 
 Before raising the PR with UI changes please execute `npm run pretty` command in `facade-app` folder to auto handle formatting of javascript/typescript files.
 
+## Integrated Vulnerable Applications
+1. [Owasp VulnerableApp](https://github.com/SasanLabs/VulnerableApp)
+2. [VulnerableApp-jsp](https://github.com/SasanLabs/VulnerableApp-jsp)
+
 ## Contact ##
 Please raise a github issue for enhancement/issues in VulnerableApp-facade or send email to karan.sasan@owasp.org regarding queries
 we will try to resolve issues asap.
