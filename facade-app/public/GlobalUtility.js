@@ -2,6 +2,16 @@ function getCurrentVulnerabilityDetails() {
   return Object.assign({}, window.globalUtilityState);
 }
 
+function getCurrentVulnerabilityLevel() {
+  let details = window.getCurrentVulnerabilityDetails();
+  return details.activeVulnerabilityLevelIdentifier;
+}
+
+function getCurrentVulnerability() {
+  let details = window.getCurrentVulnerabilityDetails();
+  return details.activeVulnerabilityIdentifier;
+}
+
 function doPostAjaxCall(callBack, url, isJson, data) {
   let xmlHttpRequest = new XMLHttpRequest();
   xmlHttpRequest.onreadystatechange = function () {

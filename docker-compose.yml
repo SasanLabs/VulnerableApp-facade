@@ -4,10 +4,16 @@ services:
       image: sasanlabs/owasp-vulnerableapp:unreleased
       ports:
        - "9090:9090"
-       
+
+    VulnerableApp-jsp:
+      image: vulnerableapp-jsp
+      ports:
+       - "9091:8080"
+
     VulnerableApp-facade:
       depends_on:
         - VulnerableApp-base
+        - VulnerableApp-jsp
       image: sasanlabs/owasp-vulnerableapp-facade
       volumes:
        - ./templates:/etc/nginx/templates
