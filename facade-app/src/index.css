@@ -34,3 +34,11 @@ code {
   font-weight: bold;
   color: #575757;
 }
+
+.VulnerableApp-Facade-LeftNav-Application a {
+  font-weight: bold;
+}
+
+.VulnerableApp-Facade-LeftNav-Vulnerability-Level a {
+  font-weight: normal;
+}

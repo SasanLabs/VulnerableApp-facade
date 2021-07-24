@@ -66,6 +66,7 @@ export class LeftNav extends React.Component<Props> {
             vulnerabilityName
           )
         }
+        className="VulnerableApp-Facade-LeftNav-Vulnerability-Level"
       >
         {levels.map((vulnerabilityLevel) => (
           <RSuiteDropdown.Item
@@ -109,7 +110,12 @@ export class LeftNav extends React.Component<Props> {
       >
         <RSuiteSidenav.Body>
           <RSuiteNav>
-            <RSuiteDropdown eventKey={applicationName} title={applicationName}>
+            <RSuiteDropdown
+              eventKey={applicationName}
+              title={applicationName}
+              className="VulnerableApp-Facade-LeftNav-Application"
+              icon={<RSuiteIcon icon="server" />}
+            >
               <RSuiteDropdown.Item divider />
               {vulnerabilityDefinition.map((vulnerabilityDefinition) =>
                 this._getApplicationVulnerabilityLevels(
