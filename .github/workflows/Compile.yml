@@ -17,10 +17,10 @@ jobs:
     - uses: leafo/gh-actions-luarocks@v4.0.0
     - name: build lua
       run: |
+        luarocks install busted
         luarocks make
       working-directory: lua-modules
     - name: build node
-      run: |
     - uses: actions/setup-node@v2
       with:
         node-version: '14'
