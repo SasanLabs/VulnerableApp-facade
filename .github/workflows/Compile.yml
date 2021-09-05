@@ -1,4 +1,4 @@
-name: Compile.yml
+name: Compile
 
 on:
   push:
