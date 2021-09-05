@@ -1,0 +1,30 @@
+name: Compile.yml
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: leafo/gh-actions-lua@v8.0.0
+      with:
+        luaVersion: "5.1.5"
+    - uses: leafo/gh-actions-luarocks@v4.0.0
+    - name: build lua
+      run: |
+        luarocks make
+      working-directory: lua-modules
+    - name: build node
+      run: |
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+        cache: 'npm'
+    - run: npm install
+    - run: npm test
+      working-directory: facade-app   
