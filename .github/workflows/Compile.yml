@@ -20,11 +20,11 @@ jobs:
         luarocks install busted
         luarocks make
       working-directory: lua-modules
-    - name: build node
     - uses: actions/setup-node@v2
       with:
         node-version: '14'
         cache: 'npm'
+    - name: build node
     - run: npm install
     - run: npm test
       working-directory: facade-app   
