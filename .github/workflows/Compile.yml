@@ -17,5 +17,4 @@ jobs:
     - name: build node
       run: |
         npm install
-        npm test
       working-directory: facade-app   
