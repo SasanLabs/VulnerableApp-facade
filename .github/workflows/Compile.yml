@@ -24,7 +24,7 @@ jobs:
         luarocks make
       working-directory: lua-modules
     - name: build node
-    - run: |
+      run: |
         npm install
         npm test
       working-directory: facade-app   
