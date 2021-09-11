@@ -43,6 +43,7 @@ Before raising the PR with UI changes please execute `npm run pretty` command in
 ## Integrated Vulnerable Applications
 1. [Owasp VulnerableApp](https://github.com/SasanLabs/VulnerableApp)
 2. [VulnerableApp-jsp](https://github.com/SasanLabs/VulnerableApp-jsp)
+3. [VulnerableApp-php](https://github.com/SasanLabs/VulnerableApp-php)
 
 ## Contact ##
 Please raise a github issue for enhancement/issues in VulnerableApp-facade or send email to karan.sasan@owasp.org regarding queries
