@@ -34,9 +34,8 @@ export function appendStaticResourcesToDocument(selectedLevel: LevelInformation)
   (resourceURI) => {
     if (resourceURI.resourceType === ResourceType.JAVASCRIPT) {
       const script = document.createElement("script");
-      script.src = resourceURI.uri;
-      script.type = "text/javascript";
-      script.async = true;
+      script.src = resourceURI.uri + "?p=" + new Date().getTime();
+      script.type = "module";
       document.getElementById("scripts")?.appendChild(script);
     } else if (resourceURI.resourceType === ResourceType.CSS) {
       let cssElement = document.createElement("link");

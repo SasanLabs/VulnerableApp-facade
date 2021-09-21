@@ -75,6 +75,8 @@ export class Content extends React.Component<Props> {
   render() {
     const {
       activeVulnerability,
+      activeApplication,
+      activeLevel,
       activateHomePage,
       activateAboutUsPage,
       showHints,
@@ -121,7 +123,16 @@ export class Content extends React.Component<Props> {
                     collapsible={true}
                     defaultExpanded={false}
                     expanded={showHints}
-                    onSelect={() => setGlobalState({ showHints: !showHints })}
+                    onSelect={() =>
+                      setGlobalState({
+                        activeApplication: activeApplication,
+                        activeVulnerability: activeVulnerability,
+                        activeLevel: activeLevel,
+                        activateHomePage: false,
+                        activateAboutUsPage: false,
+                        showHints: !showHints,
+                      })
+                    }
                   >
                     <ol>
                       {this.selectedLevel.hints.map((hint) => {
