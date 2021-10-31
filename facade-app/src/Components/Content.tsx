@@ -83,7 +83,7 @@ export class Content extends React.Component<Props> {
     } = this.props.globalState;
     const { setGlobalState } = this.props;
     return (
-      <div>
+      <div className="VulnerableApp-Facade-Info">
         {activateHomePage ? (
           <HomePage></HomePage>
         ) : activateAboutUsPage ? (
