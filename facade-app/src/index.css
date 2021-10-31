@@ -35,6 +35,10 @@ code {
   color: #575757;
 }
 
+.VulnerableApp-Facade-Info{
+  width: 100%;
+}
+
 .VulnerableApp-Facade-LeftNav-Application a {
   font-weight: bold;
 }

@@ -83,7 +83,7 @@ export class Content extends React.Component<Props> {
     } = this.props.globalState;
     const { setGlobalState } = this.props;
     return (
-      <div>
+      <div className="VulnerableApp-Facade-Info">
         {activateHomePage ? (
           <HomePage></HomePage>
         ) : activateAboutUsPage ? (
@@ -95,6 +95,8 @@ export class Content extends React.Component<Props> {
                 <RSuitePanel
                   header="Vulnerability Description"
                   className="VulnerableApp-Facade-Content-Vulnerability-Description-Header"
+                  collapsible={true}
+                  defaultExpanded={false}
                 >
                   <div className="VulnerableApp-Facade-Content">
                     <div id="__vuln_description__" />
