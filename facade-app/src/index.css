@@ -1,7 +1,7 @@
 @import "~rsuite/dist/styles/rsuite-dark.css";
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: -appleystem, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -35,14 +35,22 @@ code {
   color: #575757;
 }
 
-.VulnerableApp-Facade-Info{
-  width: 100%;
-}
-
 .VulnerableApp-Facade-LeftNav-Application a {
   font-weight: bold;
 }
 
 .VulnerableApp-Facade-LeftNav-Vulnerability-Level a {
   font-weight: normal;
+}
+
+.rs-sidebar{
+  width:40vw !important;
+}
+
+.VulnerableApp-Facade-Content-Container{
+  width: 60vw;
+}
+
+.rs-navbar{
+  width:100vw;
 }
