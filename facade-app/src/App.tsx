@@ -197,14 +197,14 @@ export default class App extends React.Component {
           globalState={this.state}
           setGlobalState={this.setGlobalState}
         ></Header>
-        <RSuiteContainer className="show-container">
-          <RSuitesSidebar style={{ flex: "0 0 300px", minWidth: "25%" }}>
+        <RSuiteContainer className="show-container" style={{display:"flex", width:"100vw"}}>
+          <RSuitesSidebar>
             <LeftNav
               globalState={this.state}
               setGlobalState={this.setGlobalState}
             />
           </RSuitesSidebar>
-          <Content
+          <Content 
             globalState={this.state}
             setGlobalState={this.setGlobalState}
           ></Content>

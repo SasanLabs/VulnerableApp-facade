@@ -89,7 +89,7 @@ export class Content extends React.Component<Props> {
         ) : activateAboutUsPage ? (
           <AboutUs></AboutUs>
         ) : (
-          <div>
+          <div className="VulnerableApp-Facade-Content-Container">
             {activeVulnerability ? (
               <div>
                 <RSuitePanel

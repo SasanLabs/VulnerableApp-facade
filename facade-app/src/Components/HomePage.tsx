@@ -23,6 +23,7 @@ export class HomePage extends React.Component {
           built agnostic to tech stacks.
           <p>Following is the design diagram of Owasp VulnerableApp-Facade:</p>
           <img
+            width="80%"
             src="/images/VulnerableApp-facade.jpeg"
             alt="Unable to lead the design diagram"
           />
