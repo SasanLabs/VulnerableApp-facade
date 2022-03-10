@@ -1,0 +1,11 @@
+version: "3.9"
+services:      
+    VulnerableApp-facade:
+      image: sasanlabs/owasp-vulnerableapp-facade
+      volumes:
+       - ./templates:/etc/nginx/templates
+      ports:
+       - "80:80"
+      environment:
+       - NGINX_HOST=foobar.com
+       - NGINX_PORT=80
