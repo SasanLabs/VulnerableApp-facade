@@ -5,7 +5,8 @@ import Footer from '../Components/Footer';
 
 describe('Footer', () => {
     it('renders correctly', () => {
-        const { container } = render(<Footer />);
+        const year = new Date().getFullYear();
+        const { container } = render(<Footer copyRightYear={year} />);
 
         expect(container).toMatchSnapshot();
     })
