@@ -2,7 +2,11 @@ import React from "react";
 import { Footer as RSuiteFooter, Navbar as RSuiteNavBar } from "rsuite";
 import { Props } from "../interface/Props";
 
-export default class Footer extends React.Component<Props> {
+interface IFooter extends Props{
+  copyRightYear: number
+}
+
+export default class Footer extends React.Component<IFooter, {}> {
   render() {
     const { copyRightYear } = this.props;
     return (
