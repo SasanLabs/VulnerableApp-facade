@@ -10,4 +10,14 @@ describe('Footer', () => {
 
         expect(container).toMatchSnapshot();
     })
+
+    it('renders copyright text', () => {
+        const year = new Date().getFullYear();
+        const text = `© Copyright ${year}, SasanLabs`;
+        render(<Footer copyRightYear={year}/>);
+
+        const copyRightText = screen.getByTestId('FOOTER_COPYRIGHT_TEXT');
+        expect(copyRightText).toBeInTheDocument();
+        expect(copyRightText.textContent).toEqual(text);
+    })
 });

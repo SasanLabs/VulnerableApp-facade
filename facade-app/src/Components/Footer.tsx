@@ -15,7 +15,7 @@ export default class Footer extends React.Component<IFooter, {}> {
           <RSuiteNavBar.Body
             style={{ textAlign: "center", height: "30px", fontSize: "15px" }}
           >
-            <div>&copy; Copyright {copyRightYear}, SasanLabs</div>
+            <div data-testid={"FOOTER_COPYRIGHT_TEXT"}>&copy; Copyright {copyRightYear}, SasanLabs</div>
           </RSuiteNavBar.Body>
         </RSuiteNavBar>
       </RSuiteFooter>
