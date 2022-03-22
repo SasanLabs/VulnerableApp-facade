@@ -5,7 +5,7 @@ import {
   Icon as RSuiteIcon,
 } from "rsuite";
 
-export class AboutUs extends React.Component {
+export default class AboutUs extends React.Component {
   Card = () => (
     <div>
       <RSuitePanel
