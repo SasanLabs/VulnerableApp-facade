@@ -214,13 +214,7 @@ export default class App extends React.Component {
             setGlobalState={this.setGlobalState}
           ></Content>
         </RSuiteContainer>
-        <Footer
-          globalState={this.state}
-          setGlobalState={this.setGlobalState}
-          copyRightYear={copyRightYear}
-        >
-          Footer
-        </Footer>
+        <Footer copyRightYear={copyRightYear}>Footer</Footer>
       </RSuiteContainer>
     );
   }

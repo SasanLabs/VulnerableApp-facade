@@ -1,8 +1,11 @@
 import React from "react";
-import { Footer as RSuiteFooter, Navbar as RSuiteNavBar } from "rsuite";
-import { Props } from "../interface/Props";
+import {
+  Footer as RSuiteFooter,
+  FooterProps,
+  Navbar as RSuiteNavBar,
+} from "rsuite";
 
-interface IFooter extends Props {
+interface IFooter extends FooterProps {
   copyRightYear: number;
 }
 
