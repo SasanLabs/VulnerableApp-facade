@@ -8,7 +8,7 @@ import {
 } from "../Utilities/Utils";
 import { VulnerabilityDefinitionResponse } from "../interface/GeneralContracts";
 import { HomePage } from "./HomePage";
-import { AboutUs } from "./AboutUs";
+import AboutUs from "./AboutUs";
 import { Props } from "../interface/Props";
 
 export class Content extends React.Component<Props> {

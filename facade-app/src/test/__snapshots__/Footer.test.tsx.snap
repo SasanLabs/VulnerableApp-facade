@@ -13,7 +13,9 @@ exports[`Footer renders correctly 1`] = `
         class="rs-navbar-body"
         style="text-align: center; height: 30px; font-size: 15px;"
       >
-        <div>
+        <div
+          data-testid="FOOTER_COPYRIGHT_TEXT"
+        >
           © Copyright 
           2022
           , SasanLabs

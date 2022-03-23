@@ -8,7 +8,7 @@ import "rsuite/dist/styles/rsuite-default.min.css";
 import { Header } from "./Components/Header";
 import { LeftNav } from "./Components/LeftNav";
 import { GlobalState } from "./interface/State";
-import Footer  from "./Components/Footer";
+import Footer from "./Components/Footer";
 import { Content } from "./Components/Content";
 import { getResource } from "./Utilities/Utils";
 import { VulnerabilityDefinitionResponse } from "./interface/GeneralContracts";
@@ -190,7 +190,6 @@ export default class App extends React.Component {
     };
   };
 
-
   render() {
     const copyRightYear = new Date().getFullYear();
 
@@ -200,21 +199,22 @@ export default class App extends React.Component {
           globalState={this.state}
           setGlobalState={this.setGlobalState}
         ></Header>
-        <RSuiteContainer className="show-container" style={{display:"flex", width:"100vw"}}>
+        <RSuiteContainer
+          className="show-container"
+          style={{ display: "flex", width: "100vw" }}
+        >
           <RSuitesSidebar>
             <LeftNav
               globalState={this.state}
               setGlobalState={this.setGlobalState}
             />
           </RSuitesSidebar>
-          <Content 
+          <Content
             globalState={this.state}
             setGlobalState={this.setGlobalState}
           ></Content>
         </RSuiteContainer>
-        <Footer globalState={this.state} setGlobalState={this.setGlobalState} copyRightYear={copyRightYear}>
-          Footer
-        </Footer>
+        <Footer copyRightYear={copyRightYear}>Footer</Footer>
       </RSuiteContainer>
     );
   }
