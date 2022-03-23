@@ -1,0 +1,208 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<div>
+  <div
+    class="rs-header"
+  >
+    <div
+      class="rs-navbar rs-navbar-inverse"
+      role="navigation"
+    >
+      <div
+        class="rs-navbar-header"
+      >
+        <img
+          alt="vulnerable app logo"
+          height="55"
+          src="Logo.png"
+          width="55"
+        />
+      </div>
+      <div
+        class="rs-navbar-body"
+      >
+        <div
+          class="rs-nav rs-nav-default rs-navbar-nav rs-nav-horizontal"
+        >
+          <ul>
+            <li
+              class="rs-nav-item"
+            >
+              <a
+                class="rs-nav-item-content"
+                role="button"
+                tabindex="0"
+              >
+                <b>
+                  Owasp VulnerableApp-Facade
+                </b>
+                <span
+                  class="rs-ripple-pond"
+                >
+                  <span
+                    class="rs-ripple"
+                  />
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="rs-nav rs-nav-default rs-navbar-nav rs-navbar-right rs-nav-horizontal"
+        >
+          <ul>
+            <li
+              class="rs-nav-item"
+            >
+              <a
+                class="rs-nav-item-content"
+                role="button"
+                tabindex="0"
+              >
+                <i
+                  class="rs-icon rs-icon-home"
+                  role="img"
+                />
+                Home
+                <span
+                  class="rs-ripple-pond"
+                >
+                  <span
+                    class="rs-ripple"
+                  />
+                </span>
+              </a>
+            </li>
+            <li
+              class="rs-nav-item"
+            >
+              <a
+                class="rs-nav-item-content"
+                role="button"
+                tabindex="0"
+              >
+                About Us
+                <span
+                  class="rs-ripple-pond"
+                >
+                  <span
+                    class="rs-ripple"
+                  />
+                </span>
+              </a>
+            </li>
+            <a
+              href="https://github.com/SasanLabs/VulnerableApp-facade"
+            >
+              <li
+                class="rs-nav-item"
+              >
+                <a
+                  class="rs-nav-item-content"
+                  role="button"
+                  tabindex="0"
+                >
+                  <i
+                    class="rs-icon rs-icon-github"
+                    role="img"
+                  />
+                  Github
+                  <span
+                    class="rs-ripple-pond"
+                  >
+                    <span
+                      class="rs-ripple"
+                    />
+                  </span>
+                </a>
+              </li>
+            </a>
+            <li
+              class="rs-dropdown rs-dropdown-placement-bottom-start"
+              role="menu"
+            >
+              <ul
+                class="rs-dropdown-menu"
+                role="menu"
+              >
+                <a
+                  href="https://github.com/SasanLabs/VulnerableApp"
+                >
+                  <li
+                    class="rs-dropdown-item rs-dropdown-item-with-icon"
+                  >
+                    <a
+                      class="rs-dropdown-item-content"
+                      tabindex="-1"
+                    >
+                      <i
+                        class="rs-dropdown-item-menu-icon rs-icon rs-icon-github"
+                        role="img"
+                      />
+                      Owasp VulnerableApp
+                    </a>
+                  </li>
+                </a>
+                <a
+                  href="https://github.com/SasanLabs/owasp-zap-jwt-addon"
+                >
+                   
+                  <li
+                    class="rs-dropdown-item rs-dropdown-item-with-icon"
+                  >
+                    <a
+                      class="rs-dropdown-item-content"
+                      tabindex="-1"
+                    >
+                      <i
+                        class="rs-dropdown-item-menu-icon rs-icon rs-icon-github"
+                        role="img"
+                      />
+                      ZAP JWT Addon
+                    </a>
+                  </li>
+                </a>
+                <a
+                  href="https://github.com/SasanLabs/owasp-zap-fileupload-addon"
+                >
+                  <li
+                    class="rs-dropdown-item rs-dropdown-item-with-icon"
+                  >
+                    <a
+                      class="rs-dropdown-item-content"
+                      tabindex="-1"
+                    >
+                      <i
+                        class="rs-dropdown-item-menu-icon rs-icon rs-icon-github"
+                        role="img"
+                      />
+                      ZAP FileUpload Addon
+                    </a>
+                  </li>
+                </a>
+              </ul>
+              <a
+                class="rs-btn rs-btn-subtle rs-dropdown-toggle"
+                tabindex="0"
+              >
+                Projects by SasanLabs
+                <span
+                  class="rs-dropdown-toggle-caret"
+                />
+                <span
+                  class="rs-ripple-pond"
+                >
+                  <span
+                    class="rs-ripple"
+                  />
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

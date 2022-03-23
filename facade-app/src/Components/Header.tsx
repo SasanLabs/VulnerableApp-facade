@@ -8,16 +8,22 @@ import {
   Icon as RSuiteIcon,
   Dropdown as RSuiteDropDown,
 } from "rsuite";
+import { GlobalState } from "../interface/State";
 import { Props } from "../interface/Props";
 
-export class Header extends React.Component<Props> {
+export default class Header extends React.Component<Props, {}> {
   render() {
-    const { setGlobalState } = this.props;
+    const { globalState, setGlobalState } = this.props;
     return (
       <RSuiteHeader>
         <RSuiteNavBar appearance="inverse">
           <RSuiteNavBar.Header>
-            <img src={VulnerableAppLogo} width="55" height="55" alt="" />
+            <img
+              src={VulnerableAppLogo}
+              width="55"
+              height="55"
+              alt="vulnerable app logo"
+            />
           </RSuiteNavBar.Header>
           <RSuiteNavBar.Body>
             <RSuiteNav>
@@ -36,43 +42,53 @@ export class Header extends React.Component<Props> {
               <RSuiteNav.Item
                 onSelect={() =>
                   setGlobalState({
+                    ...globalState,
                     activateHomePage: true,
                     activateAboutUsPage: false,
                   })
                 }
-                icon={<RSuiteIcon icon="home" />}
+                icon={<RSuiteIcon icon="home" role={"img"} />}
               >
                 Home
               </RSuiteNav.Item>
               <RSuiteNav.Item
                 onSelect={() =>
-                  setGlobalState(
-                    { activateHomePage: false, activateAboutUsPage: true },
-                    true
-                  )
+                  setGlobalState({
+                    ...globalState,
+                    activateHomePage: false,
+                    activateAboutUsPage: true,
+                  })
                 }
               >
                 About Us
               </RSuiteNav.Item>
               <a href="https://github.com/SasanLabs/VulnerableApp-facade">
-                <RSuiteNav.Item icon={<RSuiteIcon icon="github" />}>
+                <RSuiteNav.Item
+                  icon={<RSuiteIcon icon="github" role={"img"} />}
+                >
                   Github
                 </RSuiteNav.Item>
               </a>
               <RSuiteDropDown title="Projects by SasanLabs">
                 <a href="https://github.com/SasanLabs/VulnerableApp">
-                  <RSuiteDropDown.Item icon={<RSuiteIcon icon="github" />}>
+                  <RSuiteDropDown.Item
+                    icon={<RSuiteIcon icon="github" role={"img"} />}
+                  >
                     Owasp VulnerableApp
                   </RSuiteDropDown.Item>
                 </a>
                 <a href="https://github.com/SasanLabs/owasp-zap-jwt-addon">
                   {" "}
-                  <RSuiteDropDown.Item icon={<RSuiteIcon icon="github" />}>
+                  <RSuiteDropDown.Item
+                    icon={<RSuiteIcon icon="github" role={"img"} />}
+                  >
                     ZAP JWT Addon
                   </RSuiteDropDown.Item>
                 </a>
                 <a href="https://github.com/SasanLabs/owasp-zap-fileupload-addon">
-                  <RSuiteDropDown.Item icon={<RSuiteIcon icon="github" />}>
+                  <RSuiteDropDown.Item
+                    icon={<RSuiteIcon icon="github" role={"img"} />}
+                  >
                     ZAP FileUpload Addon
                   </RSuiteDropDown.Item>
                 </a>
