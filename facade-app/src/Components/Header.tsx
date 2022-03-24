@@ -8,7 +8,6 @@ import {
   Icon as RSuiteIcon,
   Dropdown as RSuiteDropDown,
 } from "rsuite";
-import { GlobalState } from "../interface/State";
 import { Props } from "../interface/Props";
 
 export default class Header extends React.Component<Props, {}> {

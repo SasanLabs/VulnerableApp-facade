@@ -27,9 +27,7 @@ describe("Header", () => {
       activateHomePage: true,
       showHints: false,
     };
-    const { container } = render(
-      <Header setGlobalState={mock} globalState={state} />
-    );
+    render(<Header setGlobalState={mock} globalState={state} />);
 
     const image = screen.getAllByRole("img")[0];
 
@@ -45,9 +43,7 @@ describe("Header", () => {
       activateHomePage: true,
       showHints: false,
     };
-    const { container } = render(
-      <Header setGlobalState={mock} globalState={state} />
-    );
+    render(<Header setGlobalState={mock} globalState={state} />);
 
     const item = screen.getByText("Owasp VulnerableApp-Facade");
 
@@ -62,15 +58,11 @@ describe("Header", () => {
       activateHomePage: true,
       showHints: false,
     };
-    const { container } = render(
-      <Header setGlobalState={mock} globalState={state} />
-    );
+    render(<Header setGlobalState={mock} globalState={state} />);
 
-    const item = screen.getByText("Home");
     const homeIcon = screen.getAllByRole("img")[1];
     const text = screen.getByText("Home");
 
-    expect(item).toBeInTheDocument();
     expect(homeIcon).toBeInTheDocument();
     expect(text).toBeInTheDocument();
   });
@@ -83,9 +75,7 @@ describe("Header", () => {
       activateHomePage: true,
       showHints: false,
     };
-    const { container } = render(
-      <Header setGlobalState={mock} globalState={state} />
-    );
+    render(<Header setGlobalState={mock} globalState={state} />);
 
     const text = screen.getByText("About Us");
 
@@ -100,9 +90,7 @@ describe("Header", () => {
       activateHomePage: true,
       showHints: false,
     };
-    const { container } = render(
-      <Header setGlobalState={mock} globalState={state} />
-    );
+    render(<Header setGlobalState={mock} globalState={state} />);
 
     const link = screen.getAllByRole("link")[0];
     const githubIcon = screen.getAllByRole("img")[2];
@@ -126,9 +114,7 @@ describe("Header", () => {
         activateHomePage: true,
         showHints: false,
       };
-      const { container } = render(
-        <Header setGlobalState={mock} globalState={state} />
-      );
+      render(<Header setGlobalState={mock} globalState={state} />);
 
       const dropDownTitle = screen.getByText("Projects by SasanLabs");
 
@@ -143,9 +129,7 @@ describe("Header", () => {
         activateHomePage: true,
         showHints: false,
       };
-      const { container } = render(
-        <Header setGlobalState={mock} globalState={state} />
-      );
+      render(<Header setGlobalState={mock} globalState={state} />);
 
       const owaspLink = screen.getAllByRole("link")[1];
       const owaspIcon = screen.getAllByRole("img")[3];
@@ -168,9 +152,7 @@ describe("Header", () => {
         activateHomePage: true,
         showHints: false,
       };
-      const { container } = render(
-        <Header setGlobalState={mock} globalState={state} />
-      );
+      render(<Header setGlobalState={mock} globalState={state} />);
 
       const zapLink = screen.getAllByRole("link")[2];
       const zapIcon = screen.getAllByRole("img")[4];
@@ -193,9 +175,7 @@ describe("Header", () => {
         activateHomePage: true,
         showHints: false,
       };
-      const { container } = render(
-        <Header setGlobalState={mock} globalState={state} />
-      );
+      render(<Header setGlobalState={mock} globalState={state} />);
 
       const zapLink = screen.getAllByRole("link")[3];
       const zapIcon = screen.getAllByRole("img")[5];
