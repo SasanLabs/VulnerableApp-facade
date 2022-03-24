@@ -69,6 +69,7 @@ exports[`About Us renders correctly 1`] = `
             >
               <i
                 class="rs-icon rs-icon-envelope"
+                role="img"
               />
                karan.sasan@owasp.org
             </p>

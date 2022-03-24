@@ -38,7 +38,7 @@ export default class AboutUs extends React.Component {
         className="VulnerableApp-Facade-AboutUs-Content-Header"
       >
         <p className="VulnerableApp-Facade-AboutUs-Content">
-          <RSuiteIcon icon="envelope" /> karan.sasan@owasp.org
+          <RSuiteIcon icon="envelope" role={"img"} /> karan.sasan@owasp.org
         </p>
       </RSuitePanel>
     </div>
