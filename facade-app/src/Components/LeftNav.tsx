@@ -6,16 +6,7 @@ import {
   Icon as RSuiteIcon,
 } from "rsuite";
 import { Props } from "../interface/Props";
-import {
-  GlobalState,
-  LevelInformation,
-  VulnerabilityDefinition,
-} from "../interface/State";
-
-interface ILeftNavProps {
-  globalState: Partial<GlobalState>;
-  setGlobalState: (state: Partial<GlobalState>) => void;
-}
+import { LevelInformation, VulnerabilityDefinition } from "../interface/State";
 
 export default class LeftNav extends React.Component<Props, {}> {
   constructor(props: Props) {
@@ -123,7 +114,7 @@ export default class LeftNav extends React.Component<Props, {}> {
               eventKey={applicationName}
               title={applicationName}
               className="VulnerableApp-Facade-LeftNav-Application"
-              icon={<RSuiteIcon icon="server" />}
+              icon={<RSuiteIcon icon="server" role={"img"} />}
             >
               <RSuiteDropdown.Item divider />
               {vulnerabilityDefinition.map((vulnerabilityDefinition) =>
@@ -145,7 +136,7 @@ export default class LeftNav extends React.Component<Props, {}> {
       this.props.globalState;
     if (isSuccessfullyLoaded && applicationData) {
       return (
-        <div>
+        <div data-testid={"LEFT_NAV_CONTAINER"}>
           {applicationData.map((applicationData) => {
             let applicationName = applicationData.applicationName;
             let vulnerabilityDefinitions =
