@@ -6,9 +6,18 @@ import {
   Icon as RSuiteIcon,
 } from "rsuite";
 import { Props } from "../interface/Props";
-import { LevelInformation, VulnerabilityDefinition } from "../interface/State";
+import {
+  GlobalState,
+  LevelInformation,
+  VulnerabilityDefinition,
+} from "../interface/State";
 
-export class LeftNav extends React.Component<Props> {
+interface ILeftNavProps {
+  globalState: Partial<GlobalState>;
+  setGlobalState: (state: Partial<GlobalState>) => void;
+}
+
+export default class LeftNav extends React.Component<Props, {}> {
   constructor(props: Props) {
     super(props);
     this._handleVulnerabilityLevelSelect =
