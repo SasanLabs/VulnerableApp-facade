@@ -5,7 +5,7 @@ import {
   Sidebar as RSuitesSidebar,
 } from "rsuite";
 import "rsuite/dist/styles/rsuite-default.min.css";
-import { Header } from "./Components/Header";
+import Header from "./Components/Header";
 import { LeftNav } from "./Components/LeftNav";
 import { GlobalState } from "./interface/State";
 import Footer from "./Components/Footer";

@@ -52,8 +52,12 @@ describe("About Us", () => {
     render(<AboutUs />);
 
     const header = screen.getAllByRole("rowheader")[1];
+    const icon = screen.getByRole("img");
+    const text = screen.getByText("karan.sasan@owasp.org");
+
     expect(header).toBeInTheDocument();
     expect(header.textContent).toBe("Contact Us");
-    expect(screen.getByText("karan.sasan@owasp.org")).toBeInTheDocument();
+    expect(icon).toBeInTheDocument();
+    expect(text).toBeInTheDocument();
   });
 });
