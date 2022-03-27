@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 
 import LeftNav from "../Components/LeftNav";
 import testFixture from "./fixtures";
@@ -27,5 +27,43 @@ describe("LeftNav", () => {
     const container = screen.getByTestId("LEFT_NAV_CONTAINER");
 
     expect(container).toBeInTheDocument();
+  });
+
+  describe("VulnerableApp nav item", () => {
+    it("renders correctly", () => {
+      const mock = () => jest.fn();
+      render(<LeftNav globalState={testFixture} setGlobalState={mock} />);
+
+      const item = screen.getByText("VulnerableApp");
+      const serverIcon = screen.getAllByRole("img")[0];
+
+      expect(item).toBeInTheDocument();
+      expect(serverIcon).toBeInTheDocument();
+    });
+
+    const inputs = [
+      ["CommandInjection"],
+      ["UnrestrictedFileUpload"],
+      ["JWTVulnerability"],
+      ["Http3xxStatusCodeBasedInjection"],
+      ["PathTraversal"],
+      ["RemoteFileInclusion"],
+      ["BlindSQLInjectionVulnerability"],
+      ["ErrorBasedSQLInjectionVulnerability"],
+      ["UnionBasedSQLInjectionVulnerability"],
+      ["SSRFVulnerability"],
+      ["PersistentXSSInHTMLTagVulnerability"],
+      ["XSSWithHtmlTagInjection"],
+      ["XSSInImgTagAttribute"],
+      ["XXEVulnerability"],
+    ];
+
+    it.each(inputs)(`should have sub item %s`, (text) => {
+      const mock = () => jest.fn();
+      render(<LeftNav globalState={testFixture} setGlobalState={mock} />);
+      const item = screen.getByText(text);
+
+      expect(item).toBeInTheDocument();
+    });
   });
 });
