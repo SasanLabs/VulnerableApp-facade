@@ -91,7 +91,7 @@ export interface VulnerabilityDefinition {
    * For example: WASC-01 and CWE-287 both represent Insufficient Authentication vulnerability hence
    * both will be added here.
    */
-  vulnerabilityTypes: Array<VulnerabilityType>;
+  vulnerabilityTypes: Array<VulnerabilityType> | null;
 
   /**
    * Information about each level present under the vulnerability
