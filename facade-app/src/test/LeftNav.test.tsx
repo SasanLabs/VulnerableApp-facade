@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen, within } from "@testing-library/react";
+import {fireEvent, render, screen } from "@testing-library/react";
 
 import LeftNav from "../Components/LeftNav";
 import testFixture from "./fixtures";
@@ -115,6 +115,29 @@ describe("LeftNav", () => {
             const item = screen.getAllByText(text)[0]
             expect(item).toBeInTheDocument()
         })
-    })
 
+        const levels = [
+            ['VulnerableApp-php.FileUpload.LEVEL_1', 'LEVEL_1'],
+            ['VulnerableApp-php.FileUpload.LEVEL_2', 'LEVEL_2'],
+            ['VulnerableApp-php.FileUpload.LEVEL_3', 'LEVEL_3'],
+            ['VulnerableApp-php.FileUpload.LEVEL_4', 'LEVEL_4'],
+            ['VulnerableApp-php.FileUpload.LEVEL_5', 'LEVEL_5'],
+            ['VulnerableApp-php.FileUpload.LEVEL_6', 'LEVEL_6'],
+            ['VulnerableApp-php.FileUpload.LEVEL_7', 'LEVEL_7'],
+            ['VulnerableApp-php.FileUpload.LEVEL_8', 'LEVEL_8'],
+            ['VulnerableApp-php.FileUpload.LEVEL_9', 'LEVEL_9'],
+            ['VulnerableApp-php.FileUpload.LEVEL_10', 'LEVEL_10'],
+            ['VulnerableApp-php.FileUpload.LEVEL_11', 'LEVEL_11'],
+            ['VulnerableApp-php.FileUpload.LEVEL_12', 'LEVEL_12'],
+        ]
+
+        it.each(levels)('should have test id %s and text %s', (testId, label) => {
+            const mock = () => jest.fn();
+            render(<LeftNav globalState={testFixture} setGlobalState={mock} />)
+
+            const link = screen.getByTestId(testId);
+            expect(link).toBeInTheDocument();
+            expect(link).toHaveTextContent(label);
+        })
+    })
 });
