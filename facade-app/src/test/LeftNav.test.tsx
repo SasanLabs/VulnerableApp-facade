@@ -61,9 +61,60 @@ describe("LeftNav", () => {
     it.each(inputs)(`should have sub item %s`, (text) => {
       const mock = () => jest.fn();
       render(<LeftNav globalState={testFixture} setGlobalState={mock} />);
-      const item = screen.getByText(text);
 
+      const item = screen.getByText(text);
       expect(item).toBeInTheDocument();
     });
   });
+
+  describe("VulnerableApp-jsp", () => {
+      it("renders correctly", () => {
+          const mock = () => jest.fn();
+          render(<LeftNav globalState={testFixture} setGlobalState={mock}/>)
+
+          const item = screen.getByText("VulnerableApp-jsp")
+          const serverIcon = screen.getAllByRole("img")[1]
+
+          expect(item).toBeInTheDocument();
+          expect(serverIcon).toBeInTheDocument();
+      })
+
+      const inputs = [
+          ["FileUpload"]
+      ]
+
+      it.each(inputs)(`should have sub item %s`, (text) => {
+          const mock = () => jest.fn();
+          render(<LeftNav globalState={testFixture} setGlobalState={mock} />);
+
+          const item = screen.getAllByText(text)[0]
+          expect(item).toBeInTheDocument()
+      })
+  })
+
+    describe("VulnerableApp-php", () => {
+        it('renders correctly', () => {
+            const mock = () => jest.fn();
+            render(<LeftNav globalState={testFixture} setGlobalState={mock} />)
+
+            const item = screen.getByText("VulnerableApp-php")
+            const serverIcon = screen.getAllByRole("img")[2]
+
+            expect(item).toBeInTheDocument();
+            expect(serverIcon).toBeInTheDocument();
+        })
+
+        const inputs = [
+            ["FileUpload"]
+        ]
+
+        it.each(inputs)(`should have sub item %s`, (text) => {
+            const mock = () => jest.fn();
+            render(<LeftNav globalState={testFixture} setGlobalState={mock} />)
+
+            const item = screen.getAllByText(text)[0]
+            expect(item).toBeInTheDocument()
+        })
+    })
+
 });
