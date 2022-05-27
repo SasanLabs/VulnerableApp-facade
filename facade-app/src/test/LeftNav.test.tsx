@@ -90,6 +90,24 @@ describe("LeftNav", () => {
           const item = screen.getAllByText(text)[0]
           expect(item).toBeInTheDocument()
       })
+
+      const levels = [
+          ['VulnerableApp-jsp.FileUpload.LEVEL_1', 'LEVEL_1'],
+          ['VulnerableApp-jsp.FileUpload.LEVEL_2', 'LEVEL_2'],
+          ['VulnerableApp-jsp.FileUpload.LEVEL_3', 'LEVEL_3'],
+          ['VulnerableApp-jsp.FileUpload.LEVEL_4', 'LEVEL_4'],
+          ['VulnerableApp-jsp.FileUpload.LEVEL_5', 'LEVEL_5'],
+          ['VulnerableApp-jsp.FileUpload.LEVEL_6', 'LEVEL_6']
+      ]
+
+      it.each(levels)('should have test id %s and text %s', (testId, label) => {
+          const mock = () => jest.fn();
+          render(<LeftNav globalState={testFixture} setGlobalState={mock} />)
+
+          const link = screen.getByTestId(testId);
+          expect(link).toBeInTheDocument();
+          expect(link).toHaveTextContent(label);
+      })
   })
 
     describe("VulnerableApp-php", () => {
