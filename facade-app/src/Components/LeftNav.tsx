@@ -8,7 +8,7 @@ import {
 import { Props } from "../interface/Props";
 import { LevelInformation, VulnerabilityDefinition } from "../interface/State";
 
-export class LeftNav extends React.Component<Props> {
+export default class LeftNav extends React.Component<Props, {}> {
   constructor(props: Props) {
     super(props);
     this._handleVulnerabilityLevelSelect =
@@ -67,6 +67,7 @@ export class LeftNav extends React.Component<Props> {
           )
         }
         className="VulnerableApp-Facade-LeftNav-Vulnerability-Level"
+        data-testid={applicationName + "." + vulnerabilityName}
       >
         {levels.map((vulnerabilityLevel) => (
           <RSuiteDropdown.Item
@@ -91,6 +92,11 @@ export class LeftNav extends React.Component<Props> {
                 vulnerabilityLevel.levelIdentifier
               )
             }
+            data-testid={applicationName +
+                "." +
+                vulnerabilityName +
+                "." +
+                vulnerabilityLevel.levelIdentifier}
           >
             {vulnerabilityLevel.levelIdentifier}
           </RSuiteDropdown.Item>
@@ -114,7 +120,7 @@ export class LeftNav extends React.Component<Props> {
               eventKey={applicationName}
               title={applicationName}
               className="VulnerableApp-Facade-LeftNav-Application"
-              icon={<RSuiteIcon icon="server" />}
+              icon={<RSuiteIcon icon="server" role={"img"} />}
             >
               <RSuiteDropdown.Item divider />
               {vulnerabilityDefinition.map((vulnerabilityDefinition) =>
@@ -136,7 +142,7 @@ export class LeftNav extends React.Component<Props> {
       this.props.globalState;
     if (isSuccessfullyLoaded && applicationData) {
       return (
-        <div>
+        <div data-testid={"LEFT_NAV_CONTAINER"}>
           {applicationData.map((applicationData) => {
             let applicationName = applicationData.applicationName;
             let vulnerabilityDefinitions =

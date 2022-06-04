@@ -29,6 +29,7 @@ export default class Header extends React.Component<Props, {}> {
               <RSuiteNav.Item
                 onSelect={() =>
                   setGlobalState({
+                    ...globalState,
                     activateHomePage: true,
                     activateAboutUsPage: false,
                   })
