@@ -3,12 +3,12 @@ import { Panel as RSuitePanel, PanelGroup as RSuitePanelGroup } from "rsuite";
 
 export class HomePage extends React.Component {
   Card = () => (
-    <div>
+    <div data-testid={"HOME_PAGE_MAIN_CONTAINER"}>
       <RSuitePanel
         header="Welcome to Owasp VulnerableApp-Facade"
         className="VulnerableApp-Facade-HomePage-Content-Header"
       >
-        <div className="VulnerableApp-Facade-HomePage-Content">
+        <div className="VulnerableApp-Facade-HomePage-Content" data-testid={"HOME_PAGE_CONTENT_CONTAINER"}>
           As we are seeing a lot of technological enhancements in the industry
           from past few years, these technical enhancements are solving one or
           the other problem however, with that they also bring few different
@@ -37,6 +37,7 @@ export class HomePage extends React.Component {
       <RSuitePanel
         className="VulnerableApp-Facade-HomePage-Content-Header"
         header="Warning"
+        data-testid={"HOME_PAGE_WARNING_CONTAINER"}
       >
         <div className="VulnerableApp-Facade-HomePage-Content">
           As VulnerableApp-Facade is a proxy wrapper over the actual Vulnerable
