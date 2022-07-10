@@ -79,3 +79,83 @@ exports[`CommandInjection content CommandInjection LEVEL_1 content renders corre
   </div>
 </div>
 `;
+
+exports[`CommandInjection content renders correctly 1`] = `
+<div>
+  <div
+    class="VulnerableApp-Facade-Info"
+  >
+    <div
+      class="VulnerableApp-Facade-Content-Container"
+    >
+      <div>
+        <div
+          class="VulnerableApp-Facade-Content-Vulnerability-Description-Header rs-panel rs-panel-default rs-panel-collapsible"
+        >
+          <div
+            class="rs-panel-heading"
+            role="rowheader"
+            tabindex="-1"
+          >
+            <span
+              class="rs-panel-title"
+              role="presentation"
+            >
+              <span
+                aria-controls="undefined"
+                aria-expanded="false"
+                aria-selected="false"
+                class="collapsed"
+              >
+                Vulnerability Description
+              </span>
+            </span>
+          </div>
+          <div
+            aria-hidden="true"
+            class="rs-panel-collapse VulnerableApp-Facade-Content-Vulnerability-Description-Header collapse"
+          >
+            <div
+              class="rs-panel-body"
+            >
+              <div
+                class="VulnerableApp-Facade-Content"
+              >
+                <div
+                  data-testid="CONTENT_VULNERABILITY_DESCRIPTION"
+                  id="__vuln_description__"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="VulnerableApp-Facade-Content-Practice-Vulnerability-Header rs-panel rs-panel-default"
+        >
+          <div
+            class="rs-panel-heading"
+            role="rowheader"
+            tabindex="-1"
+          >
+            Practice Vulnerability
+          </div>
+          <div
+            class="rs-panel-body"
+          >
+            <div
+              class="VulnerableApp-Facade-Content"
+            >
+              <div
+                id="__content__"
+              />
+            </div>
+          </div>
+        </div>
+        <div />
+      </div>
+    </div>
+  </div>
+</div>
+`;
