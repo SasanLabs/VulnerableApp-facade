@@ -79,9 +79,18 @@ export class Content extends React.Component<Props> {
       activeLevel,
       activateHomePage,
       activateAboutUsPage,
+      applicationData,
       showHints,
     } = this.props.globalState;
     const { setGlobalState } = this.props;
+    const activeApplicationState = applicationData?.find(
+      (applicationState) =>
+        applicationState.applicationName === activeApplication
+    );
+    const vulnerabilityDescription = activeApplicationState?.vulnerabilityDefinitions.find(
+      (vulnerabilityDefinition) =>
+        vulnerabilityDefinition.id === activeVulnerability
+    )?.description;
     return (
       <div className="VulnerableApp-Facade-Info">
         {activateHomePage ? (
@@ -99,7 +108,7 @@ export class Content extends React.Component<Props> {
                   defaultExpanded={false}
                 >
                   <div className="VulnerableApp-Facade-Content">
-                    <div id="__vuln_description__" />
+                    <div id="__vuln_description__" data-testid={"CONTENT_VULNERABILITY_DESCRIPTION"}/>
                   </div>
                 </RSuitePanel>
               </div>
