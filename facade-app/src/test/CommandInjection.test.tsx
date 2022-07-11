@@ -95,33 +95,6 @@ describe("CommandInjection content", () => {
         const header = screen.getByText("Practice Vulnerability");
         expect(header).toBeInTheDocument();
       });
-
-      await waitFor(() => {
-        const subHeader = screen.getByText("Welcome to Ping utility.");
-
-        expect(subHeader).toBeInTheDocument();
-      });
-
-      await waitFor(() => {
-        const ipAddressInputLabel = screen.getByText(
-          "please enter IP address:"
-        );
-
-        expect(ipAddressInputLabel).toBeInTheDocument();
-      });
-
-      await waitFor(() => {
-        const ipAddressInput = screen.getByRole("textbox");
-
-        expect(ipAddressInput).toBeInTheDocument();
-      });
-
-      await waitFor(() => {
-        const submitBtn = screen.getByRole("button");
-
-        expect(submitBtn).toBeInTheDocument();
-        expect(submitBtn).toHaveTextContent("Click here");
-      });
     }
   );
 
