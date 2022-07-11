@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CommandInjection content CommandInjection LEVEL_1 content renders correctly 1`] = `
+exports[`CommandInjection content LEVEL_1 should render correctly 1`] = `
 <div>
   <div
     class="VulnerableApp-Facade-Info"
@@ -42,7 +42,7 @@ exports[`CommandInjection content CommandInjection LEVEL_1 content renders corre
                 class="VulnerableApp-Facade-Content"
               >
                 <div
-                  data-testid="CONTENT_VULNERABILITY_DESCRIPTION"
+                  data-testid="VULNERABILITY_CONTENT_DESCRIPTION"
                   id="__vuln_description__"
                 />
               </div>
@@ -68,6 +68,7 @@ exports[`CommandInjection content CommandInjection LEVEL_1 content renders corre
               class="VulnerableApp-Facade-Content"
             >
               <div
+                data-testid="VULNERABILITY_MAIN_CONTENT"
                 id="__content__"
               />
             </div>
@@ -80,7 +81,7 @@ exports[`CommandInjection content CommandInjection LEVEL_1 content renders corre
 </div>
 `;
 
-exports[`CommandInjection content renders correctly 1`] = `
+exports[`CommandInjection content LEVEL_2 should render correctly 1`] = `
 <div>
   <div
     class="VulnerableApp-Facade-Info"
@@ -122,7 +123,7 @@ exports[`CommandInjection content renders correctly 1`] = `
                 class="VulnerableApp-Facade-Content"
               >
                 <div
-                  data-testid="CONTENT_VULNERABILITY_DESCRIPTION"
+                  data-testid="VULNERABILITY_CONTENT_DESCRIPTION"
                   id="__vuln_description__"
                 />
               </div>
@@ -148,6 +149,331 @@ exports[`CommandInjection content renders correctly 1`] = `
               class="VulnerableApp-Facade-Content"
             >
               <div
+                data-testid="VULNERABILITY_MAIN_CONTENT"
+                id="__content__"
+              />
+            </div>
+          </div>
+        </div>
+        <div />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CommandInjection content LEVEL_3 should render correctly 1`] = `
+<div>
+  <div
+    class="VulnerableApp-Facade-Info"
+  >
+    <div
+      class="VulnerableApp-Facade-Content-Container"
+    >
+      <div>
+        <div
+          class="VulnerableApp-Facade-Content-Vulnerability-Description-Header rs-panel rs-panel-default rs-panel-collapsible"
+        >
+          <div
+            class="rs-panel-heading"
+            role="rowheader"
+            tabindex="-1"
+          >
+            <span
+              class="rs-panel-title"
+              role="presentation"
+            >
+              <span
+                aria-controls="undefined"
+                aria-expanded="false"
+                aria-selected="false"
+                class="collapsed"
+              >
+                Vulnerability Description
+              </span>
+            </span>
+          </div>
+          <div
+            aria-hidden="true"
+            class="rs-panel-collapse VulnerableApp-Facade-Content-Vulnerability-Description-Header collapse"
+          >
+            <div
+              class="rs-panel-body"
+            >
+              <div
+                class="VulnerableApp-Facade-Content"
+              >
+                <div
+                  data-testid="VULNERABILITY_CONTENT_DESCRIPTION"
+                  id="__vuln_description__"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="VulnerableApp-Facade-Content-Practice-Vulnerability-Header rs-panel rs-panel-default"
+        >
+          <div
+            class="rs-panel-heading"
+            role="rowheader"
+            tabindex="-1"
+          >
+            Practice Vulnerability
+          </div>
+          <div
+            class="rs-panel-body"
+          >
+            <div
+              class="VulnerableApp-Facade-Content"
+            >
+              <div
+                data-testid="VULNERABILITY_MAIN_CONTENT"
+                id="__content__"
+              />
+            </div>
+          </div>
+        </div>
+        <div />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CommandInjection content LEVEL_4 should render correctly 1`] = `
+<div>
+  <div
+    class="VulnerableApp-Facade-Info"
+  >
+    <div
+      class="VulnerableApp-Facade-Content-Container"
+    >
+      <div>
+        <div
+          class="VulnerableApp-Facade-Content-Vulnerability-Description-Header rs-panel rs-panel-default rs-panel-collapsible"
+        >
+          <div
+            class="rs-panel-heading"
+            role="rowheader"
+            tabindex="-1"
+          >
+            <span
+              class="rs-panel-title"
+              role="presentation"
+            >
+              <span
+                aria-controls="undefined"
+                aria-expanded="false"
+                aria-selected="false"
+                class="collapsed"
+              >
+                Vulnerability Description
+              </span>
+            </span>
+          </div>
+          <div
+            aria-hidden="true"
+            class="rs-panel-collapse VulnerableApp-Facade-Content-Vulnerability-Description-Header collapse"
+          >
+            <div
+              class="rs-panel-body"
+            >
+              <div
+                class="VulnerableApp-Facade-Content"
+              >
+                <div
+                  data-testid="VULNERABILITY_CONTENT_DESCRIPTION"
+                  id="__vuln_description__"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="VulnerableApp-Facade-Content-Practice-Vulnerability-Header rs-panel rs-panel-default"
+        >
+          <div
+            class="rs-panel-heading"
+            role="rowheader"
+            tabindex="-1"
+          >
+            Practice Vulnerability
+          </div>
+          <div
+            class="rs-panel-body"
+          >
+            <div
+              class="VulnerableApp-Facade-Content"
+            >
+              <div
+                data-testid="VULNERABILITY_MAIN_CONTENT"
+                id="__content__"
+              />
+            </div>
+          </div>
+        </div>
+        <div />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CommandInjection content LEVEL_5 should render correctly 1`] = `
+<div>
+  <div
+    class="VulnerableApp-Facade-Info"
+  >
+    <div
+      class="VulnerableApp-Facade-Content-Container"
+    >
+      <div>
+        <div
+          class="VulnerableApp-Facade-Content-Vulnerability-Description-Header rs-panel rs-panel-default rs-panel-collapsible"
+        >
+          <div
+            class="rs-panel-heading"
+            role="rowheader"
+            tabindex="-1"
+          >
+            <span
+              class="rs-panel-title"
+              role="presentation"
+            >
+              <span
+                aria-controls="undefined"
+                aria-expanded="false"
+                aria-selected="false"
+                class="collapsed"
+              >
+                Vulnerability Description
+              </span>
+            </span>
+          </div>
+          <div
+            aria-hidden="true"
+            class="rs-panel-collapse VulnerableApp-Facade-Content-Vulnerability-Description-Header collapse"
+          >
+            <div
+              class="rs-panel-body"
+            >
+              <div
+                class="VulnerableApp-Facade-Content"
+              >
+                <div
+                  data-testid="VULNERABILITY_CONTENT_DESCRIPTION"
+                  id="__vuln_description__"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="VulnerableApp-Facade-Content-Practice-Vulnerability-Header rs-panel rs-panel-default"
+        >
+          <div
+            class="rs-panel-heading"
+            role="rowheader"
+            tabindex="-1"
+          >
+            Practice Vulnerability
+          </div>
+          <div
+            class="rs-panel-body"
+          >
+            <div
+              class="VulnerableApp-Facade-Content"
+            >
+              <div
+                data-testid="VULNERABILITY_MAIN_CONTENT"
+                id="__content__"
+              />
+            </div>
+          </div>
+        </div>
+        <div />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CommandInjection content LEVEL_6 should render correctly 1`] = `
+<div>
+  <div
+    class="VulnerableApp-Facade-Info"
+  >
+    <div
+      class="VulnerableApp-Facade-Content-Container"
+    >
+      <div>
+        <div
+          class="VulnerableApp-Facade-Content-Vulnerability-Description-Header rs-panel rs-panel-default rs-panel-collapsible"
+        >
+          <div
+            class="rs-panel-heading"
+            role="rowheader"
+            tabindex="-1"
+          >
+            <span
+              class="rs-panel-title"
+              role="presentation"
+            >
+              <span
+                aria-controls="undefined"
+                aria-expanded="false"
+                aria-selected="false"
+                class="collapsed"
+              >
+                Vulnerability Description
+              </span>
+            </span>
+          </div>
+          <div
+            aria-hidden="true"
+            class="rs-panel-collapse VulnerableApp-Facade-Content-Vulnerability-Description-Header collapse"
+          >
+            <div
+              class="rs-panel-body"
+            >
+              <div
+                class="VulnerableApp-Facade-Content"
+              >
+                <div
+                  data-testid="VULNERABILITY_CONTENT_DESCRIPTION"
+                  id="__vuln_description__"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="VulnerableApp-Facade-Content-Practice-Vulnerability-Header rs-panel rs-panel-default"
+        >
+          <div
+            class="rs-panel-heading"
+            role="rowheader"
+            tabindex="-1"
+          >
+            Practice Vulnerability
+          </div>
+          <div
+            class="rs-panel-body"
+          >
+            <div
+              class="VulnerableApp-Facade-Content"
+            >
+              <div
+                data-testid="VULNERABILITY_MAIN_CONTENT"
                 id="__content__"
               />
             </div>

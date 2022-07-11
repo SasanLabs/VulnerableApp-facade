@@ -83,14 +83,6 @@ export class Content extends React.Component<Props> {
       showHints,
     } = this.props.globalState;
     const { setGlobalState } = this.props;
-    const activeApplicationState = applicationData?.find(
-      (applicationState) =>
-        applicationState.applicationName === activeApplication
-    );
-    const vulnerabilityDescription = activeApplicationState?.vulnerabilityDefinitions.find(
-      (vulnerabilityDefinition) =>
-        vulnerabilityDefinition.id === activeVulnerability
-    )?.description;
     return (
       <div className="VulnerableApp-Facade-Info">
         {activateHomePage ? (
@@ -108,7 +100,7 @@ export class Content extends React.Component<Props> {
                   defaultExpanded={false}
                 >
                   <div className="VulnerableApp-Facade-Content">
-                    <div id="__vuln_description__" data-testid={"CONTENT_VULNERABILITY_DESCRIPTION"}/>
+                    <div id="__vuln_description__" data-testid={"VULNERABILITY_CONTENT_DESCRIPTION"}/>
                   </div>
                 </RSuitePanel>
               </div>
@@ -122,7 +114,7 @@ export class Content extends React.Component<Props> {
                   className="VulnerableApp-Facade-Content-Practice-Vulnerability-Header"
                 >
                   <div className="VulnerableApp-Facade-Content">
-                    <div id="__content__" />
+                    <div id="__content__" data-testid={"VULNERABILITY_MAIN_CONTENT"}/>
                   </div>
                 </RSuitePanel>
                 {this.selectedLevel &&
@@ -145,7 +137,7 @@ export class Content extends React.Component<Props> {
                       })
                     }
                   >
-                    <ol>
+                    <ol data-testid={"VULNERABILITY_HINTS"}>
                       {this.selectedLevel.hints.map((hint) => {
                         return <li>{hint.description}</li>;
                       })}
