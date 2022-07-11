@@ -79,7 +79,6 @@ export class Content extends React.Component<Props> {
       activeLevel,
       activateHomePage,
       activateAboutUsPage,
-      applicationData,
       showHints,
     } = this.props.globalState;
     const { setGlobalState } = this.props;
