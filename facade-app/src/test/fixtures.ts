@@ -4,7 +4,7 @@ const testFixture = {
     "activeApplication": "VulnerableApp",
     "isSuccessfullyLoaded": true,
     "activateAboutUsPage": false,
-    "activateHomePage": true,
+    "activateHomePage": false,
     "showHints": false,
     "activeLevel": "asdf",
     "activeVulnerability": "acv",
