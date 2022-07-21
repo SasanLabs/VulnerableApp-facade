@@ -47,9 +47,6 @@ describe("CommandInjection content", () => {
         activeVulnerability: "CommandInjection",
         activeLevel: level,
       };
-
-
-
       const { rerender } = render(
         <Content globalState={testFixture} setGlobalState={mock} />
       );
