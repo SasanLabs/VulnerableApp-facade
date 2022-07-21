@@ -17,12 +17,12 @@ jobs:
       run: |
         npm install
         npm run build
-        npm run test
+        npm run test -- --coverage
       working-directory: facade-app
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
-        files: ./facade-app/coverage.xml
+        directory: ./facade-app
     - name: testing sasan
       run: |
         ls -la
