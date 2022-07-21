@@ -1,3 +1,4 @@
+
 name: Compile
 
 on:
@@ -18,4 +19,7 @@ jobs:
       run: |
         npm install
         npm run build
+        npm run test
       working-directory: facade-app   
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
