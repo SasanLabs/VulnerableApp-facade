@@ -24,6 +24,7 @@ jobs:
       defaults:
         run:
           working-directory: facade-app
+      needs: test
       steps:
         - name: Upload coverage to Codecov
           uses: codecov/codecov-action@v3
