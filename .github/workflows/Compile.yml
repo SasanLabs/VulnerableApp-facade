@@ -18,13 +18,8 @@ jobs:
         npm install
         npm run build
         npm run test
-      working-directory: facade-app   
-  codecov:
-      runs-on: ubuntu-latest
-      defaults:
-        run:
-          working-directory: facade-app
-      needs: test
-      steps:
-        - name: Upload coverage to Codecov
-          uses: codecov/codecov-action@v3
+      working-directory: facade-app
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+          directory: facade-app
