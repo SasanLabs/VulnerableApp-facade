@@ -4,6 +4,12 @@ import { render, screen, waitFor } from "@testing-library/react";
 import { Content } from "../Components/Content";
 import testFixture from "./fixtures";
 
+const actual = jest.requireActual("../Utilities/Utils");
+const utilMocks = {
+  ...actual,
+  getResource: jest.fn()
+}
+
 describe("CommandInjection content", () => {
   const vulnerabilityLevels = [
     "LEVEL_1",
