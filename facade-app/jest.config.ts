@@ -4,7 +4,7 @@ const config = {
         "^.+\\.(ts|tsx|js|jsx)$": "ts-jest"
     }
     testPathIgnorePatterns: [
-    '<rootDir>/src/interface/'
+    '<rootDir>/facade-app/src/interface/'
     ]
 }
 
