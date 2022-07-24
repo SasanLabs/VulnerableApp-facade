@@ -31,6 +31,7 @@ describe("CommandInjection content", () => {
       activeLevel: "LEVEL_1",
     };
     const { container } = render(
+      // @ts-ignore
       <Content globalState={state} setGlobalState={mock} />
     );
 
@@ -48,9 +49,11 @@ describe("CommandInjection content", () => {
         activeLevel: level,
       };
       const { rerender } = render(
+        // @ts-ignore
         <Content globalState={testFixture} setGlobalState={mock} />
       );
 
+      // @ts-ignore
       rerender(<Content globalState={state} setGlobalState={mock} />);
 
       const header = screen.getByText("Vulnerability Description");
@@ -94,9 +97,11 @@ describe("CommandInjection content", () => {
         activeLevel: level,
       };
       const { rerender } = render(
+        // @ts-ignore
         <Content globalState={testFixture} setGlobalState={mock} />
       );
 
+      // @ts-ignore
       rerender(<Content globalState={state} setGlobalState={mock} />);
 
       await waitFor(() => {
@@ -136,9 +141,11 @@ describe("CommandInjection content", () => {
       showHints: true,
     };
     const { rerender } = render(
+      // @ts-ignore
       <Content globalState={testFixture} setGlobalState={mock} />
     );
 
+    // @ts-ignore
     rerender(<Content globalState={state} setGlobalState={mock} />);
 
     await waitFor(() => {
@@ -157,6 +164,7 @@ describe("CommandInjection content", () => {
       activeVulnerability: "CommandInjection",
       activeLevel: "LEVEL_6",
     };
+    // @ts-ignore
     render(<Content globalState={state} setGlobalState={mock} />);
 
     const header = screen.queryByText("Hints");
