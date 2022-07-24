@@ -4,13 +4,13 @@ import { render, screen, waitFor } from "@testing-library/react";
 import { Content } from "../Components/Content";
 import testFixture from "./fixtures";
 
-jest.mock('../Utilities/Utils', () => {
+jest.mock("../Utilities/Utils", () => {
   const actual = jest.requireActual("../Utilities/Utils");
   return {
     ...actual,
-    getResource: jest.fn()
-  }
-})
+    getResource: jest.fn(),
+  };
+});
 
 describe("CommandInjection content", () => {
   const vulnerabilityLevels = [
@@ -22,7 +22,7 @@ describe("CommandInjection content", () => {
     "LEVEL_6",
   ];
 
-  it.each(vulnerabilityLevels)(`%s should render correctly`, () => {
+  it("should render correctly", () => {
     const mock = () => jest.fn();
     const state = {
       ...testFixture,
