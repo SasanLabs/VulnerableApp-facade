@@ -10,7 +10,7 @@ exports[`CommandInjection content LEVEL_1 should render correctly 1`] = `
     >
       <div>
         <div
-          class="VulnerableApp-Facade-Content-Vulnerability-Description-Header rs-panel rs-panel-default rs-panel-collapsible"
+          class="VulnerableApp-Facade-Content-Vulnerability-Description-Header rs-panel rs-panel-default rs-panel-in rs-panel-collapsible"
         >
           <div
             class="rs-panel-heading"
@@ -23,17 +23,16 @@ exports[`CommandInjection content LEVEL_1 should render correctly 1`] = `
             >
               <span
                 aria-controls="undefined"
-                aria-expanded="false"
-                aria-selected="false"
-                class="collapsed"
+                aria-expanded="true"
+                aria-selected="true"
               >
                 Vulnerability Description
               </span>
             </span>
           </div>
           <div
-            aria-hidden="true"
-            class="rs-panel-collapse VulnerableApp-Facade-Content-Vulnerability-Description-Header collapse"
+            aria-hidden="false"
+            class="rs-panel-collapse VulnerableApp-Facade-Content-Vulnerability-Description-Header collapse in"
           >
             <div
               class="rs-panel-body"
@@ -91,7 +90,7 @@ exports[`CommandInjection content LEVEL_2 should render correctly 1`] = `
     >
       <div>
         <div
-          class="VulnerableApp-Facade-Content-Vulnerability-Description-Header rs-panel rs-panel-default rs-panel-collapsible"
+          class="VulnerableApp-Facade-Content-Vulnerability-Description-Header rs-panel rs-panel-default rs-panel-in rs-panel-collapsible"
         >
           <div
             class="rs-panel-heading"
@@ -104,17 +103,16 @@ exports[`CommandInjection content LEVEL_2 should render correctly 1`] = `
             >
               <span
                 aria-controls="undefined"
-                aria-expanded="false"
-                aria-selected="false"
-                class="collapsed"
+                aria-expanded="true"
+                aria-selected="true"
               >
                 Vulnerability Description
               </span>
             </span>
           </div>
           <div
-            aria-hidden="true"
-            class="rs-panel-collapse VulnerableApp-Facade-Content-Vulnerability-Description-Header collapse"
+            aria-hidden="false"
+            class="rs-panel-collapse VulnerableApp-Facade-Content-Vulnerability-Description-Header collapse in"
           >
             <div
               class="rs-panel-body"
@@ -172,7 +170,7 @@ exports[`CommandInjection content LEVEL_3 should render correctly 1`] = `
     >
       <div>
         <div
-          class="VulnerableApp-Facade-Content-Vulnerability-Description-Header rs-panel rs-panel-default rs-panel-collapsible"
+          class="VulnerableApp-Facade-Content-Vulnerability-Description-Header rs-panel rs-panel-default rs-panel-in rs-panel-collapsible"
         >
           <div
             class="rs-panel-heading"
@@ -185,17 +183,16 @@ exports[`CommandInjection content LEVEL_3 should render correctly 1`] = `
             >
               <span
                 aria-controls="undefined"
-                aria-expanded="false"
-                aria-selected="false"
-                class="collapsed"
+                aria-expanded="true"
+                aria-selected="true"
               >
                 Vulnerability Description
               </span>
             </span>
           </div>
           <div
-            aria-hidden="true"
-            class="rs-panel-collapse VulnerableApp-Facade-Content-Vulnerability-Description-Header collapse"
+            aria-hidden="false"
+            class="rs-panel-collapse VulnerableApp-Facade-Content-Vulnerability-Description-Header collapse in"
           >
             <div
               class="rs-panel-body"
@@ -253,7 +250,7 @@ exports[`CommandInjection content LEVEL_4 should render correctly 1`] = `
     >
       <div>
         <div
-          class="VulnerableApp-Facade-Content-Vulnerability-Description-Header rs-panel rs-panel-default rs-panel-collapsible"
+          class="VulnerableApp-Facade-Content-Vulnerability-Description-Header rs-panel rs-panel-default rs-panel-in rs-panel-collapsible"
         >
           <div
             class="rs-panel-heading"
@@ -266,17 +263,16 @@ exports[`CommandInjection content LEVEL_4 should render correctly 1`] = `
             >
               <span
                 aria-controls="undefined"
-                aria-expanded="false"
-                aria-selected="false"
-                class="collapsed"
+                aria-expanded="true"
+                aria-selected="true"
               >
                 Vulnerability Description
               </span>
             </span>
           </div>
           <div
-            aria-hidden="true"
-            class="rs-panel-collapse VulnerableApp-Facade-Content-Vulnerability-Description-Header collapse"
+            aria-hidden="false"
+            class="rs-panel-collapse VulnerableApp-Facade-Content-Vulnerability-Description-Header collapse in"
           >
             <div
               class="rs-panel-body"
@@ -334,7 +330,7 @@ exports[`CommandInjection content LEVEL_5 should render correctly 1`] = `
     >
       <div>
         <div
-          class="VulnerableApp-Facade-Content-Vulnerability-Description-Header rs-panel rs-panel-default rs-panel-collapsible"
+          class="VulnerableApp-Facade-Content-Vulnerability-Description-Header rs-panel rs-panel-default rs-panel-in rs-panel-collapsible"
         >
           <div
             class="rs-panel-heading"
@@ -347,17 +343,16 @@ exports[`CommandInjection content LEVEL_5 should render correctly 1`] = `
             >
               <span
                 aria-controls="undefined"
-                aria-expanded="false"
-                aria-selected="false"
-                class="collapsed"
+                aria-expanded="true"
+                aria-selected="true"
               >
                 Vulnerability Description
               </span>
             </span>
           </div>
           <div
-            aria-hidden="true"
-            class="rs-panel-collapse VulnerableApp-Facade-Content-Vulnerability-Description-Header collapse"
+            aria-hidden="false"
+            class="rs-panel-collapse VulnerableApp-Facade-Content-Vulnerability-Description-Header collapse in"
           >
             <div
               class="rs-panel-body"
@@ -415,7 +410,7 @@ exports[`CommandInjection content LEVEL_6 should render correctly 1`] = `
     >
       <div>
         <div
-          class="VulnerableApp-Facade-Content-Vulnerability-Description-Header rs-panel rs-panel-default rs-panel-collapsible"
+          class="VulnerableApp-Facade-Content-Vulnerability-Description-Header rs-panel rs-panel-default rs-panel-in rs-panel-collapsible"
         >
           <div
             class="rs-panel-heading"
@@ -428,17 +423,16 @@ exports[`CommandInjection content LEVEL_6 should render correctly 1`] = `
             >
               <span
                 aria-controls="undefined"
-                aria-expanded="false"
-                aria-selected="false"
-                class="collapsed"
+                aria-expanded="true"
+                aria-selected="true"
               >
                 Vulnerability Description
               </span>
             </span>
           </div>
           <div
-            aria-hidden="true"
-            class="rs-panel-collapse VulnerableApp-Facade-Content-Vulnerability-Description-Header collapse"
+            aria-hidden="false"
+            class="rs-panel-collapse VulnerableApp-Facade-Content-Vulnerability-Description-Header collapse in"
           >
             <div
               class="rs-panel-body"
