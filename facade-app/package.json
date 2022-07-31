@@ -44,6 +44,14 @@
       "last 1 safari version"
     ]
   },
+  "jest": {
+    "collectCoverageFrom": [
+        "<rootDir>/src/**/*.{js,ts,jsx,tsx}",
+        "!<rootDir>/src/test/**",
+        "!<rootDir>/src/interface/*",
+        "!<rootDir>/src/react-app-env.d.ts"
+    ]
+  },
   "devDependencies": {
     "ts-node": "^10.7.0"
   }

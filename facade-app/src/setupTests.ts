@@ -5,3 +5,11 @@
 import "@testing-library/jest-dom";
 
 jest.useFakeTimers();
+
+jest.mock("./Utilities/Utils", () => {
+  const actual = jest.requireActual("./Utilities/Utils");
+  return {
+    ...actual,
+    getResource: jest.fn(),
+  };
+});
