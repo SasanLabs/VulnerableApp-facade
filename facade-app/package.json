@@ -60,7 +60,10 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm test"
+      "pre-commit": "npm test",
+      "apply-patch-msg": "echo \"[Husky] apply-patch-msg\"",
+      "pre-applypatch": "echo \"[Husky] pre-applypatch\"",
+      "post-applypatch": "echo \"[Husky] post-applypatch\""
     }
   }
 }
