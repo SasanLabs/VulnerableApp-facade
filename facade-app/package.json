@@ -58,7 +58,9 @@
     "husky": "^8.0.0",
     "ts-node": "^10.7.0"
   },
-  "hooks": {
-    "pre-commit": "npm test"
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
   }
 }
