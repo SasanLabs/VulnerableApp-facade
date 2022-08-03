@@ -96,7 +96,7 @@ export class Content extends React.Component<Props> {
                   header="Vulnerability Description"
                   className="VulnerableApp-Facade-Content-Vulnerability-Description-Header"
                   collapsible={true}
-                  defaultExpanded={false}
+                  defaultExpanded={true}
                 >
                   <div className="VulnerableApp-Facade-Content">
                     <div id="__vuln_description__" data-testid={"VULNERABILITY_CONTENT_DESCRIPTION"}/>
