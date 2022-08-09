@@ -26,13 +26,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "pretty": "prettier --write \"./**/*.{js,jsx,tsx,css}\"",
+    "lint": "eslint \"./**/*.{js,jsx,tsx,css}\"",
+    "lint:fix": "npm run lint -- --fix",
     "prepare": "cd .. && husky install facade-app/.husky"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
@@ -55,15 +51,13 @@
     ]
   },
   "devDependencies": {
-    "husky": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.32.0",
+    "@typescript-eslint/parser": "^5.32.0",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest": "^26.8.0",
+    "eslint-plugin-react": "^7.30.1",
+    "husky": "^8.0.1",
     "ts-node": "^10.7.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm test",
-      "apply-patch-msg": "echo \"[Husky] apply-patch-msg\"",
-      "pre-applypatch": "echo \"[Husky] pre-applypatch\"",
-      "post-applypatch": "echo \"[Husky] post-applypatch\""
-    }
   }
 }

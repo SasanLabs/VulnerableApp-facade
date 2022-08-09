@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+cd facade-app
+echo "Husky: pre-commit"
+npm run pretty
+# TODO: enable lint
+# npm run lint
+npm test

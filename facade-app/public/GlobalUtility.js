@@ -1,3 +1,7 @@
+// Can't find these function being called anywhere what is this?
+// FIXME: Remove this when resolved
+// eslint-disable-file @typescript-eslint/no-unused-vars
+
 function getCurrentVulnerabilityDetails() {
   return Object.assign({}, window.globalUtilityState);
 }

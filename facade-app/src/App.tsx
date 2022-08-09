@@ -22,7 +22,7 @@ export default class App extends React.Component {
   };
 
   _getResourcesInformationsForLevel(levelInformationRes: any) {
-    let resourceInformationHtml = {
+    const resourceInformationHtml = {
       isAbsolute:
         levelInformationRes["resourceInformation"]["htmlResource"][
           "isAbsolute"
@@ -30,11 +30,11 @@ export default class App extends React.Component {
       uri: levelInformationRes["resourceInformation"]["htmlResource"]["uri"],
     };
 
-    let staticResourceInformation = [];
-    for (let staticResourceInformationIndexRes in levelInformationRes[
+    const staticResourceInformation = [];
+    for (const staticResourceInformationIndexRes in levelInformationRes[
       "levels"
     ]) {
-      let staticResourceInformationRes =
+      const staticResourceInformationRes =
         levelInformationRes["levels"][staticResourceInformationIndexRes];
       staticResourceInformation.push({
         isAbsolute: staticResourceInformationRes["isAbsolute"],
@@ -49,11 +49,11 @@ export default class App extends React.Component {
   }
 
   _getHintsForLevel(levelInformationRes: any) {
-    let hints = [];
-    for (let hintIndexRes in levelInformationRes["hints"]) {
-      let hintRes = levelInformationRes["hints"][hintIndexRes];
-      let vulnerabilityTypes = [];
-      for (let vulnerabilityTypeIndexRes in hintRes["vulnerabilityTypes"]) {
+    const hints = [];
+    for (const hintIndexRes in levelInformationRes["hints"]) {
+      const hintRes = levelInformationRes["hints"][hintIndexRes];
+      const vulnerabilityTypes = [];
+      for (const vulnerabilityTypeIndexRes in hintRes["vulnerabilityTypes"]) {
         vulnerabilityTypes.push({
           identifierType:
             hintRes["vulnerabilityTypes"][vulnerabilityTypeIndexRes][
@@ -63,7 +63,7 @@ export default class App extends React.Component {
             hintRes["vulnerabilityTypes"][vulnerabilityTypeIndexRes]["value"],
         });
       }
-      let hint = {
+      const hint = {
         description: hintRes[hintIndexRes],
         vulnerabilityTypes: vulnerabilityTypes,
       };
@@ -73,8 +73,8 @@ export default class App extends React.Component {
   }
 
   _getVulnerabilityTypesForLevel(vulnerabilityDefinitionsRes: any) {
-    let vulnerabilityTypes = [];
-    for (let vulnerabilityTypeIndexRes in vulnerabilityDefinitionsRes[
+    const vulnerabilityTypes = [];
+    for (const vulnerabilityTypeIndexRes in vulnerabilityDefinitionsRes[
       "vulnerabilityTypes"
     ]) {
       vulnerabilityTypes.push({
@@ -95,21 +95,21 @@ export default class App extends React.Component {
     vulnerabilityDefinitionsRes: any,
     vulnerabilityDefinitionIndexRes: string
   ) {
-    let levels = [];
-    for (let vulnerabilityLevelIndexRes in vulnerabilityDefinitionsRes[
+    const levels = [];
+    for (const vulnerabilityLevelIndexRes in vulnerabilityDefinitionsRes[
       vulnerabilityDefinitionIndexRes
     ]["levels"]) {
-      let levelInformationRes =
+      const levelInformationRes =
         vulnerabilityDefinitionsRes[vulnerabilityDefinitionIndexRes]["levels"][
           vulnerabilityLevelIndexRes
         ];
       //Hint population
-      let hints = this._getHintsForLevel(levelInformationRes);
+      const hints = this._getHintsForLevel(levelInformationRes);
       // Resource population
-      let resourceInformations =
+      const resourceInformations =
         this._getResourcesInformationsForLevel(levelInformationRes);
 
-      let levelInformation = {
+      const levelInformation = {
         levelIdentifier: levelInformationRes["levelIdentifier"],
         variant: levelInformationRes["variant"],
         hints: hints,
@@ -130,20 +130,21 @@ export default class App extends React.Component {
       if (!vulnerabilityDefinitionResponse.data) {
         return;
       }
-      let applicationsDataRes = vulnerabilityDefinitionResponse.data;
-      let applicationDataArray = [];
-      for (let vulnerableAppRes in applicationsDataRes) {
-        let vulnerabilityDefinitionsRes = applicationsDataRes[vulnerableAppRes];
-        let vulnerabilityDefinitions = [];
-        for (let vulnerabilityDefinitionIndexRes in vulnerabilityDefinitionsRes) {
-          let levels = this._populateLevelsForVulnerability(
+      const applicationsDataRes = vulnerabilityDefinitionResponse.data;
+      const applicationDataArray = [];
+      for (const vulnerableAppRes in applicationsDataRes) {
+        const vulnerabilityDefinitionsRes =
+          applicationsDataRes[vulnerableAppRes];
+        const vulnerabilityDefinitions = [];
+        for (const vulnerabilityDefinitionIndexRes in vulnerabilityDefinitionsRes) {
+          const levels = this._populateLevelsForVulnerability(
             vulnerabilityDefinitionsRes,
             vulnerabilityDefinitionIndexRes
           );
-          let vulnerabilityTypes = this._getVulnerabilityTypesForLevel(
+          const vulnerabilityTypes = this._getVulnerabilityTypesForLevel(
             vulnerabilityDefinitionIndexRes
           );
-          let vulnerabilityDefinition = {
+          const vulnerabilityDefinition = {
             name: vulnerabilityDefinitionsRes["name"],
             id: vulnerabilityDefinitionsRes["id"],
             description: vulnerabilityDefinitionsRes["description"],

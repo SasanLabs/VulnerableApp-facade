@@ -5,11 +5,11 @@ import {
   Nav as RSuiteNav,
   Icon as RSuiteIcon,
 } from "rsuite";
-import { Props } from "../interface/Props";
+import { GlobalStateProps } from "../interface/GlobalStateProps";
 import { LevelInformation, VulnerabilityDefinition } from "../interface/State";
 
-export default class LeftNav extends React.Component<Props, {}> {
-  constructor(props: Props) {
+export default class LeftNav extends React.Component<GlobalStateProps> {
+  constructor(props: GlobalStateProps) {
     super(props);
     this._handleVulnerabilityLevelSelect =
       this._handleVulnerabilityLevelSelect.bind(this);
@@ -69,38 +69,37 @@ export default class LeftNav extends React.Component<Props, {}> {
         className="VulnerableApp-Facade-LeftNav-Vulnerability-Level"
         data-testid={applicationName + "." + vulnerabilityName}
       >
-        {levels.map((vulnerabilityLevel) => (
-          <RSuiteDropdown.Item
-            eventKey={
-              applicationName +
-              "." +
-              vulnerabilityName +
-              "." +
-              vulnerabilityLevel.levelIdentifier
-            }
-            icon={
-              vulnerabilityLevel.variant === "SECURE" ? (
-                <RSuiteIcon icon="lock" />
-              ) : (
-                <RSuiteIcon icon="unlock" />
-              )
-            }
-            onSelect={() =>
-              this._handleVulnerabilityLevelSelect(
-                applicationName,
-                vulnerabilityName,
-                vulnerabilityLevel.levelIdentifier
-              )
-            }
-            data-testid={applicationName +
-                "." +
-                vulnerabilityName +
-                "." +
-                vulnerabilityLevel.levelIdentifier}
-          >
-            {vulnerabilityLevel.levelIdentifier}
-          </RSuiteDropdown.Item>
-        ))}
+        {levels.map((vulnerabilityLevel) => {
+          const itemKey =
+            applicationName +
+            "." +
+            vulnerabilityName +
+            "." +
+            vulnerabilityLevel.levelIdentifier;
+          return (
+            <RSuiteDropdown.Item
+              key={itemKey}
+              eventKey={itemKey}
+              icon={
+                vulnerabilityLevel.variant === "SECURE" ? (
+                  <RSuiteIcon icon="lock" />
+                ) : (
+                  <RSuiteIcon icon="unlock" />
+                )
+              }
+              onSelect={() =>
+                this._handleVulnerabilityLevelSelect(
+                  applicationName,
+                  vulnerabilityName,
+                  vulnerabilityLevel.levelIdentifier
+                )
+              }
+              data-testid={itemKey}
+            >
+              {vulnerabilityLevel.levelIdentifier}
+            </RSuiteDropdown.Item>
+          );
+        })}
       </RSuiteDropdown>
     );
   }
@@ -144,8 +143,8 @@ export default class LeftNav extends React.Component<Props, {}> {
       return (
         <div data-testid={"LEFT_NAV_CONTAINER"}>
           {applicationData.map((applicationData) => {
-            let applicationName = applicationData.applicationName;
-            let vulnerabilityDefinitions =
+            const applicationName = applicationData.applicationName;
+            const vulnerabilityDefinitions =
               applicationData.vulnerabilityDefinitions;
             return this._getApplicationVulnerabilities(
               applicationName,

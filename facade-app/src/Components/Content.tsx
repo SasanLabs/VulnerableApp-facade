@@ -9,12 +9,12 @@ import {
 import { VulnerabilityDefinitionResponse } from "../interface/GeneralContracts";
 import { HomePage } from "./HomePage";
 import AboutUs from "./AboutUs";
-import { Props } from "../interface/Props";
+import { GlobalStateProps } from "../interface/GlobalStateProps";
 
-export class Content extends React.Component<Props> {
+export class Content extends React.Component<GlobalStateProps> {
   selectedLevel?: LevelInformation;
 
-  componentDidUpdate(prevProps: Props) {
+  componentDidUpdate(prevProps: GlobalStateProps) {
     if (
       prevProps.globalState.activeLevel !==
         this.props.globalState.activeLevel ||
@@ -99,7 +99,10 @@ export class Content extends React.Component<Props> {
                   defaultExpanded={false}
                 >
                   <div className="VulnerableApp-Facade-Content">
-                    <div id="__vuln_description__" data-testid={"VULNERABILITY_CONTENT_DESCRIPTION"}/>
+                    <div
+                      id="__vuln_description__"
+                      data-testid={"VULNERABILITY_CONTENT_DESCRIPTION"}
+                    />
                   </div>
                 </RSuitePanel>
               </div>
@@ -113,7 +116,10 @@ export class Content extends React.Component<Props> {
                   className="VulnerableApp-Facade-Content-Practice-Vulnerability-Header"
                 >
                   <div className="VulnerableApp-Facade-Content">
-                    <div id="__content__" data-testid={"VULNERABILITY_MAIN_CONTENT"}/>
+                    <div
+                      id="__content__"
+                      data-testid={"VULNERABILITY_MAIN_CONTENT"}
+                    />
                   </div>
                 </RSuitePanel>
                 {this.selectedLevel &&
@@ -138,6 +144,7 @@ export class Content extends React.Component<Props> {
                   >
                     <ol data-testid={"VULNERABILITY_HINTS"}>
                       {this.selectedLevel.hints.map((hint) => {
+                        // TODO: add key prop
                         return <li>{hint.description}</li>;
                       })}
                     </ol>
