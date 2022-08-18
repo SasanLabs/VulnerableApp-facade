@@ -19,4 +19,4 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: sasanlabs/owasp-vulnerableapp-facade:latest, sasanlabs/owasp-vulnerableapp-facade:1.1.0
+          tags: sasanlabs/owasp-vulnerableapp-facade:latest
