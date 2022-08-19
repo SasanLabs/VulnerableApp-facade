@@ -14,9 +14,12 @@ As we are seeing a lot of technological enhancements in the industry in the past
 ## How to run the project
 VulnerableApp-facade is a farm of vulnerable applications where each application runs as a docker container. VulnerableApp-facade has `docker-compose.yml` file which contains docker configuration of other vulnerable applications along with docker configuration of VulnerableApp-facade. 
 ### Simple Start ###
-In order to run entire suit please download and install [Docker Compose](https://docs.docker.com/compose/install/). After installation, please copy the [docker-compose.yml](https://github.com/SasanLabs/VulnerableApp-facade/blob/main/docker-compose.yml) and run the following command from terminal:
-``` docker-compose up ```
-Then navigate to ``` http://localhost:80 ``` to play with the application
+In order to run entire suit please follow the below steps:
+1. Download and Install [Docker Compose](https://docs.docker.com/compose/install/). 
+2. Clone the github repository
+3. Open the terminal and navigate to the Project root directory
+4. Run the command: ``` docker-compose pull && docker-compose up ```
+5. Navigate to browser and visit `http://localhost` to play with the application.
 
 ### Advanced Start ###
 As [docker-compose.yml](https://github.com/SasanLabs/VulnerableApp-facade/blob/main/docker-compose.yml) contains all the applications which adhere to the schema of VulnerableApp-facade so in cause you are looking for specific vulnerable applications like only Java related vulnerable applications then remove other vulnerable applications from [docker-compose.yml](https://github.com/SasanLabs/VulnerableApp-facade/blob/main/docker-compose.yml) and then run steps as mentioned in the [Simple start step](#simple-start).
@@ -33,7 +36,7 @@ In order to do changes in React UI component,
 3. and run `npm run start` which will start the npm server.
 4. navigate to `http://localhost:3000` to verify/view the changes
  
-Make sure that the application docker is running such that you can verify the changes.
+Make sure that the docker application is running such that you can verify the changes.
 
 In order to make changes in Lua module, the easy way is to add the changes in the lua files and build the docker image with those changes
 by executing command: ```docker build . -t owasp-vulnerableapp-facade``` and then run the project as mentioned at [How to run the project](#how-to-run-the-project) 
