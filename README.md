@@ -29,15 +29,15 @@ VulnerableApp-facade have majorly 2 components:
 1. React UI component
 2. Lua module
 
-React UI component is used to load the skeleton UserInterface and Lua module is used to merge the Vulnerability Definitions exposed by different vulnerable applications.
+**React UI component** is used to load the skeleton UserInterface and Lua module is used to merge the Vulnerability Definitions exposed by different vulnerable applications.
 In order to do changes in React UI component, 
-1. please navigate to `facade-app` folder 
-2. add the changes
-3. and run `npm run start` which will start the npm server.
-4. navigate to `http://localhost:3000` to verify/view the changes
- 
-Make sure that the docker application is running such that you can verify the changes.
+1. Start the VulnerableApplication-facade using steps mentioned at [Simple Start](#simple-start). This is an important step as it will start the underlying VulnerableApplications which will be invoked by the Facade UI internally. Consider the underlying VulnerableApplications as the backend for Facade application.
+3. Navigate to `facade-app` folder 
+4. Do the code changes
+5. Run `npm run start` which will start the npm server.
+6. Navigate to `http://localhost:3000` to verify/view the changes
 
+**Lua module** is used for handling the Nginx configuration and communication between facade application and VulnerableApplications which is the backend for facade application. 
 In order to make changes in Lua module, the easy way is to add the changes in the lua files and build the docker image with those changes
 by executing command: ```docker build . -t owasp-vulnerableapp-facade``` and then run the project as mentioned at [How to run the project](#how-to-run-the-project) 
 
