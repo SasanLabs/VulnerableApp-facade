@@ -15,8 +15,31 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       -
+        name: Checkout new changes
+        uses: actions/checkout@v2
+        with:
+          java-version: 1.8
+          fetch-depth: 0
+      -
+        name: Setup GitVersion action
+        uses: gittools/actions/gitversion/setup@v0.9.7
+        with:
+          versionSpec: '5.x'
+      -
+        name: Execute GitVersion action
+        id: gitversion
+        uses: gittools/actions/gitversion/execute@v0.9.7
+      -
+        name: Create tag for repo
+        uses: tvdias/github-tagger@v0.0.1
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          tag: '${{ steps.gitversion.outputs.semver }}'
+      -
         name: Push docker images
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: sasanlabs/owasp-vulnerableapp-facade:latest
+          tags: |
+            sasanlabs/owasp-vulnerableapp-facade:unreleased
+            sasanlabs/owasp-vulnerableapp-facade:${{ steps.gitversion.outputs.semver }}
