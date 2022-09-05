@@ -1,0 +1,47 @@
+# This workflow automates release creation and builds and deploys to DockerHub
+name: Release project
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_notes:
+        description: 'Optional notes for the release'
+        required: false
+        type: string
+
+jobs:
+  login:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout new changes 
+        uses: actions/checkout@v2
+        with: 
+          java-version: 1.8
+          fetch-depth: 0
+      -
+        name: Get the latest tag in repository
+        id: TAG
+        run: |
+          echo "::set-output name=LATEST_VERSION::$(git tag | sort -Vr | head -n 1)"
+      -
+        name: Login to DockerHub
+        uses: docker/login-action@v1
+        with: 
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+      -
+        name: Publish release on GitHub
+        uses: softprops/action-gh-release@v1
+        with:
+          name: 'VulnerableApp-Facade-v${{ steps.TAG.outputs.LATEST_VERSION }}'
+          tag_name: '${{ steps.TAG.outputs.LATEST_VERSION }}'
+          body: '${{ inputs.release_notes }}'
+      -
+        name: Push docker images
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: |
+            sasanlabs/owasp-vulnerableapp-facade:latest
+            sasanlabs/owasp-vulnerableapp-facade:${{ steps.TAG.outputs.LATEST_VERSION }}
