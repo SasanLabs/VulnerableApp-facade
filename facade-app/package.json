@@ -11,6 +11,7 @@
     "@types/node": "^12.20.13",
     "@types/react": "^17.0.6",
     "@types/react-dom": "^17.0.5",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -22,15 +23,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
-    "pretty": "prettier --write \"./**/*.{js,jsx,tsx,css}\""
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "pretty": "prettier --write \"./**/*.{js,jsx,tsx,css}\"",
+    "lint": "eslint \"./**/*.{js,jsx,tsx,css}\"",
+    "lint:fix": "npm run lint -- --fix",
+    "prepare": "cd .. && husky install facade-app/.husky"
   },
   "browserslist": {
     "production": [
@@ -46,13 +44,20 @@
   },
   "jest": {
     "collectCoverageFrom": [
-        "<rootDir>/src/**/*.{js,ts,jsx,tsx}",
-        "!<rootDir>/src/test/**",
-        "!<rootDir>/src/interface/*",
-        "!<rootDir>/src/react-app-env.d.ts"
+      "<rootDir>/src/**/*.{js,ts,jsx,tsx}",
+      "!<rootDir>/src/test/**",
+      "!<rootDir>/src/interface/*",
+      "!<rootDir>/src/react-app-env.d.ts"
     ]
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.32.0",
+    "@typescript-eslint/parser": "^5.32.0",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest": "^26.8.0",
+    "eslint-plugin-react": "^7.30.1",
+    "husky": "^8.0.1",
     "ts-node": "^10.7.0"
   }
 }

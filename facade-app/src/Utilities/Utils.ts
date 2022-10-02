@@ -20,7 +20,7 @@ export function getResource(uri: string, callback: Function, isJson: boolean): v
 }
 
 export function removeChildByParentElementId(elementId: string): void {
-  let documentElement = document.getElementById(elementId);
+  const documentElement = document.getElementById(elementId);
   while (documentElement && documentElement.lastElementChild) {
     documentElement.removeChild(documentElement.lastElementChild);
   }

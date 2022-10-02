@@ -8,9 +8,9 @@ import {
   Icon as RSuiteIcon,
   Dropdown as RSuiteDropDown,
 } from "rsuite";
-import { Props } from "../interface/Props";
+import { GlobalStateProps } from "../interface/GlobalStateProps";
 
-export default class Header extends React.Component<Props, {}> {
+export default class Header extends React.Component<GlobalStateProps> {
   render() {
     const { globalState, setGlobalState } = this.props;
     return (

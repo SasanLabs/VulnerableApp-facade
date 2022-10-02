@@ -9,7 +9,7 @@ interface IFooter extends FooterProps {
   copyRightYear: number;
 }
 
-export default class Footer extends React.Component<IFooter, {}> {
+export default class Footer extends React.Component<IFooter> {
   render() {
     const { copyRightYear } = this.props;
     return (

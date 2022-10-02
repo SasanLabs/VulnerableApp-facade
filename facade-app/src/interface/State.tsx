@@ -30,8 +30,8 @@ export enum ResourceType {
 
 export class ResourceURI {
   resourceType: ResourceType = ResourceType.HTML;
-  isAbsolute: boolean = false;
-  uri: string = "/";
+  isAbsolute = false;
+  uri = "/";
 }
 
 export interface ResourceInformation {
@@ -115,7 +115,8 @@ export interface GlobalState {
   activeApplication?: string;
   activeVulnerability?: string;
   activeLevel?: string;
-  isSuccessfullyLoaded: boolean;
+  // note: added ? here
+  isSuccessfullyLoaded?: boolean;
   activateHomePage: boolean;
   activateAboutUsPage: boolean;
   showHints: boolean;

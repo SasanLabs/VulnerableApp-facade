@@ -1,10 +1,10 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { HomePage} from "../Components/HomePage";
+import { HomePage } from "../Components/HomePage";
 
 describe("Home Page", () => {
   it("renders correctly", () => {
-    const { container } = render(<HomePage/>);
+    const { container } = render(<HomePage />);
 
     expect(container).toMatchSnapshot();
   });
@@ -24,11 +24,11 @@ describe("Home Page", () => {
     expect(header).toHaveAttribute("role", "rowheader");
   });
 
-
   it("renders main description", () => {
-    render(<HomePage/>);
+    render(<HomePage />);
 
-    const description = "As we are seeing a lot of technological enhancements in the industry" +
+    const description =
+      "As we are seeing a lot of technological enhancements in the industry" +
       " from past few years, these technical enhancements are solving one or" +
       " the other problem however, with that they also bring few different" +
       " vulnerabilities. Vulnerable Applications are generally written in one" +
@@ -39,7 +39,7 @@ describe("Home Page", () => {
       " it heavier and complex which finally makes it unmaintainable. So" +
       " VulnerableApp-facade is built to solve this problem by building a" +
       " distributed farm of Vulnerable Applications such that they can be" +
-      " built agnostic to tech stacks."
+      " built agnostic to tech stacks.";
 
     const container = screen.getByTestId("HOME_PAGE_CONTENT_CONTAINER");
     expect(container).toBeInTheDocument();
@@ -47,7 +47,7 @@ describe("Home Page", () => {
   });
 
   it("renders hero image", () => {
-    render(<HomePage/>);
+    render(<HomePage />);
 
     const image = screen.getByRole("img");
     expect(image).toBeInTheDocument();
@@ -55,21 +55,22 @@ describe("Home Page", () => {
   });
 
   it("renders warning header", () => {
-    render(<HomePage/>);
+    render(<HomePage />);
 
     const header = screen.getByTestId("HOME_PAGE_WARNING_CONTAINER");
     expect(header).toBeInTheDocument();
     expect(header).toHaveTextContent("Warning");
-  })
+  });
 
   it("renders warning text", () => {
-    render(<HomePage/>);
+    render(<HomePage />);
 
-    const text = "As VulnerableApp-Facade is a proxy wrapper over the actual Vulnerable" +
+    const text =
+      "As VulnerableApp-Facade is a proxy wrapper over the actual Vulnerable" +
       " Applications which can be very dangerous if exposed over the public" +
       " internet. So we suggest you to please run it in local dev environments" +
-      " or environments without any public internet access."
+      " or environments without any public internet access.";
     const container = screen.getByTestId("HOME_PAGE_WARNING_CONTAINER");
     expect(container).toHaveTextContent(text);
-  })
-})
+  });
+});
