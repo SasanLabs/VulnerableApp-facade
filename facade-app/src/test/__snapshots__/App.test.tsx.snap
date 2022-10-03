@@ -1,0 +1,2293 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders correctly 1`] = `
+<div>
+  <div
+    class="rs-container show-container"
+  >
+    <div
+      class="rs-header"
+    >
+      <div
+        class="rs-navbar rs-navbar-inverse"
+        role="navigation"
+      >
+        <div
+          class="rs-navbar-header"
+        >
+          <img
+            alt="vulnerable app logo"
+            height="55"
+            src="Logo.png"
+            width="55"
+          />
+        </div>
+        <div
+          class="rs-navbar-body"
+        >
+          <div
+            class="rs-nav rs-nav-default rs-navbar-nav rs-nav-horizontal"
+          >
+            <ul>
+              <li
+                class="rs-nav-item"
+              >
+                <a
+                  class="rs-nav-item-content"
+                  role="button"
+                  tabindex="0"
+                >
+                  <b>
+                    Owasp VulnerableApp-Facade
+                  </b>
+                  <span
+                    class="rs-ripple-pond"
+                  >
+                    <span
+                      class="rs-ripple"
+                    />
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="rs-nav rs-nav-default rs-navbar-nav rs-navbar-right rs-nav-horizontal"
+          >
+            <ul>
+              <li
+                class="rs-nav-item"
+              >
+                <a
+                  class="rs-nav-item-content"
+                  role="button"
+                  tabindex="0"
+                >
+                  <i
+                    class="rs-icon rs-icon-home"
+                    role="img"
+                  />
+                  Home
+                  <span
+                    class="rs-ripple-pond"
+                  >
+                    <span
+                      class="rs-ripple"
+                    />
+                  </span>
+                </a>
+              </li>
+              <li
+                class="rs-nav-item"
+              >
+                <a
+                  class="rs-nav-item-content"
+                  role="button"
+                  tabindex="0"
+                >
+                  About Us
+                  <span
+                    class="rs-ripple-pond"
+                  >
+                    <span
+                      class="rs-ripple"
+                    />
+                  </span>
+                </a>
+              </li>
+              <a
+                href="https://github.com/SasanLabs/VulnerableApp-facade"
+              >
+                <li
+                  class="rs-nav-item"
+                >
+                  <a
+                    class="rs-nav-item-content"
+                    role="button"
+                    tabindex="0"
+                  >
+                    <i
+                      class="rs-icon rs-icon-github"
+                      role="img"
+                    />
+                    Github
+                    <span
+                      class="rs-ripple-pond"
+                    >
+                      <span
+                        class="rs-ripple"
+                      />
+                    </span>
+                  </a>
+                </li>
+              </a>
+              <li
+                class="rs-dropdown rs-dropdown-placement-bottom-start"
+                role="menu"
+              >
+                <ul
+                  class="rs-dropdown-menu"
+                  role="menu"
+                >
+                  <a
+                    href="https://github.com/SasanLabs/VulnerableApp"
+                  >
+                    <li
+                      class="rs-dropdown-item rs-dropdown-item-with-icon"
+                    >
+                      <a
+                        class="rs-dropdown-item-content"
+                        tabindex="-1"
+                      >
+                        <i
+                          class="rs-dropdown-item-menu-icon rs-icon rs-icon-github"
+                          role="img"
+                        />
+                        Owasp VulnerableApp
+                      </a>
+                    </li>
+                  </a>
+                  <a
+                    href="https://github.com/SasanLabs/owasp-zap-jwt-addon"
+                  >
+                     
+                    <li
+                      class="rs-dropdown-item rs-dropdown-item-with-icon"
+                    >
+                      <a
+                        class="rs-dropdown-item-content"
+                        tabindex="-1"
+                      >
+                        <i
+                          class="rs-dropdown-item-menu-icon rs-icon rs-icon-github"
+                          role="img"
+                        />
+                        ZAP JWT Addon
+                      </a>
+                    </li>
+                  </a>
+                  <a
+                    href="https://github.com/SasanLabs/owasp-zap-fileupload-addon"
+                  >
+                    <li
+                      class="rs-dropdown-item rs-dropdown-item-with-icon"
+                    >
+                      <a
+                        class="rs-dropdown-item-content"
+                        tabindex="-1"
+                      >
+                        <i
+                          class="rs-dropdown-item-menu-icon rs-icon rs-icon-github"
+                          role="img"
+                        />
+                        ZAP FileUpload Addon
+                      </a>
+                    </li>
+                  </a>
+                </ul>
+                <a
+                  class="rs-btn rs-btn-subtle rs-dropdown-toggle"
+                  tabindex="0"
+                >
+                  Projects by SasanLabs
+                  <span
+                    class="rs-dropdown-toggle-caret"
+                  />
+                  <span
+                    class="rs-ripple-pond"
+                  >
+                    <span
+                      class="rs-ripple"
+                    />
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="rs-container show-container rs-container-has-sidebar"
+      style="display: flex; width: 100vw;"
+    >
+      <div
+        class="rs-sidebar"
+        style="flex: 0 0 260px; width: 260px;"
+      >
+        <div
+          data-testid="LEFT_NAV_CONTAINER"
+        >
+          <div
+            class="rs-sidenav rs-sidenav-default rs-sidenav-collapse-in"
+            role="navigation"
+          >
+            <div
+              class="rs-sidenav-body"
+            >
+              <div
+                class="rs-nav rs-nav-default rs-sidenav-nav rs-nav-vertical"
+              >
+                <ul>
+                  <li
+                    class="rs-dropdown VulnerableApp-Facade-LeftNav-Application rs-dropdown-placement-bottom-start rs-dropdown-expand"
+                    role="menu"
+                  >
+                    <ul
+                      class="rs-dropdown-menu rs-dropdown-menu-collapse-in"
+                      role="menu"
+                    >
+                      <li
+                        class="rs-dropdown-item-divider"
+                        role="separator"
+                      />
+                      <div
+                        class="rs-dropdown VulnerableApp-Facade-LeftNav-Vulnerability-Level rs-dropdown-placement-bottom-start rs-dropdown-collapse"
+                        role="menu"
+                      >
+                        <ul
+                          class="rs-dropdown-menu rs-dropdown-menu-collapse-out"
+                          role="menu"
+                        >
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.CommandInjection.LEVEL_1"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_1
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.CommandInjection.LEVEL_2"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_2
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.CommandInjection.LEVEL_3"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_3
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.CommandInjection.LEVEL_4"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_4
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.CommandInjection.LEVEL_5"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_5
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.CommandInjection.LEVEL_6"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-lock"
+                              />
+                              LEVEL_6
+                            </a>
+                          </li>
+                        </ul>
+                        <a
+                          class="rs-btn rs-btn-subtle rs-dropdown-toggle"
+                          data-testid="VulnerableApp.CommandInjection"
+                          tabindex="0"
+                        >
+                          CommandInjection
+                          <span
+                            class="rs-dropdown-toggle-caret"
+                          />
+                          <span
+                            class="rs-ripple-pond"
+                          >
+                            <span
+                              class="rs-ripple"
+                            />
+                          </span>
+                        </a>
+                      </div>
+                      <div
+                        class="rs-dropdown VulnerableApp-Facade-LeftNav-Vulnerability-Level rs-dropdown-placement-bottom-start rs-dropdown-collapse"
+                        role="menu"
+                      >
+                        <ul
+                          class="rs-dropdown-menu rs-dropdown-menu-collapse-out"
+                          role="menu"
+                        >
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.UnrestrictedFileUpload.LEVEL_1"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_1
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.UnrestrictedFileUpload.LEVEL_2"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_2
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.UnrestrictedFileUpload.LEVEL_3"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_3
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.UnrestrictedFileUpload.LEVEL_4"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_4
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.UnrestrictedFileUpload.LEVEL_5"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_5
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.UnrestrictedFileUpload.LEVEL_6"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_6
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.UnrestrictedFileUpload.LEVEL_7"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_7
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.UnrestrictedFileUpload.LEVEL_8"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_8
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.UnrestrictedFileUpload.LEVEL_9"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-lock"
+                              />
+                              LEVEL_9
+                            </a>
+                          </li>
+                        </ul>
+                        <a
+                          class="rs-btn rs-btn-subtle rs-dropdown-toggle"
+                          data-testid="VulnerableApp.UnrestrictedFileUpload"
+                          tabindex="0"
+                        >
+                          UnrestrictedFileUpload
+                          <span
+                            class="rs-dropdown-toggle-caret"
+                          />
+                          <span
+                            class="rs-ripple-pond"
+                          >
+                            <span
+                              class="rs-ripple"
+                            />
+                          </span>
+                        </a>
+                      </div>
+                      <div
+                        class="rs-dropdown VulnerableApp-Facade-LeftNav-Vulnerability-Level rs-dropdown-placement-bottom-start rs-dropdown-collapse"
+                        role="menu"
+                      >
+                        <ul
+                          class="rs-dropdown-menu rs-dropdown-menu-collapse-out"
+                          role="menu"
+                        >
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.JWTVulnerability.LEVEL_1"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_1
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.JWTVulnerability.LEVEL_2"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_2
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.JWTVulnerability.LEVEL_3"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_3
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.JWTVulnerability.LEVEL_4"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_4
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.JWTVulnerability.LEVEL_5"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_5
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.JWTVulnerability.LEVEL_6"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_6
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.JWTVulnerability.LEVEL_7"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_7
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.JWTVulnerability.LEVEL_8"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_8
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.JWTVulnerability.LEVEL_9"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_9
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.JWTVulnerability.LEVEL_10"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_10
+                            </a>
+                          </li>
+                        </ul>
+                        <a
+                          class="rs-btn rs-btn-subtle rs-dropdown-toggle"
+                          data-testid="VulnerableApp.JWTVulnerability"
+                          tabindex="0"
+                        >
+                          JWTVulnerability
+                          <span
+                            class="rs-dropdown-toggle-caret"
+                          />
+                          <span
+                            class="rs-ripple-pond"
+                          >
+                            <span
+                              class="rs-ripple"
+                            />
+                          </span>
+                        </a>
+                      </div>
+                      <div
+                        class="rs-dropdown VulnerableApp-Facade-LeftNav-Vulnerability-Level rs-dropdown-placement-bottom-start rs-dropdown-collapse"
+                        role="menu"
+                      >
+                        <ul
+                          class="rs-dropdown-menu rs-dropdown-menu-collapse-out"
+                          role="menu"
+                        >
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.Http3xxStatusCodeBasedInjection.LEVEL_1"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_1
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.Http3xxStatusCodeBasedInjection.LEVEL_2"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_2
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.Http3xxStatusCodeBasedInjection.LEVEL_3"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_3
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.Http3xxStatusCodeBasedInjection.LEVEL_4"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_4
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.Http3xxStatusCodeBasedInjection.LEVEL_5"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_5
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.Http3xxStatusCodeBasedInjection.LEVEL_6"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_6
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.Http3xxStatusCodeBasedInjection.LEVEL_7"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_7
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.Http3xxStatusCodeBasedInjection.LEVEL_8"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_8
+                            </a>
+                          </li>
+                        </ul>
+                        <a
+                          class="rs-btn rs-btn-subtle rs-dropdown-toggle"
+                          data-testid="VulnerableApp.Http3xxStatusCodeBasedInjection"
+                          tabindex="0"
+                        >
+                          Http3xxStatusCodeBasedInjection
+                          <span
+                            class="rs-dropdown-toggle-caret"
+                          />
+                          <span
+                            class="rs-ripple-pond"
+                          >
+                            <span
+                              class="rs-ripple"
+                            />
+                          </span>
+                        </a>
+                      </div>
+                      <div
+                        class="rs-dropdown VulnerableApp-Facade-LeftNav-Vulnerability-Level rs-dropdown-placement-bottom-start rs-dropdown-collapse"
+                        role="menu"
+                      >
+                        <ul
+                          class="rs-dropdown-menu rs-dropdown-menu-collapse-out"
+                          role="menu"
+                        >
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.PathTraversal.LEVEL_1"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_1
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.PathTraversal.LEVEL_2"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_2
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.PathTraversal.LEVEL_3"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_3
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.PathTraversal.LEVEL_4"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_4
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.PathTraversal.LEVEL_5"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_5
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.PathTraversal.LEVEL_6"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_6
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.PathTraversal.LEVEL_7"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_7
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.PathTraversal.LEVEL_8"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_8
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.PathTraversal.LEVEL_9"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_9
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.PathTraversal.LEVEL_10"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_10
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.PathTraversal.LEVEL_11"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_11
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.PathTraversal.LEVEL_12"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_12
+                            </a>
+                          </li>
+                        </ul>
+                        <a
+                          class="rs-btn rs-btn-subtle rs-dropdown-toggle"
+                          data-testid="VulnerableApp.PathTraversal"
+                          tabindex="0"
+                        >
+                          PathTraversal
+                          <span
+                            class="rs-dropdown-toggle-caret"
+                          />
+                          <span
+                            class="rs-ripple-pond"
+                          >
+                            <span
+                              class="rs-ripple"
+                            />
+                          </span>
+                        </a>
+                      </div>
+                      <div
+                        class="rs-dropdown VulnerableApp-Facade-LeftNav-Vulnerability-Level rs-dropdown-placement-bottom-start rs-dropdown-collapse"
+                        role="menu"
+                      >
+                        <ul
+                          class="rs-dropdown-menu rs-dropdown-menu-collapse-out"
+                          role="menu"
+                        >
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.RemoteFileInclusion.LEVEL_1"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_1
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.RemoteFileInclusion.LEVEL_2"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_2
+                            </a>
+                          </li>
+                        </ul>
+                        <a
+                          class="rs-btn rs-btn-subtle rs-dropdown-toggle"
+                          data-testid="VulnerableApp.RemoteFileInclusion"
+                          tabindex="0"
+                        >
+                          RemoteFileInclusion
+                          <span
+                            class="rs-dropdown-toggle-caret"
+                          />
+                          <span
+                            class="rs-ripple-pond"
+                          >
+                            <span
+                              class="rs-ripple"
+                            />
+                          </span>
+                        </a>
+                      </div>
+                      <div
+                        class="rs-dropdown VulnerableApp-Facade-LeftNav-Vulnerability-Level rs-dropdown-placement-bottom-start rs-dropdown-collapse"
+                        role="menu"
+                      >
+                        <ul
+                          class="rs-dropdown-menu rs-dropdown-menu-collapse-out"
+                          role="menu"
+                        >
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.BlindSQLInjectionVulnerability.LEVEL_1"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_1
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.BlindSQLInjectionVulnerability.LEVEL_2"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_2
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.BlindSQLInjectionVulnerability.LEVEL_3"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-lock"
+                              />
+                              LEVEL_3
+                            </a>
+                          </li>
+                        </ul>
+                        <a
+                          class="rs-btn rs-btn-subtle rs-dropdown-toggle"
+                          data-testid="VulnerableApp.BlindSQLInjectionVulnerability"
+                          tabindex="0"
+                        >
+                          BlindSQLInjectionVulnerability
+                          <span
+                            class="rs-dropdown-toggle-caret"
+                          />
+                          <span
+                            class="rs-ripple-pond"
+                          >
+                            <span
+                              class="rs-ripple"
+                            />
+                          </span>
+                        </a>
+                      </div>
+                      <div
+                        class="rs-dropdown VulnerableApp-Facade-LeftNav-Vulnerability-Level rs-dropdown-placement-bottom-start rs-dropdown-collapse"
+                        role="menu"
+                      >
+                        <ul
+                          class="rs-dropdown-menu rs-dropdown-menu-collapse-out"
+                          role="menu"
+                        >
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.ErrorBasedSQLInjectionVulnerability.LEVEL_1"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_1
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.ErrorBasedSQLInjectionVulnerability.LEVEL_2"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_2
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.ErrorBasedSQLInjectionVulnerability.LEVEL_3"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_3
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.ErrorBasedSQLInjectionVulnerability.LEVEL_4"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_4
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.ErrorBasedSQLInjectionVulnerability.LEVEL_5"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-lock"
+                              />
+                              LEVEL_5
+                            </a>
+                          </li>
+                        </ul>
+                        <a
+                          class="rs-btn rs-btn-subtle rs-dropdown-toggle"
+                          data-testid="VulnerableApp.ErrorBasedSQLInjectionVulnerability"
+                          tabindex="0"
+                        >
+                          ErrorBasedSQLInjectionVulnerability
+                          <span
+                            class="rs-dropdown-toggle-caret"
+                          />
+                          <span
+                            class="rs-ripple-pond"
+                          >
+                            <span
+                              class="rs-ripple"
+                            />
+                          </span>
+                        </a>
+                      </div>
+                      <div
+                        class="rs-dropdown VulnerableApp-Facade-LeftNav-Vulnerability-Level rs-dropdown-placement-bottom-start rs-dropdown-collapse"
+                        role="menu"
+                      >
+                        <ul
+                          class="rs-dropdown-menu rs-dropdown-menu-collapse-out"
+                          role="menu"
+                        >
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.UnionBasedSQLInjectionVulnerability.LEVEL_1"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_1
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.UnionBasedSQLInjectionVulnerability.LEVEL_2"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_2
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.UnionBasedSQLInjectionVulnerability.LEVEL_3"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-lock"
+                              />
+                              LEVEL_3
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.UnionBasedSQLInjectionVulnerability.LEVEL_4"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-lock"
+                              />
+                              LEVEL_4
+                            </a>
+                          </li>
+                        </ul>
+                        <a
+                          class="rs-btn rs-btn-subtle rs-dropdown-toggle"
+                          data-testid="VulnerableApp.UnionBasedSQLInjectionVulnerability"
+                          tabindex="0"
+                        >
+                          UnionBasedSQLInjectionVulnerability
+                          <span
+                            class="rs-dropdown-toggle-caret"
+                          />
+                          <span
+                            class="rs-ripple-pond"
+                          >
+                            <span
+                              class="rs-ripple"
+                            />
+                          </span>
+                        </a>
+                      </div>
+                      <div
+                        class="rs-dropdown VulnerableApp-Facade-LeftNav-Vulnerability-Level rs-dropdown-placement-bottom-start rs-dropdown-collapse"
+                        role="menu"
+                      >
+                        <ul
+                          class="rs-dropdown-menu rs-dropdown-menu-collapse-out"
+                          role="menu"
+                        >
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.SSRFVulnerability.LEVEL_1"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_1
+                            </a>
+                          </li>
+                        </ul>
+                        <a
+                          class="rs-btn rs-btn-subtle rs-dropdown-toggle"
+                          data-testid="VulnerableApp.SSRFVulnerability"
+                          tabindex="0"
+                        >
+                          SSRFVulnerability
+                          <span
+                            class="rs-dropdown-toggle-caret"
+                          />
+                          <span
+                            class="rs-ripple-pond"
+                          >
+                            <span
+                              class="rs-ripple"
+                            />
+                          </span>
+                        </a>
+                      </div>
+                      <div
+                        class="rs-dropdown VulnerableApp-Facade-LeftNav-Vulnerability-Level rs-dropdown-placement-bottom-start rs-dropdown-collapse"
+                        role="menu"
+                      >
+                        <ul
+                          class="rs-dropdown-menu rs-dropdown-menu-collapse-out"
+                          role="menu"
+                        >
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.PersistentXSSInHTMLTagVulnerability.LEVEL_1"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_1
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.PersistentXSSInHTMLTagVulnerability.LEVEL_2"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_2
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.PersistentXSSInHTMLTagVulnerability.LEVEL_3"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_3
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.PersistentXSSInHTMLTagVulnerability.LEVEL_4"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_4
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.PersistentXSSInHTMLTagVulnerability.LEVEL_5"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_5
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.PersistentXSSInHTMLTagVulnerability.LEVEL_6"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_6
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.PersistentXSSInHTMLTagVulnerability.LEVEL_7"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-lock"
+                              />
+                              LEVEL_7
+                            </a>
+                          </li>
+                        </ul>
+                        <a
+                          class="rs-btn rs-btn-subtle rs-dropdown-toggle"
+                          data-testid="VulnerableApp.PersistentXSSInHTMLTagVulnerability"
+                          tabindex="0"
+                        >
+                          PersistentXSSInHTMLTagVulnerability
+                          <span
+                            class="rs-dropdown-toggle-caret"
+                          />
+                          <span
+                            class="rs-ripple-pond"
+                          >
+                            <span
+                              class="rs-ripple"
+                            />
+                          </span>
+                        </a>
+                      </div>
+                      <div
+                        class="rs-dropdown VulnerableApp-Facade-LeftNav-Vulnerability-Level rs-dropdown-placement-bottom-start rs-dropdown-collapse"
+                        role="menu"
+                      >
+                        <ul
+                          class="rs-dropdown-menu rs-dropdown-menu-collapse-out"
+                          role="menu"
+                        >
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.XSSWithHtmlTagInjection.LEVEL_1"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_1
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.XSSWithHtmlTagInjection.LEVEL_2"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_2
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.XSSWithHtmlTagInjection.LEVEL_3"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_3
+                            </a>
+                          </li>
+                        </ul>
+                        <a
+                          class="rs-btn rs-btn-subtle rs-dropdown-toggle"
+                          data-testid="VulnerableApp.XSSWithHtmlTagInjection"
+                          tabindex="0"
+                        >
+                          XSSWithHtmlTagInjection
+                          <span
+                            class="rs-dropdown-toggle-caret"
+                          />
+                          <span
+                            class="rs-ripple-pond"
+                          >
+                            <span
+                              class="rs-ripple"
+                            />
+                          </span>
+                        </a>
+                      </div>
+                      <div
+                        class="rs-dropdown VulnerableApp-Facade-LeftNav-Vulnerability-Level rs-dropdown-placement-bottom-start rs-dropdown-collapse"
+                        role="menu"
+                      >
+                        <ul
+                          class="rs-dropdown-menu rs-dropdown-menu-collapse-out"
+                          role="menu"
+                        >
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.XSSInImgTagAttribute.LEVEL_1"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_1
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.XSSInImgTagAttribute.LEVEL_2"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_2
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.XSSInImgTagAttribute.LEVEL_3"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_3
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.XSSInImgTagAttribute.LEVEL_4"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_4
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.XSSInImgTagAttribute.LEVEL_5"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_5
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.XSSInImgTagAttribute.LEVEL_6"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_6
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.XSSInImgTagAttribute.LEVEL_7"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-lock"
+                              />
+                              LEVEL_7
+                            </a>
+                          </li>
+                        </ul>
+                        <a
+                          class="rs-btn rs-btn-subtle rs-dropdown-toggle"
+                          data-testid="VulnerableApp.XSSInImgTagAttribute"
+                          tabindex="0"
+                        >
+                          XSSInImgTagAttribute
+                          <span
+                            class="rs-dropdown-toggle-caret"
+                          />
+                          <span
+                            class="rs-ripple-pond"
+                          >
+                            <span
+                              class="rs-ripple"
+                            />
+                          </span>
+                        </a>
+                      </div>
+                      <div
+                        class="rs-dropdown VulnerableApp-Facade-LeftNav-Vulnerability-Level rs-dropdown-placement-bottom-start rs-dropdown-collapse"
+                        role="menu"
+                      >
+                        <ul
+                          class="rs-dropdown-menu rs-dropdown-menu-collapse-out"
+                          role="menu"
+                        >
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.XXEVulnerability.LEVEL_1"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_1
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.XXEVulnerability.LEVEL_2"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_2
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.XXEVulnerability.LEVEL_3"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-lock"
+                              />
+                              LEVEL_3
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp.XXEVulnerability.LEVEL_4"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-lock"
+                              />
+                              LEVEL_4
+                            </a>
+                          </li>
+                        </ul>
+                        <a
+                          class="rs-btn rs-btn-subtle rs-dropdown-toggle"
+                          data-testid="VulnerableApp.XXEVulnerability"
+                          tabindex="0"
+                        >
+                          XXEVulnerability
+                          <span
+                            class="rs-dropdown-toggle-caret"
+                          />
+                          <span
+                            class="rs-ripple-pond"
+                          >
+                            <span
+                              class="rs-ripple"
+                            />
+                          </span>
+                        </a>
+                      </div>
+                    </ul>
+                    <a
+                      class="rs-btn rs-btn-subtle rs-dropdown-toggle"
+                      tabindex="0"
+                    >
+                      <i
+                        class="rs-icon rs-icon-server"
+                        role="img"
+                      />
+                      VulnerableApp
+                      <span
+                        class="rs-dropdown-toggle-caret"
+                      />
+                      <span
+                        class="rs-ripple-pond"
+                      >
+                        <span
+                          class="rs-ripple"
+                        />
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="rs-sidenav rs-sidenav-default rs-sidenav-collapse-in"
+            role="navigation"
+          >
+            <div
+              class="rs-sidenav-body"
+            >
+              <div
+                class="rs-nav rs-nav-default rs-sidenav-nav rs-nav-vertical"
+              >
+                <ul>
+                  <li
+                    class="rs-dropdown VulnerableApp-Facade-LeftNav-Application rs-dropdown-placement-bottom-start rs-dropdown-collapse"
+                    role="menu"
+                  >
+                    <ul
+                      class="rs-dropdown-menu rs-dropdown-menu-collapse-out"
+                      role="menu"
+                    >
+                      <li
+                        class="rs-dropdown-item-divider"
+                        role="separator"
+                      />
+                      <div
+                        class="rs-dropdown VulnerableApp-Facade-LeftNav-Vulnerability-Level rs-dropdown-placement-bottom-start rs-dropdown-collapse"
+                        role="menu"
+                      >
+                        <ul
+                          class="rs-dropdown-menu rs-dropdown-menu-collapse-out"
+                          role="menu"
+                        >
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp-jsp.FileUpload.LEVEL_1"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_1
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp-jsp.FileUpload.LEVEL_2"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_2
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp-jsp.FileUpload.LEVEL_3"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_3
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp-jsp.FileUpload.LEVEL_4"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_4
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp-jsp.FileUpload.LEVEL_5"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_5
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp-jsp.FileUpload.LEVEL_6"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_6
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp-jsp.FileUpload.LEVEL_7"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-lock"
+                              />
+                              LEVEL_7
+                            </a>
+                          </li>
+                        </ul>
+                        <a
+                          class="rs-btn rs-btn-subtle rs-dropdown-toggle"
+                          data-testid="VulnerableApp-jsp.FileUpload"
+                          tabindex="0"
+                        >
+                          FileUpload
+                          <span
+                            class="rs-dropdown-toggle-caret"
+                          />
+                          <span
+                            class="rs-ripple-pond"
+                          >
+                            <span
+                              class="rs-ripple"
+                            />
+                          </span>
+                        </a>
+                      </div>
+                    </ul>
+                    <a
+                      class="rs-btn rs-btn-subtle rs-dropdown-toggle"
+                      tabindex="0"
+                    >
+                      <i
+                        class="rs-icon rs-icon-server"
+                        role="img"
+                      />
+                      VulnerableApp-jsp
+                      <span
+                        class="rs-dropdown-toggle-caret"
+                      />
+                      <span
+                        class="rs-ripple-pond"
+                      >
+                        <span
+                          class="rs-ripple"
+                        />
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="rs-sidenav rs-sidenav-default rs-sidenav-collapse-in"
+            role="navigation"
+          >
+            <div
+              class="rs-sidenav-body"
+            >
+              <div
+                class="rs-nav rs-nav-default rs-sidenav-nav rs-nav-vertical"
+              >
+                <ul>
+                  <li
+                    class="rs-dropdown VulnerableApp-Facade-LeftNav-Application rs-dropdown-placement-bottom-start rs-dropdown-collapse"
+                    role="menu"
+                  >
+                    <ul
+                      class="rs-dropdown-menu rs-dropdown-menu-collapse-out"
+                      role="menu"
+                    >
+                      <li
+                        class="rs-dropdown-item-divider"
+                        role="separator"
+                      />
+                      <div
+                        class="rs-dropdown VulnerableApp-Facade-LeftNav-Vulnerability-Level rs-dropdown-placement-bottom-start rs-dropdown-collapse"
+                        role="menu"
+                      >
+                        <ul
+                          class="rs-dropdown-menu rs-dropdown-menu-collapse-out"
+                          role="menu"
+                        >
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp-php.FileUpload.LEVEL_1"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_1
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp-php.FileUpload.LEVEL_2"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_2
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp-php.FileUpload.LEVEL_3"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_3
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp-php.FileUpload.LEVEL_4"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_4
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp-php.FileUpload.LEVEL_5"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_5
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp-php.FileUpload.LEVEL_6"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_6
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp-php.FileUpload.LEVEL_7"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_7
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp-php.FileUpload.LEVEL_8"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_8
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp-php.FileUpload.LEVEL_9"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_9
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp-php.FileUpload.LEVEL_10"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_10
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp-php.FileUpload.LEVEL_11"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-unlock"
+                              />
+                              LEVEL_11
+                            </a>
+                          </li>
+                          <li
+                            class="rs-dropdown-item rs-dropdown-item-with-icon"
+                          >
+                            <a
+                              class="rs-dropdown-item-content"
+                              data-testid="VulnerableApp-php.FileUpload.LEVEL_12"
+                              tabindex="-1"
+                            >
+                              <i
+                                class="rs-dropdown-item-menu-icon rs-icon rs-icon-lock"
+                              />
+                              LEVEL_12
+                            </a>
+                          </li>
+                        </ul>
+                        <a
+                          class="rs-btn rs-btn-subtle rs-dropdown-toggle"
+                          data-testid="VulnerableApp-php.FileUpload"
+                          tabindex="0"
+                        >
+                          FileUpload
+                          <span
+                            class="rs-dropdown-toggle-caret"
+                          />
+                          <span
+                            class="rs-ripple-pond"
+                          >
+                            <span
+                              class="rs-ripple"
+                            />
+                          </span>
+                        </a>
+                      </div>
+                    </ul>
+                    <a
+                      class="rs-btn rs-btn-subtle rs-dropdown-toggle"
+                      tabindex="0"
+                    >
+                      <i
+                        class="rs-icon rs-icon-server"
+                        role="img"
+                      />
+                      VulnerableApp-php
+                      <span
+                        class="rs-dropdown-toggle-caret"
+                      />
+                      <span
+                        class="rs-ripple-pond"
+                      >
+                        <span
+                          class="rs-ripple"
+                        />
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="VulnerableApp-Facade-Info"
+      >
+        <div>
+          <div
+            class="rs-panel-group"
+          >
+            <div
+              data-testid="HOME_PAGE_MAIN_CONTAINER"
+            >
+              <div
+                class="VulnerableApp-Facade-HomePage-Content-Header rs-panel rs-panel-default"
+              >
+                <div
+                  class="rs-panel-heading"
+                  role="rowheader"
+                  tabindex="-1"
+                >
+                  Welcome to Owasp VulnerableApp-Facade
+                </div>
+                <div
+                  class="rs-panel-body"
+                >
+                  <div
+                    class="VulnerableApp-Facade-HomePage-Content"
+                    data-testid="HOME_PAGE_CONTENT_CONTAINER"
+                  >
+                    As we are seeing a lot of technological enhancements in the industry from past few years, these technical enhancements are solving one or the other problem however, with that they also bring few different vulnerabilities. Vulnerable Applications are generally written in one of the techstacks like either Node.js or Java with a SQL or NoSQL database etc and hence they are not able to expand to a whole new set of vulnerabilities which are present in other technologies. Also adding more vulnerabilities in a single vulnerable application makes it heavier and complex which finally makes it unmaintainable. So VulnerableApp-facade is built to solve this problem by building a distributed farm of Vulnerable Applications such that they can be built agnostic to tech stacks.
+                    <p>
+                      Following is the design diagram of Owasp VulnerableApp-Facade:
+                    </p>
+                    <img
+                      alt="Unable to lead the design diagram"
+                      src="/images/VulnerableApp-facade.jpeg"
+                      width="80%"
+                    />
+                    <p>
+                      Here VulnerableApp-Facade is running as a gateway or a proxy which is routing calls to actual Vulnerable Applications based on a criteria defined in the nginx configuration.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="VulnerableApp-Facade-HomePage-Content-Header rs-panel rs-panel-default"
+                data-testid="HOME_PAGE_WARNING_CONTAINER"
+              >
+                <div
+                  class="rs-panel-heading"
+                  role="rowheader"
+                  tabindex="-1"
+                >
+                  Warning
+                </div>
+                <div
+                  class="rs-panel-body"
+                >
+                  <div
+                    class="VulnerableApp-Facade-HomePage-Content"
+                  >
+                    As VulnerableApp-Facade is a proxy wrapper over the actual Vulnerable Applications which can be very dangerous if exposed over the public internet. So we suggest you to please run it in local dev environments or environments without any public internet access.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer
+      class="rs-footer"
+    >
+      <div
+        class="rs-navbar rs-navbar-default"
+        role="navigation"
+      >
+        <div
+          class="rs-navbar-body"
+          style="text-align: center; height: 30px; font-size: 15px;"
+        >
+          <div
+            data-testid="FOOTER_COPYRIGHT_TEXT"
+          >
+            © Copyright 
+            2022
+            , SasanLabs
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+`;
