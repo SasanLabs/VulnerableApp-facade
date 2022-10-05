@@ -6,23 +6,62 @@ import {
 } from "../Utilities/Utils";
 import { ResourceType } from "../interface/State";
 
-global.fetch = jest.fn(() =>
-  Promise.resolve({
-    json: () =>
-      Promise.resolve({
-        isSuccessful: true,
-        data: { res: [] },
-      }),
-  })
-) as jest.Mock;
+interface CallbackParams {
+  isSuccessful: boolean;
+  data?: any;
+  error?: any;
+}
+
+const mockData = { res: [] };
+
+// This test is not working in this jest version. But it is working on latest version. This is a bug.
+// https://github.com/facebook/jest/issues/11607
+// https://github.com/facebook/create-react-app/issues/10094
 
 describe("getResource()", () => {
-  it("should call the callback function with the obj", () => {
-    const mockCallback = jest.fn();
-    getResource("/dummy_endpoint", mockCallback, true);
-    expect(getResource).toBeCalledWith("/dummy_endpoint", mockCallback, true);
-    // expect(fetch).toHaveBeenCalledWith("/dummy_endpoint");
-    // expect(mockCallback.mock.calls.length).toBe(1);
+  it("should call the callback function with the obj when isJson is true", (done) => {
+    //@ts-ignore
+    const fetchMock = jest.spyOn(global, "fetch").mockResolvedValueOnce({
+      ok: true,
+      json: jest.fn().mockResolvedValue(mockData),
+    });
+    const endpoint = "/dummy_endpoint";
+    const cb = ({ isSuccessful, data, error }: CallbackParams) => {
+      try {
+        expect(fetchMock).toHaveBeenCalled();
+        expect(fetchMock).toHaveBeenCalledWith(endpoint);
+        expect(isSuccessful).toBe(true);
+        expect(data).toBeTruthy();
+        expect(data).toBe(mockData);
+        expect(error).toBeFalsy();
+        done();
+      } catch (err) {
+        done(err);
+      }
+    };
+    getResource(endpoint, cb, true);
+  });
+
+  it("should call the callback function with the text when isJson is true", (done) => {
+    //@ts-ignore
+    const fetchMock = jest.spyOn(global, "fetch").mockRejectedValueOnce({
+      ok: false,
+      json: jest.fn().mockResolvedValue(mockData),
+    });
+    const endpoint = "/dummy_endpoint";
+    const cb = ({ isSuccessful, data, error }: CallbackParams) => {
+      try {
+        expect(fetchMock).toHaveBeenCalled();
+        expect(fetchMock).toHaveBeenCalledWith(endpoint);
+        expect(isSuccessful).toBe(false);
+        expect(data).toBeFalsy();
+        expect(error).toBeTruthy();
+        done();
+      } catch (err) {
+        done(err);
+      }
+    };
+    getResource(endpoint, cb, true);
   });
 });
 
