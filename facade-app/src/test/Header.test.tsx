@@ -190,4 +190,21 @@ describe("Header", () => {
       expect(text).toBeInTheDocument();
     });
   });
+
+  describe('scanner dropdown', () => {
+    it('renders scanner dropdown', () => {
+      const mock = () => jest.fn();
+      const state = {
+        isSuccessfullyLoaded: false,
+        activateAboutUsPage: false,
+        activateHomePage: true,
+        showHints: false,
+      };
+      render(<Header setGlobalState={mock} globalState={state} />);
+
+      const dropDownTitle = screen.getByText("Scanners");
+
+    });
+
+  })
 });
