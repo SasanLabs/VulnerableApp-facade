@@ -220,5 +220,18 @@ describe("Header", () => {
       expect(text).toBeInTheDocument();
     });
 
+    it('renders second item', () => {
+      const mock = () => jest.fn();
+      const state = {
+        isSuccessfullyLoaded: false,
+        activateAboutUsPage: false,
+        activateHomePage: true,
+        showHints: false,
+      };
+      render(<Header setGlobalState={mock} globalState={state}></Header>);
+      const text = screen.getByText("SAST");
+      
+    });
+
   })
 });
