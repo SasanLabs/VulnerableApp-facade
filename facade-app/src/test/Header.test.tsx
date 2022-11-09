@@ -204,6 +204,7 @@ describe("Header", () => {
 
       const dropDownTitle = screen.getByText("Scanners");
 
+      expect(dropDownTitle).toBeInTheDocument();
     });
 
   })
