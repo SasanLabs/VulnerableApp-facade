@@ -230,7 +230,7 @@ describe("Header", () => {
       };
       render(<Header setGlobalState={mock} globalState={state}></Header>);
       const text = screen.getByText("SAST");
-      
+      expect(text).toBeInTheDocument();
     });
 
   })
