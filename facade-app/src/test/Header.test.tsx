@@ -217,6 +217,7 @@ describe("Header", () => {
       };
       render(<Header setGlobalState={mock} globalState={state} />);
       const text = screen.getByText("DAST");  
+      expect(text).toBeInTheDocument();
     });
 
   })
