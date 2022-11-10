@@ -199,6 +199,52 @@ exports[`Header renders correctly 1`] = `
                 </span>
               </a>
             </li>
+            <li
+              class="rs-dropdown rs-dropdown-placement-bottom-start"
+              role="menu"
+            >
+              <ul
+                class="rs-dropdown-menu"
+                role="menu"
+              >
+                <li
+                  class="rs-dropdown-item"
+                >
+                  <a
+                    class="rs-dropdown-item-content"
+                    tabindex="-1"
+                  >
+                    DAST
+                  </a>
+                </li>
+                <li
+                  class="rs-dropdown-item"
+                >
+                  <a
+                    class="rs-dropdown-item-content"
+                    tabindex="-1"
+                  >
+                    SAST
+                  </a>
+                </li>
+              </ul>
+              <a
+                class="rs-btn rs-btn-subtle rs-dropdown-toggle"
+                tabindex="0"
+              >
+                Scanners
+                <span
+                  class="rs-dropdown-toggle-caret"
+                />
+                <span
+                  class="rs-ripple-pond"
+                >
+                  <span
+                    class="rs-ripple"
+                  />
+                </span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
