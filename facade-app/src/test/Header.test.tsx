@@ -191,8 +191,8 @@ describe("Header", () => {
     });
   });
 
-  describe('scanner dropdown', () => {
-    it('renders scanner dropdown', () => {
+  describe("scanner dropdown", () => {
+    it("renders scanner dropdown", () => {
       const mock = () => jest.fn();
       const state = {
         isSuccessfullyLoaded: false,
@@ -206,8 +206,8 @@ describe("Header", () => {
 
       expect(dropDownTitle).toBeInTheDocument();
     });
-    
-    it('renders first item', () => {
+
+    it("renders first item", () => {
       const mock = () => jest.fn();
       const state = {
         isSuccessfullyLoaded: false,
@@ -216,11 +216,11 @@ describe("Header", () => {
         showHints: false,
       };
       render(<Header setGlobalState={mock} globalState={state} />);
-      const text = screen.getByText("DAST");  
+      const text = screen.getByText("DAST");
       expect(text).toBeInTheDocument();
     });
 
-    it('renders second item', () => {
+    it("renders second item", () => {
       const mock = () => jest.fn();
       const state = {
         isSuccessfullyLoaded: false,
@@ -232,6 +232,5 @@ describe("Header", () => {
       const text = screen.getByText("SAST");
       expect(text).toBeInTheDocument();
     });
-
-  })
+  });
 });
