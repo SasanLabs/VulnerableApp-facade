@@ -64,10 +64,14 @@ export default class Header extends React.Component<Props, {}> {
               >
                 About Us
               </RSuiteNav.Item>
-                  <RSuiteDropDown title="Scanners">
-                    <RSuiteDropDown.Item title="Dynamic Application Security Testing">DAST</RSuiteDropDown.Item>
-                    <RSuiteDropDown.Item title="Static Application Security Testing">SAST</RSuiteDropDown.Item>
-                  </RSuiteDropDown>
+              <RSuiteDropDown title="Scanners">
+                <RSuiteDropDown.Item title="Dynamic Application Security Testing">
+                  DAST
+                </RSuiteDropDown.Item>
+                <RSuiteDropDown.Item title="Static Application Security Testing">
+                  SAST
+                </RSuiteDropDown.Item>
+              </RSuiteDropDown>
               <a href="https://github.com/SasanLabs/VulnerableApp-facade">
                 <RSuiteNav.Item
                   icon={<RSuiteIcon icon="github" role={"img"} />}
