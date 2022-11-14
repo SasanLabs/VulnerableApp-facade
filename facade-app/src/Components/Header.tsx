@@ -10,6 +10,8 @@ import {
 } from "rsuite";
 import { Props } from "../interface/Props";
 
+import "../styles/Header.css";
+
 export default class Header extends React.Component<Props, {}> {
   render() {
     const { globalState, setGlobalState } = this.props;
