@@ -224,6 +224,7 @@ exports[`Header renders correctly 1`] = `
                   <a
                     class="rs-dropdown-item-content"
                     tabindex="-1"
+                    title="Static Application Security Testing"
                   >
                     SAST
                   </a>
