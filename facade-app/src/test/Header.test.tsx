@@ -233,7 +233,7 @@ describe("Header", () => {
       expect(text).toBeInTheDocument();
     });
 
-    it("should have tooltip for DAST", async () => {
+    it("should have tooltip for DAST", () => {
       const mock = () => jest.fn();
       const state = {
         isSuccessfullyLoaded: false,
@@ -244,6 +244,19 @@ describe("Header", () => {
       const dast = "Dynamic Application Security Testing";
       render(<Header setGlobalState={mock} globalState={state}></Header>);
       expect(screen.getByTitle(dast)).toBeInTheDocument();
+    });
+
+    it("should have tooltip for SAST", () => {
+      const mock = () => jest.fn();
+      const state = {
+        isSuccessfullyLoaded: false,
+        activateAboutUsPage: false,
+        activateHomePage: true,
+        showHints: false,
+      };
+      const sast = "Static Application Security Testing";
+      render(<Header setGlobalState={mock} globalState={state}></Header>);
+      expect(screen.getByTitle(sast)).toBeInTheDocument();
     });
   });
 });
