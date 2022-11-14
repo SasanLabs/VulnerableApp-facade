@@ -232,5 +232,18 @@ describe("Header", () => {
       const text = screen.getByText("SAST");
       expect(text).toBeInTheDocument();
     });
+
+    it("should have tooltip for DAST", async () => {
+      const mock = () => jest.fn();
+      const state = {
+        isSuccessfullyLoaded: false,
+        activateAboutUsPage: false,
+        activateHomePage: true,
+        showHints: false,
+      };
+      const dast = "Dynamic Application Security Testing";
+      render(<Header setGlobalState={mock} globalState={state}></Header>);
+      expect(screen.getByTitle(dast)).toBeInTheDocument();
+    });
   });
 });
