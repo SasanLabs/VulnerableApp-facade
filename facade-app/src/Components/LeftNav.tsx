@@ -92,11 +92,13 @@ export default class LeftNav extends React.Component<Props, {}> {
                 vulnerabilityLevel.levelIdentifier
               )
             }
-            data-testid={applicationName +
-                "." +
-                vulnerabilityName +
-                "." +
-                vulnerabilityLevel.levelIdentifier}
+            data-testid={
+              applicationName +
+              "." +
+              vulnerabilityName +
+              "." +
+              vulnerabilityLevel.levelIdentifier
+            }
           >
             {vulnerabilityLevel.levelIdentifier}
           </RSuiteDropdown.Item>

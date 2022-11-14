@@ -8,7 +8,10 @@ export class HomePage extends React.Component {
         header="Welcome to Owasp VulnerableApp-Facade"
         className="VulnerableApp-Facade-HomePage-Content-Header"
       >
-        <div className="VulnerableApp-Facade-HomePage-Content" data-testid={"HOME_PAGE_CONTENT_CONTAINER"}>
+        <div
+          className="VulnerableApp-Facade-HomePage-Content"
+          data-testid={"HOME_PAGE_CONTENT_CONTAINER"}
+        >
           As we are seeing a lot of technological enhancements in the industry
           from past few years, these technical enhancements are solving one or
           the other problem however, with that they also bring few different

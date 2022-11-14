@@ -190,4 +190,73 @@ describe("Header", () => {
       expect(text).toBeInTheDocument();
     });
   });
+
+  describe("scanner dropdown", () => {
+    it("renders scanner dropdown", () => {
+      const mock = () => jest.fn();
+      const state = {
+        isSuccessfullyLoaded: false,
+        activateAboutUsPage: false,
+        activateHomePage: true,
+        showHints: false,
+      };
+      render(<Header setGlobalState={mock} globalState={state} />);
+
+      const dropDownTitle = screen.getByText("Scanners");
+
+      expect(dropDownTitle).toBeInTheDocument();
+    });
+
+    it("renders first item", () => {
+      const mock = () => jest.fn();
+      const state = {
+        isSuccessfullyLoaded: false,
+        activateAboutUsPage: false,
+        activateHomePage: true,
+        showHints: false,
+      };
+      render(<Header setGlobalState={mock} globalState={state} />);
+      const text = screen.getByText("DAST");
+      expect(text).toBeInTheDocument();
+    });
+
+    it("renders second item", () => {
+      const mock = () => jest.fn();
+      const state = {
+        isSuccessfullyLoaded: false,
+        activateAboutUsPage: false,
+        activateHomePage: true,
+        showHints: false,
+      };
+      render(<Header setGlobalState={mock} globalState={state}></Header>);
+      const text = screen.getByText("SAST");
+      expect(text).toBeInTheDocument();
+    });
+
+    it("should have tooltip for DAST", () => {
+      const mock = () => jest.fn();
+      const state = {
+        isSuccessfullyLoaded: false,
+        activateAboutUsPage: false,
+        activateHomePage: true,
+        showHints: false,
+      };
+      const dast = "Dynamic Application Security Testing";
+      render(<Header setGlobalState={mock} globalState={state}></Header>);
+      expect(screen.getByTitle(dast)).toBeInTheDocument();
+    });
+
+    it("should have tooltip for SAST", () => {
+      const mock = () => jest.fn();
+      const state = {
+        isSuccessfullyLoaded: false,
+        activateAboutUsPage: false,
+        activateHomePage: true,
+        showHints: false,
+      };
+      const sast = "Static Application Security Testing";
+      render(<Header setGlobalState={mock} globalState={state}></Header>);
+      expect(screen.getByTitle(sast)).toBeInTheDocument();
+    });
+  });
 });
