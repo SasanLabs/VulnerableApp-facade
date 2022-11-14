@@ -96,7 +96,7 @@ export default class Header extends React.Component<Props, {}> {
                 </a>
               </RSuiteDropDown>
               <RSuiteDropDown title="Scanners">
-                <RSuiteDropDown.Item>DAST</RSuiteDropDown.Item>
+                <RSuiteDropDown.Item title="Dynamic Application Security Testing">DAST</RSuiteDropDown.Item>
                 <RSuiteDropDown.Item>SAST</RSuiteDropDown.Item>
               </RSuiteDropDown>
             </RSuiteNav>

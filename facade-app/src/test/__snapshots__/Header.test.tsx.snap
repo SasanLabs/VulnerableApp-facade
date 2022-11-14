@@ -213,6 +213,7 @@ exports[`Header renders correctly 1`] = `
                   <a
                     class="rs-dropdown-item-content"
                     tabindex="-1"
+                    title="Dynamic Application Security Testing"
                   >
                     DAST
                   </a>
