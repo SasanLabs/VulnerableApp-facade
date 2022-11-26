@@ -14,7 +14,7 @@ services:
         - VulnerableApp-base
         - VulnerableApp-jsp
         - VulnerableApp-php
-      image: sasanlabs/owasp-vulnerableapp-facade  
+      image: sasanlabs/owasp-vulnerableapp-facade:unreleased
       volumes:
        - ./templates:/etc/nginx/templates
       ports:

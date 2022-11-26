@@ -39,7 +39,7 @@ In order to do changes in React UI component,
 
 **Lua module** is used for handling the Nginx configuration and communication between facade application and VulnerableApplications which is the backend for facade application. 
 In order to make changes in Lua module, the easy way is to add the changes in the lua files and build the docker image with those changes
-by executing command: ```docker build . -t owasp-vulnerableapp-facade``` and then run the project as mentioned at [How to run the project](#how-to-run-the-project) 
+by executing command: ```docker build . -t sasanlabs/owasp-vulnerableapp-facade:unreleased``` and then run the project as mentioned at [How to run the project](#how-to-run-the-project) 
 
 Before raising the PR with UI changes please execute `npm run pretty` command in `facade-app` folder to auto handle formatting of javascript/typescript files.
 
