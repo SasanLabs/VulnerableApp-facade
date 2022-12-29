@@ -1,4 +1,4 @@
-FROM node:14 as BUILDER
+FROM --platform=$BUILDPLATFORM node:14 as BUILDER
 WORKDIR /usr/src/app
 COPY ./facade-app/package.json .
 COPY ./facade-app/package-lock.json .
