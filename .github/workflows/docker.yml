@@ -49,7 +49,7 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           context: .
           push: true
-          platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/386,linux/s390x
+          platforms: linux/amd64,linux/arm64/v8
           tags: |
             sasanlabs/owasp-vulnerableapp-facade:unreleased
             sasanlabs/owasp-vulnerableapp-facade:${{ steps.gitversion.outputs.semver }}
