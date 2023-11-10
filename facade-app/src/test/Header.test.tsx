@@ -92,7 +92,7 @@ describe("Header", () => {
     };
     render(<Header setGlobalState={mock} globalState={state} />);
 
-    const link = screen.getAllByRole("link")[0];
+    const link = screen.getAllByRole("link")[2];
     const githubIcon = screen.getAllByRole("img")[2];
     const text = screen.getByText("Github");
 
@@ -130,8 +130,8 @@ describe("Header", () => {
         showHints: false,
       };
       render(<Header setGlobalState={mock} globalState={state} />);
-
-      const owaspLink = screen.getAllByRole("link")[1];
+      
+      const owaspLink = screen.getByRole("link", { name: "Owasp VulnerableApp" });
       const owaspIcon = screen.getAllByRole("img")[3];
       const text = screen.getByText("Owasp VulnerableApp");
 
@@ -154,7 +154,7 @@ describe("Header", () => {
       };
       render(<Header setGlobalState={mock} globalState={state} />);
 
-      const zapLink = screen.getAllByRole("link")[2];
+      const zapLink = screen.getByRole("link", { name: "ZAP JWT Addon" });
       const zapIcon = screen.getAllByRole("img")[4];
       const text = screen.getByText("ZAP JWT Addon");
 
@@ -177,7 +177,7 @@ describe("Header", () => {
       };
       render(<Header setGlobalState={mock} globalState={state} />);
 
-      const zapLink = screen.getAllByRole("link")[3];
+      const zapLink = screen.getAllByRole("link")[5];
       const zapIcon = screen.getAllByRole("img")[5];
       const text = screen.getByText("ZAP FileUpload Addon");
 
