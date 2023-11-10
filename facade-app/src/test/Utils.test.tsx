@@ -26,27 +26,27 @@ describe("appendStaticResourcesToDocument()", () => {
     hints: [
       {
         vulnerabilityTypes: [{ identifierType: "CWE", value: "WASC-1" }],
-        description: "vulnerability hint 1"
+        description: "vulnerability hint 1",
       },
     ],
     resourceInformation: {
       htmlResource: {
         resourceType: ResourceType.HTML,
         isAbsolute: false,
-        uri: "/"
+        uri: "/",
       },
       staticResources: [
         {
           resourceType: ResourceType.JAVASCRIPT,
           isAbsolute: false,
-          uri: "/dummy_javascript_uri"
+          uri: "/dummy_javascript_uri",
         },
         {
           resourceType: ResourceType.CSS,
           isAbsolute: false,
-          uri: "/dummy_css_uri"
-        }
-      ]
+          uri: "/dummy_css_uri",
+        },
+      ],
     },
   };
   it("should modify the content of an element.", () => {
