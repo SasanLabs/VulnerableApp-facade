@@ -100,28 +100,36 @@ exports[`Header renders correctly 1`] = `
                 class="rs-dropdown-menu"
                 role="menu"
               >
-                <li
-                  class="rs-dropdown-item"
+                <a
+                  href="../scanner/dast"
                 >
-                  <a
-                    class="rs-dropdown-item-content"
-                    tabindex="-1"
-                    title="Dynamic Application Security Testing"
+                  <li
+                    class="rs-dropdown-item"
                   >
-                    DAST
-                  </a>
-                </li>
-                <li
-                  class="rs-dropdown-item"
+                    <a
+                      class="rs-dropdown-item-content"
+                      tabindex="-1"
+                      title="Dynamic Application Security Testing"
+                    >
+                      DAST
+                    </a>
+                  </li>
+                </a>
+                <a
+                  href="../scanner/sast"
                 >
-                  <a
-                    class="rs-dropdown-item-content"
-                    tabindex="-1"
-                    title="Static Application Security Testing"
+                  <li
+                    class="rs-dropdown-item"
                   >
-                    SAST
-                  </a>
-                </li>
+                    <a
+                      class="rs-dropdown-item-content"
+                      tabindex="-1"
+                      title="Static Application Security Testing"
+                    >
+                      SAST
+                    </a>
+                  </li>
+                </a>
               </ul>
               <a
                 class="rs-btn rs-btn-subtle rs-dropdown-toggle"

@@ -95,6 +95,62 @@ exports[`App renders correctly 1`] = `
                   </span>
                 </a>
               </li>
+              <li
+                class="rs-dropdown rs-dropdown-placement-bottom-start"
+                role="menu"
+              >
+                <ul
+                  class="rs-dropdown-menu"
+                  role="menu"
+                >
+                  <a
+                    href="../scanner/dast"
+                  >
+                    <li
+                      class="rs-dropdown-item"
+                    >
+                      <a
+                        class="rs-dropdown-item-content"
+                        tabindex="-1"
+                        title="Dynamic Application Security Testing"
+                      >
+                        DAST
+                      </a>
+                    </li>
+                  </a>
+                  <a
+                    href="../scanner/sast"
+                  >
+                    <li
+                      class="rs-dropdown-item"
+                    >
+                      <a
+                        class="rs-dropdown-item-content"
+                        tabindex="-1"
+                        title="Static Application Security Testing"
+                      >
+                        SAST
+                      </a>
+                    </li>
+                  </a>
+                </ul>
+                <a
+                  class="rs-btn rs-btn-subtle rs-dropdown-toggle"
+                  tabindex="0"
+                >
+                  Scanners
+                  <span
+                    class="rs-dropdown-toggle-caret"
+                  />
+                  <span
+                    class="rs-ripple-pond"
+                  >
+                    <span
+                      class="rs-ripple"
+                    />
+                  </span>
+                </a>
+              </li>
               <a
                 href="https://github.com/SasanLabs/VulnerableApp-facade"
               >
@@ -2282,7 +2338,7 @@ exports[`App renders correctly 1`] = `
             data-testid="FOOTER_COPYRIGHT_TEXT"
           >
             © Copyright 
-            2022
+            2023
             , SasanLabs
           </div>
         </div>
