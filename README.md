@@ -52,6 +52,22 @@ Before raising the PR with UI changes please execute `npm run pretty` command in
 Please raise a github issue for enhancement/issues in VulnerableApp-facade or send email to karan.sasan@owasp.org regarding queries
 we will try to resolve issues asap.
 
+## Documentation and References
+
+1. [Documentation](https://sasanlabs.github.io/VulnerableApp)
+2. [Design Documentation](https://sasanlabs.github.io/VulnerableApp/DesignDocumentation.html)
+3. [Owasp VulnerableApp](https://owasp.org/www-project-vulnerableapp/)
+4. [Overview video for OWASP Spotlight series](https://www.youtube.com/watch?v=HRRTrnRgMjs)
+5. [Overview Video](https://www.youtube.com/watch?v=AjL4B-WwrrA&ab_channel=OwaspVulnerableApp)
+
+### Blogs
+1. [Overview of Owasp-VulnerableApp - Medium article](https://hussaina-begum.medium.com/an-extensible-vulnerable-application-for-testing-the-vulnerability-scanning-tools-cc98f0d94dbc)
+2. [Overview of Owasp-VulnerableApp - Blogspot post](https://hussaina-begum.blogspot.com/2020/10/an-extensible-vulnerable-application.html)
+3. [Introduction to Owasp VulnerableApp by Kenji Nakajima](https://jpn.nec.com/cybersecurity/blog/220520/index.html)
+
+### Troubleshooting references
+1. [Reddit exploiting SQL Injection Vulnerability](https://www.reddit.com/r/hacking/comments/11wtf17/owasp_vulnerableappfacade_sql_injection/)
+
 ## Other links ##
 1. [Owasp Project link](https://owasp.org/www-project-vulnerableapp-facade/)
 2. [Github pages](https://sasanlabs.github.io/VulnerableApp-facade/)
