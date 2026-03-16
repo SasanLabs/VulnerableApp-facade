@@ -1,6 +1,6 @@
 local vulnerableapp_utility = {}
 
-function vulnerableapp_utility.merge_vulnerability_information(vulnerableAppResponse, vulnerableAppJspResponse, vulnerableAppPhpResponse)
+function vulnerableapp_utility.merge_vulnerability_information(vulnerableAppResponse, vulnerableAppJspResponse, vulnerableAppPhpResponse, llmForgeResponse)
     local response = "{"
     local appendComma = false
     if (vulnerableAppResponse.status == 200) then
@@ -20,6 +20,13 @@ function vulnerableapp_utility.merge_vulnerability_information(vulnerableAppResp
         end
         appendComma = true
         response = response .. '"VulnerableApp-php":' .. vulnerableAppPhpResponse.body
+    end
+    if (llmForgeResponse and llmForgeResponse.status == 200) then
+        if (appendComma) then
+            response = response .. ","
+        end
+        appendComma = true
+        response = response .. '"llmforge":' .. llmForgeResponse.body
     end
     response = response .. "}"
     return response
