@@ -40,10 +40,9 @@ export default class App extends React.Component {
       }
       this.setState({
         applicationData: applicationDataArray,
-        activeApplication:
-          applicationDataArray.length >= 1
-            ? applicationDataArray[0].applicationName
-            : null,
+        activeApplication: undefined,
+        activeVulnerability: undefined,
+        activeLevel: undefined,
         isSuccessfullyLoaded: true,
       });
     } else {
@@ -75,25 +74,28 @@ export default class App extends React.Component {
     const copyRightYear = new Date().getFullYear();
 
     return (
-      <RSuiteContainer className="show-container">
+      <RSuiteContainer className="show-container VulnerableApp-Facade-AppLayout">
         <Header
           globalState={this.state}
           setGlobalState={this.setGlobalState}
         ></Header>
         <RSuiteContainer
-          className="show-container"
-          style={{ display: "flex", width: "100vw" }}
+          className="show-container VulnerableApp-Facade-MainLayout"
         >
-          <RSuitesSidebar>
-            <LeftNav
+          <RSuitesSidebar className="VulnerableApp-Facade-MasterPane">
+            <div className="VulnerableApp-Facade-MasterPane-Inner">
+              <LeftNav
+                globalState={this.state}
+                setGlobalState={this.setGlobalState}
+              />
+            </div>
+          </RSuitesSidebar>
+          <div className="VulnerableApp-Facade-DetailsPane">
+            <Content
               globalState={this.state}
               setGlobalState={this.setGlobalState}
-            />
-          </RSuitesSidebar>
-          <Content
-            globalState={this.state}
-            setGlobalState={this.setGlobalState}
-          ></Content>
+            ></Content>
+          </div>
         </RSuiteContainer>
         <Footer copyRightYear={copyRightYear}>Footer</Footer>
       </RSuiteContainer>
