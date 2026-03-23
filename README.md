@@ -24,26 +24,6 @@ In order to run entire suit please follow the below steps:
 ### Advanced Start ###
 As [docker-compose.yml](https://github.com/SasanLabs/VulnerableApp-facade/blob/main/docker-compose.yml) contains all the applications which adhere to the schema of VulnerableApp-facade so in case you are looking for specific vulnerable applications like only Java related vulnerable applications then remove other vulnerable applications from [docker-compose.yml](https://github.com/SasanLabs/VulnerableApp-facade/blob/main/docker-compose.yml) and then run steps as mentioned in the [Simple start step](#simple-start).
 
-### LLMForge model runtime ###
-The compose file starts `ollama`, runs `ollama-model-init` to pull a model, and then starts `llmforge`.
-
-- Select model with `OLLAMA_MODEL`.
-- If not set, default is `phi3:mini`.
-
-PowerShell:
-
-```bash
-$env:OLLAMA_MODEL="llama3.1:8b"
-docker compose up --build
-```
-
-Bash:
-
-```bash
-export OLLAMA_MODEL="mistral:7b-instruct-q4_0"
-docker compose up --build
-```
-
 ## How to Contribute to the project
 VulnerableApp-facade have majorly 2 components:
 1. React UI component
