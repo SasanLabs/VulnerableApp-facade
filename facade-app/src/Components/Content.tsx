@@ -144,7 +144,7 @@ export class Content extends React.Component<Props> {
                   >
                     <ol data-testid={"VULNERABILITY_HINTS"}>
                       {this.selectedLevel.hints.map((hint) => {
-                        return <li>{hint.description}</li>;
+                        return <li dangerouslySetInnerHTML={{ __html: hint.description }} />;
                       })}
                     </ol>
                   </RSuitePanel>
