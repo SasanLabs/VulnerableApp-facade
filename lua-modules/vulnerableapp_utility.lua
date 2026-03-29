@@ -7,6 +7,13 @@ function vulnerableapp_utility.merge_vulnerability_information(vulnerableAppResp
         response = response .. '"VulnerableApp":' .. vulnerableAppResponse.body
         appendComma = true
     end
+    if (llmForgeResponse and llmForgeResponse.status == 200) then
+        if (appendComma) then
+            response = response .. ","
+        end
+        appendComma = true
+        response = response .. '"llmforge":' .. llmForgeResponse.body
+    end
     if (vulnerableAppJspResponse.status == 200) then
         if (appendComma) then
             response = response .. ","
@@ -21,12 +28,12 @@ function vulnerableapp_utility.merge_vulnerability_information(vulnerableAppResp
         appendComma = true
         response = response .. '"VulnerableApp-php":' .. vulnerableAppPhpResponse.body
     end
-    if (llmForgeResponse and llmForgeResponse.status == 200) then
-        if (appendComma) then
-            response = response .. ","
+    if (not appendComma) then
+        local llmStatus = 0
+        if (llmForgeResponse) then
+            llmStatus = llmForgeResponse.status
         end
-        appendComma = true
-        response = response .. '"llmforge":' .. llmForgeResponse.body
+        ngx.log(ngx.ERR, "empty aggregate response; statuses: base=", vulnerableAppResponse.status, ", jsp=", vulnerableAppJspResponse.status, ", php=", vulnerableAppPhpResponse.status, ", llmforge=", llmStatus)
     end
     response = response .. "}"
     return response
