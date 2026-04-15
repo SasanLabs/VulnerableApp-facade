@@ -154,14 +154,14 @@ describe("Header", () => {
       };
       render(<Header setGlobalState={mock} globalState={state} />);
 
-      const zapLink = screen.getByRole("link", { name: "ZAP JWT Addon" });
+      const zapLink = screen.getByRole("link", { name: "LLMForge" });
       const zapIcon = screen.getAllByRole("img")[4];
-      const text = screen.getByText("ZAP JWT Addon");
+      const text = screen.getByText("LLMForge");
 
       expect(zapLink).toBeInTheDocument();
       expect(zapLink).toHaveAttribute(
         "href",
-        "https://github.com/SasanLabs/owasp-zap-jwt-addon"
+        "https://github.com/SasanLabs/LLMForge"
       );
       expect(zapIcon).toBeInTheDocument();
       expect(text).toBeInTheDocument();
@@ -179,12 +179,12 @@ describe("Header", () => {
 
       const zapLink = screen.getAllByRole("link")[5];
       const zapIcon = screen.getAllByRole("img")[5];
-      const text = screen.getByText("ZAP FileUpload Addon");
+      const text = screen.getByText("Security Awareness for Everyone");
 
       expect(zapLink).toBeInTheDocument();
       expect(zapLink).toHaveAttribute(
         "href",
-        "https://github.com/SasanLabs/owasp-zap-fileupload-addon"
+        "https://github.com/SasanLabs/SAFE"
       );
       expect(zapIcon).toBeInTheDocument();
       expect(text).toBeInTheDocument();
