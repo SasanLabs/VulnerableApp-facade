@@ -42,7 +42,7 @@ function doGetAjaxCall(callBack, url, isJson) {
 function genericResponseHandler(xmlHttpRequest, callBack, isJson) {
   if (xmlHttpRequest.readyState == XMLHttpRequest.DONE) {
     // XMLHttpRequest.DONE == 4
-    if (xmlHttpRequest.status == 200 || xmlHttpRequest.status == 401) {
+    if (xmlHttpRequest.status == 200 || xmlHttpRequest.status == 401 || xmlHttpRequest.status == 403) {
       if (isJson) {
         callBack(JSON.parse(xmlHttpRequest.responseText), xmlHttpRequest);
       } else {
