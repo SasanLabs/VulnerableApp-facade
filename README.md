@@ -6,7 +6,7 @@ As we are seeing a lot of technological enhancements in the industry in the past
 ## High Level Design Details
 ![High Level Design](https://raw.githubusercontent.com/SasanLabs/VulnerableApp-facade/main/docs/images/VulnerableApp-facade.jpeg)
 
-**VulnerableApp-facade** is a small component which acts as a webserver and a gateway. It routes the calls to different Vulnerable Applications which are registered with it based on an url pattern. It also exposes a schema/contract (Vulnerability Definition) and if a vulnerable application adhere to that then it will be able to interact and route the traffic to that vulnerable application. It also provides the generic skeleton UI which it builds by reading the provided schema (Vulnerability Definition) from the vulnerable application and then loads the UI specific to vulnerable application inside the skeleton UserInterface. 
+**VulnerableApp-facade** acts as a webserver and a gateway. It routes the calls to different Vulnerable Applications which are registered with it based on an url pattern. It also exposes a schema/contract (Vulnerability Definition) and if a vulnerable application adhere to that then it will be able to interact and route the traffic to that vulnerable application. It also provides the generic skeleton UI which it builds by reading the provided schema (Vulnerability Definition) from the vulnerable application and then loads the UI specific to vulnerable application inside the skeleton UserInterface. 
 
 ### Glimpse of the Owasp VulnerableApp-Facade
 ![Owasp VulnerableApp-Facade](https://raw.githubusercontent.com/SasanLabs/VulnerableApp-facade/main/docs/images/gif/VulnerableApp-Facade.gif)
@@ -65,6 +65,8 @@ we will try to resolve issues asap.
 1. [Overview of Owasp-VulnerableApp - Medium article](https://hussaina-begum.medium.com/an-extensible-vulnerable-application-for-testing-the-vulnerability-scanning-tools-cc98f0d94dbc)
 2. [Overview of Owasp-VulnerableApp - Blogspot post](https://hussaina-begum.blogspot.com/2020/10/an-extensible-vulnerable-application.html)
 3. [Introduction to Owasp VulnerableApp by Kenji Nakajima](https://jpn.nec.com/cybersecurity/blog/220520/index.html)
+4. [Gen AI based platform Shannon exploiting VulnerableApp](https://qiita.com/fiord/items/9351bcff6d646862f181)
+5. [I Built the OWASP ZAP File Upload Addon. Here’s Why VulnerableApp-Facade Had to Exist First](https://medium.com/p/52c4f2226ed3)
 
 ### Troubleshooting references
 1. [Reddit exploiting SQL Injection Vulnerability](https://www.reddit.com/r/hacking/comments/11wtf17/owasp_vulnerableappfacade_sql_injection/)
