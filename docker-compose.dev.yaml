@@ -9,3 +9,6 @@ services:
       environment:
        - NGINX_HOST=foobar.com
        - NGINX_PORT=80
+       - ENABLE_VULNERABLEAPP_JSP=false
+       - ENABLE_VULNERABLEAPP_PHP=false
+       - ENABLE_LLMFORGE=false
