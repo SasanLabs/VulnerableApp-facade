@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 
 import { Content } from "../Components/Content";
 import testFixture from "./fixtures";
@@ -162,5 +162,115 @@ describe("CommandInjection content", () => {
     const header = screen.queryByText("Hints");
 
     expect(header).not.toBeInTheDocument();
+  });
+
+  it("resets challenge card hint state when changing levels", async () => {
+    const mock = jest.fn();
+    const baseState = {
+      isSuccessfullyLoaded: true,
+      activateAboutUsPage: false,
+      activateHomePage: false,
+      showHints: false,
+      isChallengeModeEnabled: true,
+      activeApplication: "VulnerableApp",
+      activeVulnerability: "ChallengeVuln",
+      applicationData: [
+        {
+          applicationName: "VulnerableApp",
+          vulnerabilityDefinitions: [
+            {
+              name: "ChallengeVuln",
+              id: "ChallengeVuln",
+              description: "Challenge vulnerability",
+              vulnerabilityTypes: [],
+              levels: [
+                {
+                  levelIdentifier: "LEVEL_1",
+                  variant: "UNSECURE",
+                  hints: [],
+                  resourceInformation: {
+                    htmlResource: {
+                      resourceType: "HTML",
+                      isAbsolute: false,
+                      uri: "/level-1",
+                    },
+                    staticResources: [],
+                  },
+                  challengeCards: [
+                    {
+                      challengeText: "Level 1 challenge",
+                      hints: [{ order: 1, text: "Level 1 hint" }],
+                    },
+                  ],
+                },
+                {
+                  levelIdentifier: "LEVEL_2",
+                  variant: "UNSECURE",
+                  hints: [],
+                  resourceInformation: {
+                    htmlResource: {
+                      resourceType: "HTML",
+                      isAbsolute: false,
+                      uri: "/level-2",
+                    },
+                    staticResources: [],
+                  },
+                  challengeCards: [
+                    {
+                      challengeText: "Level 2 challenge",
+                      hints: [{ order: 1, text: "Level 2 hint" }],
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    };
+
+    const initialState = {
+      ...baseState,
+      activeLevel: undefined,
+    };
+
+    const levelOneState = {
+      ...baseState,
+      activeLevel: "LEVEL_1",
+    };
+
+    const levelTwoState = {
+      ...baseState,
+      activeLevel: "LEVEL_2",
+    };
+
+    const { rerender } = render(
+      // @ts-ignore
+      <Content globalState={initialState} setGlobalState={mock} />
+    );
+
+    // @ts-ignore
+    rerender(<Content globalState={levelOneState} setGlobalState={mock} />);
+
+    await waitFor(() => {
+      expect(screen.getByText("Level 1 challenge")).toBeInTheDocument();
+    });
+
+    fireEvent.click(screen.getByText("Show Hint >"));
+
+    expect(screen.getByText("Level 1 hint")).toBeInTheDocument();
+
+    // @ts-ignore
+    rerender(<Content globalState={levelTwoState} setGlobalState={mock} />);
+
+    await waitFor(() => {
+      expect(screen.getByText("Level 2 challenge")).toBeInTheDocument();
+    });
+
+    expect(screen.queryByText("Level 1 hint")).not.toBeInTheDocument();
+    expect(screen.queryByText("Level 2 hint")).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByText("Show Hint >"));
+    expect(screen.getByText("Level 2 hint")).toBeInTheDocument();
   });
 });

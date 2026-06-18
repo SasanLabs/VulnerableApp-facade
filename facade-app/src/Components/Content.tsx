@@ -100,6 +100,11 @@ export class Content extends React.Component<Props, ContentState> {
     const rightColumnCards = challengeCards.filter(
       (_, index) => index % 2 !== 0
     );
+    const challengeRenderScopeKey = `${
+      this.props.globalState.activeApplication || ""
+    }-${this.props.globalState.activeVulnerability || ""}-${
+      this.props.globalState.activeLevel || ""
+    }`;
 
     return (
       <div className="VulnerableApp-Facade-Info">
@@ -167,7 +172,7 @@ export class Content extends React.Component<Props, ContentState> {
                     >
                       {leftColumnCards.map((challenge, index) => (
                         <ChallengeCard
-                          key={`left-${index}`}
+                          key={`${challengeRenderScopeKey}-left-${index}`}
                           challenge={challenge}
                           challengeNumber={index * 2 + 1}
                         />
@@ -185,7 +190,7 @@ export class Content extends React.Component<Props, ContentState> {
                     >
                       {rightColumnCards.map((challenge, index) => (
                         <ChallengeCard
-                          key={`right-${index}`}
+                          key={`${challengeRenderScopeKey}-right-${index}`}
                           challenge={challenge}
                           challengeNumber={index * 2 + 2}
                         />
