@@ -54,7 +54,7 @@ export default class App extends React.Component {
   componentDidMount() {
     getResource(
       "/VulnerabilityDefinitions",
-     //  "/mockResponse.json",
+      //  "/mockResponse.json",
       this._populateGlobalState.bind(this),
       true
     );
