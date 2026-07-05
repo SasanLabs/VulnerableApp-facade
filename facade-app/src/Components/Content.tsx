@@ -118,12 +118,12 @@ export class Content extends React.Component<Props, ContentState> {
             {activeVulnerability && (
               <div>
                 {/* 1. Vulnerability Description (Scanner Mode Only) */}
-                {!showChallengeMode && (
+                {
                   <RSuitePanel
                     header="Vulnerability Description"
                     className="VulnerableApp-Facade-Content-Vulnerability-Description-Header"
                     collapsible={true}
-                    defaultExpanded={true}
+                    defaultExpanded={!showChallengeMode}
                   >
                     <div
                       className="VulnerableApp-Facade-Content"
@@ -136,7 +136,7 @@ export class Content extends React.Component<Props, ContentState> {
                       />
                     </div>
                   </RSuitePanel>
-                )}
+                }
 
                 {/* 2. Practice Vulnerability (Always displayed) */}
                 <RSuitePanel
