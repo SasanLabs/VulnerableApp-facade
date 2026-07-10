@@ -5,21 +5,46 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+
 jobs:
-  test:
+  react-test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-    - name: build node
-      run: |
-        npm install
-        npm run build
-        npm run test -- --coverage
-      working-directory: facade-app
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v3
-      with:
-        directory: ./facade-app
+      - uses: actions/checkout@master
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: npm
+          cache-dependency-path: facade-app/package-lock.json
+
+      - name: Build and test React app
+        working-directory: facade-app
+        run: |
+          npm ci
+          npm run build
+          npm run test -- --coverage
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          directory: ./facade-app
+
+  lua-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Install Lua + LuaRocks
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lua5.4 luarocks
+
+      - name: Install Lua validator/test tools
+        run: |
+          luarocks install luacheck
+
+      - name: Validate Lua scripts (lint)
+        working-directory: lua-modules
+        run: |
+          luacheck .
