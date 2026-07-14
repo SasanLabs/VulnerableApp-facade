@@ -48,9 +48,10 @@ jobs:
 
       - name: Install Lua validator/test tools
         run: |
-          luarocks install luacheck
+          luarocks install --local luacheck
 
       - name: Validate Lua scripts (lint)
         working-directory: lua-modules
         run: |
+          export PATH="$HOME/.luarocks/bin:$PATH"
           luacheck .
