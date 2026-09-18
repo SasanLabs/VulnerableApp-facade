@@ -20,6 +20,21 @@ local function carries_json(response)
     return type(cjson.decode(response.body)) == "table"
 end
 
+local function carries_xml(response)
+    if (not response or response.status ~= 200 or not response.body or response.truncated) then
+        return false
+    end
+    return string.find(response.body, "<urlset", 1, true) ~= nil or string.find(response.body, "<sitemapindex", 1, true) ~= nil
+end
+
+local function extract_xml_entries(xmlBody, tagName)
+    local entries = ""
+    for entry in string.gmatch(xmlBody, "<" .. tagName .. ">.-</" .. tagName .. ">") do
+        entries = entries .. entry
+    end
+    return entries
+end
+
 function vulnerableapp_utility.merge_vulnerability_information(vulnerableAppResponse, vulnerableAppJspResponse, vulnerableAppPhpResponse, llmForgeResponse)
     local response = "{"
     local appendComma = false
@@ -56,6 +71,42 @@ function vulnerableapp_utility.merge_vulnerability_information(vulnerableAppResp
         ngx.log(ngx.ERR, "empty aggregate response; statuses: base=", vulnerableAppResponse.status, ", jsp=", vulnerableAppJspResponse.status, ", php=", vulnerableAppPhpResponse.status, ", llmforge=", llmStatus)
     end
     response = response .. "}"
+    return response
+end
+
+function vulnerableapp_utility.merge_sitemap_information(vulnerableAppResponse, vulnerableAppJspResponse, vulnerableAppPhpResponse, llmForgeResponse)
+    local entries = ""
+
+    if (carries_xml(vulnerableAppResponse)) then
+        entries = entries .. extract_xml_entries(vulnerableAppResponse.body, "url")
+        entries = entries .. extract_xml_entries(vulnerableAppResponse.body, "sitemap")
+    end
+    if (carries_xml(vulnerableAppJspResponse)) then
+        entries = entries .. extract_xml_entries(vulnerableAppJspResponse.body, "url")
+        entries = entries .. extract_xml_entries(vulnerableAppJspResponse.body, "sitemap")
+    end
+    if (carries_xml(vulnerableAppPhpResponse)) then
+        entries = entries .. extract_xml_entries(vulnerableAppPhpResponse.body, "url")
+        entries = entries .. extract_xml_entries(vulnerableAppPhpResponse.body, "sitemap")
+    end
+    if (carries_xml(llmForgeResponse)) then
+        entries = entries .. extract_xml_entries(llmForgeResponse.body, "url")
+        entries = entries .. extract_xml_entries(llmForgeResponse.body, "sitemap")
+    end
+
+    if (entries == "") then
+        local llmStatus = 0
+        if (llmForgeResponse) then
+            llmStatus = llmForgeResponse.status
+        end
+        ngx.log(ngx.ERR, "empty merged sitemap response; statuses: base=", vulnerableAppResponse.status, ", jsp=", vulnerableAppJspResponse.status, ", php=", vulnerableAppPhpResponse.status, ", llmforge=", llmStatus)
+    end
+
+    local response = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+    response = response .. "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">"
+    response = response .. entries
+    response = response .. "</urlset>"
+
     return response
 end
 

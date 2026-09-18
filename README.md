@@ -8,6 +8,8 @@ As we are seeing a lot of technological enhancements in the industry in the past
 
 **VulnerableApp-facade** acts as a webserver and a gateway. It routes the calls to different Vulnerable Applications which are registered with it based on an url pattern. It also exposes a schema/contract (Vulnerability Definition) and if a vulnerable application adhere to that then it will be able to interact and route the traffic to that vulnerable application. It also provides the generic skeleton UI which it builds by reading the provided schema (Vulnerability Definition) from the vulnerable application and then loads the UI specific to vulnerable application inside the skeleton UserInterface. 
 
+It also exposes aggregate endpoints such as `/VulnerabilityDefinitions`, `/scanner/dast`, `/scanner/sast` and `/sitemap.xml` where `/sitemap.xml` merges sitemap entries from the integrated vulnerable applications (including `llmforge` when enabled).
+
 ### Glimpse of the Owasp VulnerableApp-Facade
 ![Owasp VulnerableApp-Facade](https://raw.githubusercontent.com/SasanLabs/VulnerableApp-facade/main/docs/images/gif/VulnerableApp-Facade.gif)
 
