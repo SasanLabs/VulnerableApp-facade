@@ -10,3 +10,6 @@ FROM openresty/openresty:alpine
 COPY --from=BUILDER /usr/src/app/build /usr/share/nginx/html/
 COPY nginx.conf /usr/local/openresty/nginx/conf
 COPY lua-modules/vulnerableapp_utility.lua ./vulnerableapp_utility.lua
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
+ENTRYPOINT ["/docker-entrypoint.sh"]
