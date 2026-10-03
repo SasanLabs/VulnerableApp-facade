@@ -6,7 +6,11 @@ import { LevelInformation, ResourceType } from "../interface/State";
  * @param callback , callback function to invoke on Api response
  * @param isJson , to parse the response and return json object if True and text in case of False
  */
-export function getResource(uri: string, callback: Function, isJson: boolean): void {
+export function getResource(
+  uri: string,
+  callback: Function,
+  isJson: boolean
+): void {
   fetch(uri)
     .then((res) => (isJson ? res.json() : res.text()))
     .then(
@@ -26,12 +30,12 @@ export function removeChildByParentElementId(elementId: string): void {
   }
 }
 
-
-export function appendStaticResourcesToDocument(selectedLevel: LevelInformation): void {
+export function appendStaticResourcesToDocument(
+  selectedLevel: LevelInformation
+): void {
   removeChildByParentElementId("scripts");
   removeChildByParentElementId("styles");
-  selectedLevel.resourceInformation.staticResources.forEach(
-  (resourceURI) => {
+  selectedLevel.resourceInformation.staticResources.forEach((resourceURI) => {
     if (resourceURI.resourceType === ResourceType.JAVASCRIPT) {
       const script = document.createElement("script");
       script.src = resourceURI.uri + "?p=" + new Date().getTime();
@@ -49,7 +53,7 @@ export function appendStaticResourcesToDocument(selectedLevel: LevelInformation)
 
 export function manipulateDOM(elementId: string, content: string): void {
   const element = document.getElementById(elementId);
-        if(element) {
-          element.innerHTML = content;
-        }
+  if (element) {
+    element.innerHTML = content;
+  }
 }
