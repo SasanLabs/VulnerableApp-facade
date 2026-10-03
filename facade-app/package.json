@@ -25,7 +25,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test -u",
     "eject": "react-scripts eject",
-    "pretty": "prettier --write \"./**/*.{js,jsx,tsx,css}\""
+    "pretty": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css}\" \"public/**/*.{js,css}\"",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx --max-warnings 0",
+    "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,css}\" \"public/**/*.{js,css}\""
   },
   "eslintConfig": {
     "extends": [

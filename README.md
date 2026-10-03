@@ -76,3 +76,18 @@ we will try to resolve issues asap.
 ## Other links ##
 1. [Owasp Project link](https://owasp.org/www-project-vulnerableapp-facade/)
 2. [Github pages](https://sasanlabs.github.io/VulnerableApp-facade/)
+
+### React code checks
+
+From `facade-app`, run `npm ci`, then `npm run lint` and
+`npm run format:check` before submitting a pull request. CI runs both checks
+before the React build and tests.
+
+`lint` checks every JS/JSX/TS/TSX file under `src`, including tests, with the
+existing React App ESLint configuration. Public scripts such as
+`GlobalUtility.js` are loaded separately by the vulnerability templates;
+they are included in formatting but not in the React lint target.
+
+Use `npm run pretty` to fix formatting. Both formatting commands cover
+JS/JSX/TS/TSX/CSS under `src` and JS/CSS under `public`. The file patterns
+exclude generated build, coverage, and dependency directories.
