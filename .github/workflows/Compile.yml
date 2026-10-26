@@ -26,6 +26,8 @@ jobs:
         working-directory: facade-app
         run: |
           npm ci
+          npm run lint
+          npm run format:check
           npm run build
           npm run test -- --coverage
 
