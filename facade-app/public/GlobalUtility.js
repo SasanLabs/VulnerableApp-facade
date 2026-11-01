@@ -85,3 +85,47 @@ function getUrlForVulnerability() {
   let details = window.getCurrentVulnerabilityDetails();
   return "/VulnerableApp/" + details.activeVulnerabilityIdentifier;
 }
+
+/**
+ * DONOT USE THIS METHOD.
+ *
+ * Only for VulnerableApp, for easy shortcut (Backward compatibility). Mirrors
+ * VulnerableApp's own vulnerableApp.js, which this skeleton UI never loads, so a level's
+ * own script (served as a JS module and run through this UI) can call the same global
+ * function names whether it is rendered standalone or through the facade.
+ * @returns
+ */
+function getWebSocketUrlForVulnerabilityLevel() {
+  let details = window.getCurrentVulnerabilityDetails();
+  let scheme = window.location.protocol === "https:" ? "wss://" : "ws://";
+  return (
+    scheme +
+    window.location.host +
+    "/VulnerableApp/ws/" +
+    details.activeVulnerabilityIdentifier +
+    "/" +
+    details.activeVulnerabilityLevelIdentifier
+  );
+}
+
+// Only the WebSocket of the level being shown stays open, so it is closed when the user
+// moves to another level or vulnerability. The handlers are removed first so the template
+// that is being replaced never gets a late callback.
+let activeWebSocket = null;
+
+function closeActiveWebSocket() {
+  if (activeWebSocket) {
+    activeWebSocket.onopen = null;
+    activeWebSocket.onmessage = null;
+    activeWebSocket.onclose = null;
+    activeWebSocket.onerror = null;
+    activeWebSocket.close();
+    activeWebSocket = null;
+  }
+}
+
+function openWebSocketForVulnerabilityLevel() {
+  closeActiveWebSocket();
+  activeWebSocket = new WebSocket(getWebSocketUrlForVulnerabilityLevel());
+  return activeWebSocket;
+}

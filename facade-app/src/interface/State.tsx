@@ -25,6 +25,15 @@ export enum ResourceType {
   CSS = "CSS",
 }
 
+/**
+ * Transport a level's endpoint is reached over, so the UI can tell a WebSocket handshake URL
+ * apart from a plain HTTP endpoint.
+ */
+export enum Protocol {
+  HTTP = "HTTP",
+  WS = "WS",
+}
+
 export class ResourceURI {
   resourceType: ResourceType = ResourceType.HTML;
   isAbsolute: boolean = false;
@@ -57,6 +66,10 @@ export interface Challenge {
 export interface LevelInformation {
   levelIdentifier: string;
   variant: string;
+
+  // Optional and defaulted to HTTP server-side, so an app that predates this field (or an
+  // older cached response) still has a sensible value here instead of undefined.
+  protocol?: Protocol;
 
   // Scanner mode hints (unchanged)
   hints: Array<Hint>;

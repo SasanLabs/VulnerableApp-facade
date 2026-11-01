@@ -28,6 +28,12 @@ export class Content extends React.Component<Props, ContentState> {
       prevProps.globalState.activeApplication !==
         this.props.globalState.activeApplication
     ) {
+      // Only the WebSocket of the level currently shown stays open, so it has to be closed
+      // here before the level being left is torn down, the same way VulnerableApp's own
+      // standalone UI does when switching levels.
+      if (typeof (window as any).closeActiveWebSocket === "function") {
+        (window as any).closeActiveWebSocket();
+      }
       const {
         activeApplication,
         applicationData,
