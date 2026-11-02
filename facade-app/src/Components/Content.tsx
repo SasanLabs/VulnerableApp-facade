@@ -21,6 +21,18 @@ export class Content extends React.Component<Props, ContentState> {
 
   componentDidUpdate(prevProps: Props) {
     if (
+      (this.props.globalState.activateHomePage &&
+        !prevProps.globalState.activateHomePage) ||
+      (this.props.globalState.activateAboutUsPage &&
+        !prevProps.globalState.activateAboutUsPage)
+    ) {
+      // Home/About change neither activeLevel nor activeVulnerability, so the check below
+      // wouldn't catch a level WebSocket left open while the user navigates away to either.
+      if (typeof (window as any).closeActiveWebSocket === "function") {
+        (window as any).closeActiveWebSocket();
+      }
+    }
+    if (
       prevProps.globalState.activeLevel !==
         this.props.globalState.activeLevel ||
       prevProps.globalState.activeVulnerability !==

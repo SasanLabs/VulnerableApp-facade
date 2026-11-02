@@ -7,7 +7,7 @@ import {
 import "rsuite/dist/styles/rsuite-default.min.css";
 import Header from "./Components/Header";
 import LeftNav from "./Components/LeftNav";
-import { GlobalState } from "./interface/State";
+import { GlobalState, Protocol } from "./interface/State";
 import Footer from "./Components/Footer";
 import { Content } from "./Components/Content";
 import { getResource } from "./Utilities/Utils";
@@ -62,12 +62,25 @@ export default class App extends React.Component {
 
   setGlobalState = (globalState: GlobalState) => {
     this.setState(globalState);
+    const selectedApplicationState = this.state.applicationData?.find(
+      (applicationState) =>
+        applicationState.applicationName === globalState.activeApplication
+    );
+    const selectedVulnerability =
+      selectedApplicationState?.vulnerabilityDefinitions.find(
+        (vulnerabilityDefinition) =>
+          vulnerabilityDefinition.id === globalState.activeVulnerability
+      );
+    const selectedLevel = selectedVulnerability?.levels.find(
+      (level) => level.levelIdentifier === globalState.activeLevel
+    );
     //Sets the global state such that the vulnerable applications
     //knows the execution context details which can help them write the
     //templates.
     (window as any).globalUtilityState = {
       activeVulnerabilityIdentifier: globalState.activeVulnerability,
       activeVulnerabilityLevelIdentifier: globalState.activeLevel,
+      protocol: selectedLevel?.protocol ?? Protocol.HTTP,
       baseURI: window.location.toString(),
     };
   };
