@@ -68,20 +68,56 @@ function genericResponseHandler(xmlHttpRequest, callBack, isJson) {
 /**
  * DONOT USE THIS METHOD.
  *
- * Only for VulnerableApp, for easy shortcut (Backward compatibility)
+ * Only for VulnerableApp, for easy shortcut (Backward compatibility). Reads the active
+ * level's protocol (set in globalUtilityState alongside the other identifiers) to return a
+ * ws(s):// handshake URL for a WebSocket level and the usual http path for everything else,
+ * so a level's own script calls this one method regardless of transport.
  * @returns
  */
 function getUrlForVulnerabilityLevel() {
   let details = window.getCurrentVulnerabilityDetails();
-  let url =
+  if (details.protocol === "WS") {
+    let scheme = window.location.protocol === "https:" ? "wss://" : "ws://";
+    return (
+      scheme +
+      window.location.host +
+      "/VulnerableApp/ws/" +
+      details.activeVulnerabilityIdentifier +
+      "/" +
+      details.activeVulnerabilityLevelIdentifier
+    );
+  }
+  return (
     "/VulnerableApp/" +
     details.activeVulnerabilityIdentifier +
     "/" +
-    details.activeVulnerabilityLevelIdentifier;
-  return url;
+    details.activeVulnerabilityLevelIdentifier
+  );
 }
 
 function getUrlForVulnerability() {
   let details = window.getCurrentVulnerabilityDetails();
   return "/VulnerableApp/" + details.activeVulnerabilityIdentifier;
+}
+
+// Only the WebSocket of the level being shown stays open, so it is closed when the user
+// moves to another level or vulnerability. The handlers are removed first so the template
+// that is being replaced never gets a late callback.
+let activeWebSocket = null;
+
+function closeActiveWebSocket() {
+  if (activeWebSocket) {
+    activeWebSocket.onopen = null;
+    activeWebSocket.onmessage = null;
+    activeWebSocket.onclose = null;
+    activeWebSocket.onerror = null;
+    activeWebSocket.close();
+    activeWebSocket = null;
+  }
+}
+
+function openWebSocketForVulnerabilityLevel() {
+  closeActiveWebSocket();
+  activeWebSocket = new WebSocket(getUrlForVulnerabilityLevel());
+  return activeWebSocket;
 }

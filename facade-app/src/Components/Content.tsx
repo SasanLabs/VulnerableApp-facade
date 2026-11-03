@@ -21,6 +21,18 @@ export class Content extends React.Component<Props, ContentState> {
 
   componentDidUpdate(prevProps: Props) {
     if (
+      (this.props.globalState.activateHomePage &&
+        !prevProps.globalState.activateHomePage) ||
+      (this.props.globalState.activateAboutUsPage &&
+        !prevProps.globalState.activateAboutUsPage)
+    ) {
+      // Home/About change neither activeLevel nor activeVulnerability, so the check below
+      // wouldn't catch a level WebSocket left open while the user navigates away to either.
+      if (typeof (window as any).closeActiveWebSocket === "function") {
+        (window as any).closeActiveWebSocket();
+      }
+    }
+    if (
       prevProps.globalState.activeLevel !==
         this.props.globalState.activeLevel ||
       prevProps.globalState.activeVulnerability !==
@@ -28,6 +40,12 @@ export class Content extends React.Component<Props, ContentState> {
       prevProps.globalState.activeApplication !==
         this.props.globalState.activeApplication
     ) {
+      // Only the WebSocket of the level currently shown stays open, so it has to be closed
+      // here before the level being left is torn down, the same way VulnerableApp's own
+      // standalone UI does when switching levels.
+      if (typeof (window as any).closeActiveWebSocket === "function") {
+        (window as any).closeActiveWebSocket();
+      }
       const {
         activeApplication,
         applicationData,
