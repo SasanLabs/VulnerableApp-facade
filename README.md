@@ -43,7 +43,7 @@ New here? Look for issues labelled [`good first issue`](https://github.com/Sasan
 
 **React UI component** is used to load the skeleton UserInterface and Lua module is used to merge the Vulnerability Definitions exposed by different vulnerable applications.
 In order to do changes in React UI component, 
-1. Start the VulnerableApplication-facade using steps mentioned at [Simple Start](#simple-start). This is an important step as it will start the underlying VulnerableApplications which will be invoked by the Facade UI internally. Consider the underlying VulnerableApplications as the backend for Facade application.
+1. Start the VulnerableApplication-facade using steps mentioned at [Simple Start](#simple-start-). This is an important step as it will start the underlying VulnerableApplications which will be invoked by the Facade UI internally. Consider the underlying VulnerableApplications as the backend for Facade application.
 2. Navigate to `facade-app` folder 
 3. Do the code changes
 4. Run `npm run start` which will start the npm server.
