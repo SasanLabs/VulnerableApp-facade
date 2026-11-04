@@ -10,15 +10,16 @@ As we are seeing a lot of technological enhancements in the industry in the past
 
 It also exposes aggregate endpoints such as `/VulnerabilityDefinitions`, `/scanner/dast`, `/scanner/sast` and `/sitemap.xml` where `/sitemap.xml` merges sitemap entries from the integrated vulnerable applications (including `llmforge` when enabled).
 
-### Glimpse of the Owasp VulnerableApp-Facade
+### Glimpse of the OWASP VulnerableApp-Facade
 ![Owasp VulnerableApp-Facade](https://raw.githubusercontent.com/SasanLabs/VulnerableApp-facade/main/docs/images/gif/VulnerableApp-Facade.gif)
 
 ## How to run the project
 VulnerableApp-facade is a farm of vulnerable applications where each application runs as a docker container. VulnerableApp-facade has `docker-compose.yml` file which contains docker configuration of other vulnerable applications along with docker configuration of VulnerableApp-facade. 
+
 ### Simple Start ###
 In order to run entire suit please follow the below steps:
 1. Download and Install [Docker Compose](https://docs.docker.com/compose/install/). 
-2. Clone the github repository
+2. Clone the GitHub repository
 3. Open the terminal and navigate to the Project root directory
 4. Run the command: ``` docker-compose pull && docker-compose up ```
 5. Navigate to browser and visit `http://localhost` to play with the application.
@@ -26,33 +27,42 @@ In order to run entire suit please follow the below steps:
 ### Advanced Start ###
 As [docker-compose.yml](https://github.com/SasanLabs/VulnerableApp-facade/blob/main/docker-compose.yml) contains all the applications which adhere to the schema of VulnerableApp-facade so in case you are looking for specific vulnerable applications like only Java related vulnerable applications then remove other vulnerable applications from [docker-compose.yml](https://github.com/SasanLabs/VulnerableApp-facade/blob/main/docker-compose.yml) and then run steps as mentioned in the [Simple start step](#simple-start).
 
-## How to Contribute to the project
-VulnerableApp-facade have majorly 2 components:
-1. React UI component
-2. Lua module
+## 🤝 Contributing
+
+Contributions of every kind are welcome: bug reports, code, tests, reviews, docs, and helping other users. 🎉
+
+👉 Please read the **[Contributing Guide](CONTRIBUTING.md)** before you start. It covers:
+
+- 🛠️ Setting up the project locally
+- ⚛️ Working on the React UI and the 🌙 Lua/Nginx module
+- ✅ Running tests and checks
+- 🔀 Opening a pull request and commit message rules
+- 🚨 [Strict Rules](CONTRIBUTING.md#strict-rules), including our zero-tolerance policy on sexual content and harassment
+
+New here? Look for issues labelled [`good first issue`](https://github.com/SasanLabs/VulnerableApp-facade/labels/good%20first%20issue). 🌱
 
 **React UI component** is used to load the skeleton UserInterface and Lua module is used to merge the Vulnerability Definitions exposed by different vulnerable applications.
 In order to do changes in React UI component, 
-1. Start the VulnerableApplication-facade using steps mentioned at [Simple Start](#simple-start). This is an important step as it will start the underlying VulnerableApplications which will be invoked by the Facade UI internally. Consider the underlying VulnerableApplications as the backend for Facade application.
+1. Start the VulnerableApplication-facade using steps mentioned at [Simple Start](#simple-start-). This is an important step as it will start the underlying VulnerableApplications which will be invoked by the Facade UI internally. Consider the underlying VulnerableApplications as the backend for Facade application.
 2. Navigate to `facade-app` folder 
 3. Do the code changes
 4. Run `npm run start` which will start the npm server.
 5. Navigate to `http://localhost:3000` to verify/view the changes
 
 **Lua module** is used for handling the Nginx configuration and communication between facade application and VulnerableApplications which is the backend for facade application. 
-In order to make changes in Lua module, the easy way is to add the changes in the lua files and build the docker image with those changes
+In order to make changes in Lua module, the easy way is to add the changes in the Lua files and build the docker image with those changes
 by executing command: ```docker build . -t sasanlabs/owasp-vulnerableapp-facade:latest``` and then run the project as mentioned at [How to run the project](#how-to-run-the-project) 
 
 Before raising the PR with UI changes please execute `npm run pretty` command in `facade-app` folder to auto handle formatting of javascript/typescript files.
 
 ## Integrated Vulnerable Applications
-1. [Owasp VulnerableApp](https://github.com/SasanLabs/VulnerableApp)
+1. [OWASP VulnerableApp](https://github.com/SasanLabs/VulnerableApp)
 2. [VulnerableApp-jsp](https://github.com/SasanLabs/VulnerableApp-jsp)
 3. [VulnerableApp-php](https://github.com/SasanLabs/VulnerableApp-php)
 4. [LLMForge](https://github.com/SasanLabs/LLMForge)
 
 ## Contact ##
-Please raise a github issue for enhancement/issues in VulnerableApp-facade or send email to karan.sasan@owasp.org regarding queries
+Please raise a GitHub issue for enhancement/issues in VulnerableApp-facade or send email to karan.sasan@owasp.org regarding queries
 we will try to resolve issues asap.
 
 ## Documentation and References
@@ -74,8 +84,8 @@ we will try to resolve issues asap.
 1. [Reddit exploiting SQL Injection Vulnerability](https://www.reddit.com/r/hacking/comments/11wtf17/owasp_vulnerableappfacade_sql_injection/)
 
 ## Other links ##
-1. [Owasp Project link](https://owasp.org/www-project-vulnerableapp-facade/)
-2. [Github pages](https://sasanlabs.github.io/VulnerableApp-facade/)
+1. [OWASP Project link](https://owasp.org/www-project-vulnerableapp-facade/)
+2. [GitHub pages](https://sasanlabs.github.io/VulnerableApp-facade/)
 
 ### React code checks
 
