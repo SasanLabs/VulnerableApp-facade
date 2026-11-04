@@ -18,7 +18,7 @@ VulnerableApp-facade is a farm of vulnerable applications where each application
 ### Simple Start ###
 In order to run entire suit please follow the below steps:
 1. Download and Install [Docker Compose](https://docs.docker.com/compose/install/). 
-2. Clone the github repository
+2. Clone the GitHub repository
 3. Open the terminal and navigate to the Project root directory
 4. Run the command: ``` docker-compose pull && docker-compose up ```
 5. Navigate to browser and visit `http://localhost` to play with the application.
@@ -40,26 +40,26 @@ In order to do changes in React UI component,
 5. Navigate to `http://localhost:3000` to verify/view the changes
 
 **Lua module** is used for handling the Nginx configuration and communication between facade application and VulnerableApplications which is the backend for facade application. 
-In order to make changes in Lua module, the easy way is to add the changes in the lua files and build the docker image with those changes
+In order to make changes in Lua module, the easy way is to add the changes in the Lua files and build the docker image with those changes
 by executing command: ```docker build . -t sasanlabs/owasp-vulnerableapp-facade:latest``` and then run the project as mentioned at [How to run the project](#how-to-run-the-project) 
 
 Before raising the PR with UI changes please execute `npm run pretty` command in `facade-app` folder to auto handle formatting of javascript/typescript files.
 
 ## Integrated Vulnerable Applications
-1. [Owasp VulnerableApp](https://github.com/SasanLabs/VulnerableApp)
+1. [OWASP VulnerableApp](https://github.com/SasanLabs/VulnerableApp)
 2. [VulnerableApp-jsp](https://github.com/SasanLabs/VulnerableApp-jsp)
 3. [VulnerableApp-php](https://github.com/SasanLabs/VulnerableApp-php)
 4. [LLMForge](https://github.com/SasanLabs/LLMForge)
 
 ## Contact ##
-Please raise a github issue for enhancement/issues in VulnerableApp-facade or send email to karan.sasan@owasp.org regarding queries
+Please raise a GitHub issue for enhancement/issues in VulnerableApp-facade or send email to karan.sasan@owasp.org regarding queries
 we will try to resolve issues asap.
 
 ## Documentation and References
 
 1. [Documentation](https://sasanlabs.github.io/VulnerableApp)
 2. [Design Documentation](https://sasanlabs.github.io/VulnerableApp/DesignDocumentation.html)
-3. [Owasp VulnerableApp](https://owasp.org/www-project-vulnerableapp/)
+3. [OWASP VulnerableApp](https://owasp.org/www-project-vulnerableapp/)
 4. [Overview video for OWASP Spotlight series](https://www.youtube.com/watch?v=HRRTrnRgMjs)
 5. [Overview Video](https://www.youtube.com/watch?v=AjL4B-WwrrA&ab_channel=OwaspVulnerableApp)
 
@@ -74,8 +74,8 @@ we will try to resolve issues asap.
 1. [Reddit exploiting SQL Injection Vulnerability](https://www.reddit.com/r/hacking/comments/11wtf17/owasp_vulnerableappfacade_sql_injection/)
 
 ## Other links ##
-1. [Owasp Project link](https://owasp.org/www-project-vulnerableapp-facade/)
-2. [Github pages](https://sasanlabs.github.io/VulnerableApp-facade/)
+1. [OWASP Project link](https://owasp.org/www-project-vulnerableapp-facade/)
+2. [GitHub pages](https://sasanlabs.github.io/VulnerableApp-facade/)
 
 ### React code checks
 
