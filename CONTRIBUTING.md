@@ -2,7 +2,7 @@
 
 VulnerableApp-facade is a community project and contributions are welcome. This guide covers how to set up the project, run it, and send a change, whether it is a typo fix, a UI change, or work on the Nginx/Lua gateway.
 
-By participating, you agree to follow the [VulnerableApp's Code of Conduct](https://github.com/SasanLabs/VulnerableApp/blob/master/CODE_OF_CONDUCT.md) and the [Strict Rules](#strict-rules).
+By participating, you agree to follow the [VulnerableApp's Code of Conduct](https://github.com/SasanLabs/VulnerableApp/blob/master/CODE_OF_CONDUCT.md).
 
 
 ## Table of contents
@@ -20,7 +20,6 @@ By participating, you agree to follow the [VulnerableApp's Code of Conduct](http
 11. [License and contributor agreement](#license-and-contributor-agreement)
 12. [Useful resources](#useful-resources)
 13. [Getting help and important links](#getting-help-and-important-links)
-14. [Strict Rules](#strict-rules)
 
 
 ## Ways to contribute
