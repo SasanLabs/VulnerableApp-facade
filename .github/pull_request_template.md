@@ -1,0 +1,44 @@
+## Issue Title 
+<!-- link the #123 tag of the issue that it closes or is a part of -->
+
+## Description
+<!-- What does this PR change, and why? Keep it short and clear. -->
+
+
+## Related Issue
+<!-- Link the issue this PR addresses. Example: Closes #123 -->
+Closes # / Fixes # Or Related Issue #
+<!-- Use Closes # or Fixes # when the pull request fully closes the issue else use Related Issue # -->
+
+
+## Type of Change
+<!-- Put an "x" in the box that applies. And keep [ ] that doesn't-->
+- [ ] Bug fix
+- [ ] New vulnerability level
+- [ ] Documentation
+- [ ] Refactor
+- [ ] Other (please describe):
+
+
+## How Was This Tested?
+<!-- Describe the steps you took to test your change.
+     If the UI changed, attach screenshots. -->
+
+**Steps:**
+1.
+2.
+3.
+
+**Screenshots or Recordings (if UI changed):**
+
+
+## Checklist
+- [ ] I have read and followed [CONTRIBUTING.md](https://github.com/SasanLabs/VulnerableApp-facade/blob/main/CONTRIBUTING.md)
+- [ ] My code builds locally and in docker without errors.
+- [ ] I have tested my changes locally as well as in docker with modern ui.
+- [ ] I have updated the documentation where needed.
+- [ ] My PR title and description clearly explain the change.
+- [ ] This PR is focused on one change (no unrelated edits).
+- [ ] If this PR updates a GitHub Action/workflow, I have shared the link to the GitHub Actions run below.
+
+**GitHub Action run link (only if a workflow was updated):**
