@@ -100,6 +100,25 @@ function getUrlForVulnerability() {
   return "/VulnerableApp/" + details.activeVulnerabilityIdentifier;
 }
 
+/**
+ * DONOT USE THIS METHOD.
+ *
+ * Only for VulnerableApp, for easy shortcut (Backward compatibility). Always the HTTP(S)
+ * path, even for a WebSocket level: a level that also exposes a companion REST endpoint
+ * (such as a session setup call made before opening its WebSocket) needs this instead of
+ * getUrlForVulnerabilityLevel(), which returns a ws(s):// URL for a WebSocket level.
+ * @returns
+ */
+function getHttpUrlForVulnerabilityLevel() {
+  let details = window.getCurrentVulnerabilityDetails();
+  return (
+    "/VulnerableApp/" +
+    details.activeVulnerabilityIdentifier +
+    "/" +
+    details.activeVulnerabilityLevelIdentifier
+  );
+}
+
 // Only the WebSocket of the level being shown stays open, so it is closed when the user
 // moves to another level or vulnerability. The handlers are removed first so the template
 // that is being replaced never gets a late callback.
